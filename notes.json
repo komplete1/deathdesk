@@ -1,0 +1,22 @@
+{
+ "updated": 1793220557697,
+ "plan": {
+  "kPEPE": {
+   "side": "long",
+   "entry": 0.004836,
+   "size": 92000,
+   "sl": 0.00469,
+   "tp": 0.00542,
+   "partial_trigger": 0.005128,
+   "partial_size": 46000,
+   "be_price": 0.004845
+  }
+ },
+ "lessons": [
+  "<b>ONE BET, NOT THREE</b> (from BTC/ENA/ZEC, 22 Oct, 3 losses). Alt longs plus BTC long opened together = one correlated BTC bet at ~15% risk. When BTC is the driver, max 2 open longs total until one is at breakeven, and at most 1 new entry per run unless the coins are genuinely uncorrelated.",
+  "<b>BTC GATE SCRAPPED BY DANNY</b> (28 Oct 2026). Do NOT block alt longs on BTC structure. Every alt trades on its own chart: own 4h higher low / breakout hold, rising OI, $5M+ vol. BTC context is only a note (if BTC is actively dumping, a 4h close breaking down hard, skip fresh entries that run). Check Danny&#x27;s X list EVERY run.",
+  "<b>NO CHASING THE GREEN-BOARD DAY</b> (same 3 losses). After a board-wide +10-30% day, don&#x27;t buy &quot;retests&quot; right into it at the open of the next session. Wait for a real pullback that holds (higher low printed on 4h) before entering.",
+  "<b>BREAKOUT-HOLD LONGS ARE 0/4</b> (BTC, ENA, ZEC 22 Oct; HYPE 28 Oct). Buying after a few 4h closes above a fresh breakout keeps getting faded back into the range. Only take a breakout long after price has actually retested the level (4h wick into it) and closed back above, or buy the next 4h higher low after that retest. Trail stops under a higher low with a buffer (~0.3-0.5x ATR), not a few ticks under it."
+ ],
+ "scoreboard": "Scoreboard: breakout-hold setups 0/4 wins, avg -0.94R."
+}
