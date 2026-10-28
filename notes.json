@@ -1,15 +1,25 @@
 {
- "updated": 1793220557697,
+ "updated": 1793231959620,
  "plan": {
   "kPEPE": {
    "side": "long",
    "entry": 0.004836,
    "size": 92000,
-   "sl": 0.00469,
+   "sl": 0.00493,
    "tp": 0.00542,
    "partial_trigger": 0.005128,
    "partial_size": 46000,
-   "be_price": 0.004845
+   "be_price": 0.00493
+  },
+  "PUMP": {
+   "side": "long",
+   "entry": 0.00453,
+   "size": 156000,
+   "sl": 0.00444,
+   "tp": 0.00484,
+   "partial_trigger": 0.00471,
+   "partial_size": 78000,
+   "be_price": 0.004535
   }
  },
  "lessons": [
