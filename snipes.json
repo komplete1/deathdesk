@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T11:01:22+00:00",
- "equity": 275.28,
- "risk_per_trade": 13.76,
- "scan_note": "22:00 intraday: IN PUMP. PUMP closed the hour over 0.00435 off its double bottom, long 250k @ 0.004366, stop 0.00431, TP 0.00455. HYPE ripped +8% in one candle to 86.3; not chasing, waiting for a retest. BTC 80.26k, steady.",
+ "updated_at": "2026-10-29T11:56:12+00:00",
+ "equity": 268.53,
+ "risk_per_trade": 13.43,
+ "scan_note": "23:00 intraday: still IN PUMP (0.00435, stop 0.00431, TP 0.00455), 15m lows holding 0.00434. HYPE kept ripping to 88.1 with no pullback, still not chasing. BTC 80.15k, flat.",
  "x_list_note": "X list skim (20:00 run): no coin calls. blackwidowbtc says 'Bitcoin winter is ending, entering SPRING'; rest is banter.",
  "snipes": [
   {
@@ -10,8 +10,8 @@
    "coin": "kPEPE",
    "name": "PEPE",
    "emoji": "\ud83d\udc38",
-   "status": "ARMED",
-   "why": "Runner got stopped at 0.00491 for a small win (+$3.3). Still the strongest meme on the board. If 0.004866 holds as the 1h higher low and it gets back over 0.00503, we reload.",
+   "status": "WAITING",
+   "why": "Broke the 0.004866 higher low at 21:00 (low 0.004784), now bouncing to 0.00494. New base is 0.004784; reload only on a 1h close back over 0.00503.",
    "setup": "Higher low hold + reclaim",
    "dir": "above",
    "trigger": 0.00503,
@@ -20,7 +20,7 @@
     0.00506
    ],
    "entry": 0.00505,
-   "stop": 0.00485,
+   "stop": 0.00476,
    "targets": [
     0.00518,
     0.00542
@@ -35,11 +35,11 @@
      }
     },
     {
-     "t": "1h low holds above 0.004866 (13:00 higher low)",
+     "t": "Holds above the 0.004784 21:00 low",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.004866
+      "px": 0.004784
      }
     },
     {
@@ -56,19 +56,19 @@
     }
    ],
    "x_mention": null,
-   "plain": "hold above 0.004866, then get back over 0.00503 and close an hour up there",
+   "plain": "hold above 0.004784, then get back over 0.00503 and close an hour up there",
    "rr": [
-    0.65,
-    1.85
+    0.45,
+    1.28
    ],
-   "size": 68800.0,
-   "notional": 347.44,
-   "risk_usd": 13.76,
+   "size": 46310.0,
+   "notional": 233.87,
+   "risk_usd": 13.43,
    "reward_usd": [
-    8.94,
-    25.46
+    6.02,
+    17.13
    ],
-   "price_at_scan": 0.004888
+   "price_at_scan": 0.004923
   },
   {
    "id": "pump-reclaim",
@@ -126,14 +126,14 @@
     1.15,
     2.91
    ],
-   "size": 125100.0,
-   "notional": 565.41,
-   "risk_usd": 13.76,
+   "size": 122100.0,
+   "notional": 551.85,
+   "risk_usd": 13.43,
    "reward_usd": [
-    15.89,
-    40.03
+    15.51,
+    39.07
    ],
-   "price_at_scan": 0.004371
+   "price_at_scan": 0.004347
   },
   {
    "id": "pump-dbl",
@@ -196,7 +196,7 @@
     28.0,
     46.0
    ],
-   "price_at_scan": 0.004371
+   "price_at_scan": 0.004347
   },
   {
    "id": "hype-retest",
@@ -204,35 +204,35 @@
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
    "status": "WAITING",
-   "why": "Ripped 79.3 to 86.3 in 30 min on 215M volume at 21:30. Not chasing a one-candle spike (fails LATE + ORGANIC). Buy only if it pulls back to the 83.9 spike base and prints a 15m higher low there.",
+   "why": "HYPE ran 79 to 88 on 750M volume. Not buying the top: want a dip into the 86.0-86.6 15m higher lows and a hold.",
    "setup": "Spike retest (dip buy)",
    "dir": "below",
-   "trigger": 84.0,
+   "trigger": 86.5,
    "zone": [
-    83.6,
-    84.2
+    86.0,
+    86.6
    ],
-   "entry": 84.0,
-   "stop": 83.3,
+   "entry": 86.3,
+   "stop": 85.7,
    "targets": [
-    86.3,
-    88.0
+    88.15,
+    90.0
    ],
    "conditions": [
     {
-     "t": "Dips into 83.6-84.2",
+     "t": "Dips into 86.0-86.6",
      "auto": {
       "coin": "HYPE",
       "op": "<=",
-      "px": 84.2
+      "px": 86.6
      }
     },
     {
-     "t": "Stays above 83.3 (spike base broken = dead)",
+     "t": "Stays above 85.7 (15m structure stop)",
      "auto": {
       "coin": "HYPE",
       "op": ">",
-      "px": 83.3
+      "px": 85.7
      }
     },
     {
@@ -249,20 +249,20 @@
     }
    ],
    "x_mention": null,
-   "plain": "pull back to about 84 after the big pump and hold there",
+   "plain": "dip back to about 86, hold it and bounce",
    "rr": [
-    3.29,
-    5.71
+    3.08,
+    6.17
    ],
    "size_note": "capped at 4x equity notional",
-   "size": 13.11,
-   "notional": 1101.11,
-   "risk_usd": 9.18,
+   "size": 12.45,
+   "notional": 1074.11,
+   "risk_usd": 7.47,
    "reward_usd": [
-    30.15,
-    52.43
+    23.03,
+    46.05
    ],
-   "price_at_scan": 85.1705
+   "price_at_scan": 87.4415
   },
   {
    "id": "init-break",
@@ -320,14 +320,14 @@
     1.98,
     2.25
    ],
-   "size": 1058.0,
-   "notional": 242.39,
-   "risk_usd": 13.76,
+   "size": 1033.0,
+   "notional": 236.57,
+   "risk_usd": 13.43,
    "reward_usd": [
-    27.2,
-    30.91
+    26.55,
+    30.17
    ],
-   "price_at_scan": 0.23176
+   "price_at_scan": 0.229555
   },
   {
    "id": "fart-reclaim",
@@ -385,14 +385,14 @@
     1.47,
     2.8
    ],
-   "size": 3440.0,
-   "notional": 449.95,
-   "risk_usd": 13.76,
+   "size": 3357.0,
+   "notional": 439.16,
+   "risk_usd": 13.43,
    "reward_usd": [
-    20.3,
-    38.53
+    19.81,
+    37.6
    ],
-   "price_at_scan": 0.13027
+   "price_at_scan": 0.12943
   },
   {
    "id": "xpl-reclaim",
@@ -400,7 +400,7 @@
    "name": "XPL",
    "emoji": "\u26a1",
    "status": "ARMED",
-   "why": "Broke the 0.0772 lower high (21:00 hour closed 0.0774, wicked 0.0780) but spread ~5.7bp and only 14M volume. Needs a retest hold of 0.0772 with a 1h higher low.",
+   "why": "21:00 hour closed over 0.0772 but 22:00 slipped back to 0.0770 and spread was too wide. Need a fresh 1h close over 0.0772 with a tight book.",
    "setup": "Downtrend break",
    "dir": "above",
    "trigger": 0.0772,
@@ -450,14 +450,14 @@
     1.36,
     2.14
    ],
-   "size": 9829.0,
-   "notional": 759.75,
-   "risk_usd": 13.76,
+   "size": 9593.0,
+   "notional": 741.53,
+   "risk_usd": 13.43,
    "reward_usd": [
-    18.67,
-    29.49
+    18.23,
+    28.78
    ],
-   "price_at_scan": 0.077387
+   "price_at_scan": 0.076971
   },
   {
    "id": "uni-break",
@@ -515,14 +515,14 @@
     1.21,
     2.16
    ],
-   "size": 72.42,
-   "notional": 533.74,
-   "risk_usd": 13.76,
+   "size": 70.68,
+   "notional": 520.94,
+   "risk_usd": 13.43,
    "reward_usd": [
-    16.66,
-    29.69
+    16.26,
+    28.98
    ],
-   "price_at_scan": 7.15535
+   "price_at_scan": 7.19265
   }
  ]
 }
