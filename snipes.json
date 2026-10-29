@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T18:01:10+00:00",
+ "updated_at": "2026-10-29T18:53:36+00:00",
  "equity": 256.68,
  "risk_per_trade": 12.83,
- "scan_note": "05:05 Fri intraday: PUMP breakout failed and stopped us out (-1R). Board cooling off the overnight pump: BTC 80.9k after 81.9k, HYPE 97 to 93, ENA/LIT/XPL lost their retest levels. Waiting for real higher lows, not chasing.",
+ "scan_note": "06:05 Fri intraday: board still cooling. kPEPE tagged its 0.005244 retest and is basing, LIT printing a higher low, but both need their candle closes before we fire (lesson from the PUMP stop-out). ZEC and PUMP still bleeding.",
  "x_list_note": "No new skim (intraday run). Last full skim 04:00: HYPE news flood, gum says no top, ByzGeneral cool on XPL. Nobody called PUMP.",
  "snipes": [
   {
@@ -11,7 +11,7 @@
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
    "status": "WAITING",
-   "why": "Broke the 0.004554 lid to 0.004658, then faded straight back under and hit our stop (-1R). Only a fresh 1h CLOSE back over the lid gets a second shot.",
+   "why": "Failed breakout stopped us out at 04:24, then lost 0.00445 too (05:30 low 0.004388). Only a 1h close back over the 0.004554 lid gets another shot.",
    "setup": "Breakout + retest",
    "dir": "above",
    "trigger": 0.00456,
@@ -20,7 +20,7 @@
     0.0046
    ],
    "entry": 0.00458,
-   "stop": 0.00444,
+   "stop": 0.004375,
    "targets": [
     0.00488,
     0.0052
@@ -35,15 +35,15 @@
      }
     },
     {
-     "t": "1h close above 0.00456 (failed at 04:00)",
+     "t": "1h close above 0.00456",
      "ok": false
     },
     {
-     "t": "Holds the 0.00445 low",
+     "t": "Holds the 0.004388 low",
      "auto": {
       "coin": "PUMP",
       "op": ">",
-      "px": 0.00445
+      "px": 0.004388
      }
     },
     {
@@ -58,57 +58,53 @@
    "x_mention": null,
    "plain": "get back over 0.00456 and actually close there this time",
    "rr": [
-    2.14,
-    4.43
+    1.46,
+    3.02
    ],
-   "size": 91640.0,
-   "notional": 419.72,
+   "size": 62590.0,
+   "notional": 286.64,
    "risk_usd": 12.83,
    "reward_usd": [
-    27.49,
-    56.82
+    18.78,
+    38.8
    ],
-   "price_at_scan": 0.004481
+   "price_at_scan": 0.004434
   },
   {
    "id": "kpepe-retest",
    "coin": "kPEPE",
    "name": "PEPE",
    "emoji": "\ud83d\udc38",
-   "status": "WAITING",
-   "why": "Ran to 0.00571, holding 0.00537-0.00552 since. Still want the dip to the 0.005244 old 4h high, not the middle of the range.",
+   "status": "ARMED",
+   "why": "Dipped to 0.005237 at 05:15, tagging the old 0.005244 4h high, and printed rising 15m lows since. Rule 4 says the 4h candle has to CLOSE back above 0.005244 (07:00) before we pull the trigger.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 0.00528,
    "zone": [
-    0.00522,
-    0.00528
+    0.00524,
+    0.00533
    ],
-   "entry": 0.00525,
-   "stop": 0.00513,
+   "entry": 0.0053,
+   "stop": 0.005221,
    "targets": [
-    0.00571,
-    0.006
+    0.00563,
+    0.00571
    ],
    "conditions": [
     {
-     "t": "Price dips into 0.00522-0.00528",
-     "auto": {
-      "coin": "kPEPE",
-      "op": "<=",
-      "px": 0.00528
-     }
-    },
-    {
-     "t": "Holds 0.00513",
+     "t": "Holds 0.005237 retest low",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.00513
+      "px": 0.005237
      }
     },
     {
-     "t": "15m higher low prints in the zone",
+     "t": "15m higher lows in the zone (0.005237, 0.00526, 0.005275)",
+     "ok": true
+    },
+    {
+     "t": "4h candle closes above 0.005244 at 07:00 (rule 4)",
      "ok": false
     },
     {
@@ -121,27 +117,27 @@
     }
    ],
    "x_mention": null,
-   "plain": "dip back to 0.00525 and hold",
+   "plain": "close the 4h above 0.005244 at 7am without losing 0.005237",
    "rr": [
-    3.83,
-    6.25
+    4.18,
+    5.19
    ],
-   "size": 106900.0,
-   "notional": 561.31,
+   "size": 162400.0,
+   "notional": 860.75,
    "risk_usd": 12.83,
    "reward_usd": [
-    49.18,
-    80.19
+    53.59,
+    66.59
    ],
-   "price_at_scan": 0.00544
+   "price_at_scan": 0.005316
   },
   {
    "id": "ena-hl",
    "coin": "ENA",
    "name": "ENA",
    "emoji": "\u26a1",
-   "status": "WAITING",
-   "why": "Lost the 0.2127 level (04:45 low 0.2102), old snipe dead. Next real 1h higher low is 0.20787 (02:00).",
+   "status": "ARMED",
+   "why": "Slid to 0.20901 at 05:30, a hair above the 0.2079-0.209 zone at the 0.20787 1h higher low. Still want the tag and a 15m higher low there.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 0.209,
@@ -199,7 +195,7 @@
     46.78,
     81.25
    ],
-   "price_at_scan": 0.21126
+   "price_at_scan": 0.21063
   },
   {
    "id": "lit-retest",
@@ -207,7 +203,7 @@
    "name": "LIT",
    "emoji": "\ud83d\udd25",
    "status": "ARMED",
-   "why": "Dipped to 3.18 at 04:00 (through the old 3.19 stop), now 3.22. Buy only if 3.18 holds as a 1h higher low.",
+   "why": "Dipped to 3.197 in the 05:00 hour, above the 3.1802 04:00 low, so a 1h higher low is forming. Needs the hour to close and hold before entry.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 3.2,
@@ -223,12 +219,8 @@
    ],
    "conditions": [
     {
-     "t": "Price dips into 3.18-3.2",
-     "auto": {
-      "coin": "LIT",
-      "op": "<=",
-      "px": 3.2
-     }
+     "t": "Price dipped into 3.18-3.2 (3.197 at 05:30)",
+     "ok": true
     },
     {
      "t": "Holds 3.165",
@@ -239,7 +231,7 @@
      }
     },
     {
-     "t": "1h higher low confirmed above 3.18",
+     "t": "05:00 1h closes with the 3.197 higher low intact",
      "ok": false
     },
     {
@@ -265,7 +257,7 @@
     53.43,
     83.68
    ],
-   "price_at_scan": 3.2115
+   "price_at_scan": 3.2311
   },
   {
    "id": "hype-dip",
@@ -331,45 +323,45 @@
     70.03,
     102.79
    ],
-   "price_at_scan": 94.3465
+   "price_at_scan": 94.9315
   },
   {
    "id": "zec-retest",
    "coin": "ZEC",
    "name": "ZEC",
    "emoji": "\ud83d\udee1\ufe0f",
-   "status": "ARMED",
-   "why": "Broke 1319 to 1400, pulled to 1329 at 04:00, now 1336. Buy the 1319 retest if it holds.",
+   "status": "WAITING",
+   "why": "Sliced through the 1319 retest to 1308 with lower 1h lows (1341, 1329, 1308). Next real level is the 1297 02:00 1h low; want a 15m higher low there.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 1325.0,
    "zone": [
-    1318.0,
-    1325.0
+    1298.0,
+    1305.0
    ],
-   "entry": 1322.0,
-   "stop": 1296.0,
+   "entry": 1302.0,
+   "stop": 1293.0,
    "targets": [
-    1400.0,
-    1450.0
+    1358.0,
+    1400.0
    ],
    "x_mention": null,
-   "plain": "dip back to 1320 and hold",
+   "plain": "dip to about 1300 and bounce, not keep bleeding",
    "conditions": [
     {
-     "t": "Price dips into 1318.0-1325.0",
+     "t": "Price dips into 1298-1305",
      "auto": {
       "coin": "ZEC",
       "op": "<=",
-      "px": 1325.0
+      "px": 1305
      }
     },
     {
-     "t": "Holds 1296",
+     "t": "Holds 1293",
      "auto": {
       "coin": "ZEC",
       "op": ">",
-      "px": 1296.0
+      "px": 1293
      }
     },
     {
@@ -386,82 +378,18 @@
     }
    ],
    "rr": [
-    3.0,
-    4.92
+    6.22,
+    10.89
    ],
-   "size": 0.4935,
-   "notional": 652.36,
-   "risk_usd": 12.83,
+   "size_note": "capped at 4x equity notional",
+   "size": 0.7886,
+   "notional": 1026.74,
+   "risk_usd": 7.1,
    "reward_usd": [
-    38.49,
-    63.16
+    44.16,
+    77.28
    ],
-   "price_at_scan": 1335.15
-  },
-  {
-   "id": "xpl-retest",
-   "coin": "XPL",
-   "name": "XPL",
-   "emoji": "\ud83e\uddea",
-   "status": "DEAD",
-   "why": "Lost 0.0776 again (04:00 low 0.07638, through the 0.0768 stop). Thin anyway. Dropping next run.",
-   "setup": "Base bounce (dip buy)",
-   "dir": "below",
-   "trigger": 0.0781,
-   "zone": [
-    0.0778,
-    0.0781
-   ],
-   "entry": 0.078,
-   "stop": 0.0768,
-   "targets": [
-    0.0803,
-    0.083
-   ],
-   "conditions": [
-    {
-     "t": "Price dips into 0.0778-0.0781",
-     "auto": {
-      "coin": "XPL",
-      "op": "<=",
-      "px": 0.0781
-     }
-    },
-    {
-     "t": "Holds 0.0768",
-     "auto": {
-      "coin": "XPL",
-      "op": ">",
-      "px": 0.0768
-     }
-    },
-    {
-     "t": "15m higher low prints in the zone",
-     "ok": false
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": "ByzGeneral: likes XPL fundamentally but 'too much supply to justify buying'",
-   "plain": "dip to 0.078 and hold",
-   "rr": [
-    1.92,
-    4.17
-   ],
-   "size": 10690.0,
-   "notional": 833.95,
-   "risk_usd": 12.83,
-   "reward_usd": [
-    24.59,
-    53.46
-   ],
-   "price_at_scan": 0.07675
+   "price_at_scan": 1320.7
   }
  ]
 }
