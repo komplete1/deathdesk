@@ -129,6 +129,65 @@ tr:hover td{background:rgba(0,240,255,.04)}
 .sb-kill{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:14px;background:var(--card);font-size:15px}
 .sb-kill .bar{height:14px}
 .sb-live{text-align:center;margin-top:18px;font-family:'JetBrains Mono';font-size:13px;color:var(--mu)}
+/* sniper scope */
+#v-scope main{display:block}
+.sc-top{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-bottom:14px}
+.radar{width:120px;height:120px;border-radius:50%;position:relative;background:radial-gradient(circle,rgba(0,240,255,.08) 0 30%,transparent 31% 32%,rgba(0,240,255,.06) 33% 62%,transparent 63% 64%,rgba(0,240,255,.05) 65%);border:1px solid rgba(0,240,255,.4);box-shadow:0 0 30px rgba(0,240,255,.25),inset 0 0 30px rgba(0,240,255,.15);overflow:hidden}
+.radar:before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(0,240,255,.55),transparent 22%);animation:spin 3s linear infinite}
+.radar:after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(0,240,255,.25);box-shadow:0 0 0 0 transparent}
+.radar i{position:absolute;width:7px;height:7px;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 10px currentColor;background:currentColor;animation:pulse 1.6s infinite}
+.sc-meta{font-family:'JetBrains Mono';font-size:12px;color:var(--mu);line-height:1.7}.sc-meta b{color:var(--tx)}
+.sc-meta .note{color:#c6cdea;font-family:Inter;font-size:13px;margin-top:4px}
+.sc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:14px}
+@media(max-width:700px){.sc-grid{grid-template-columns:1fr}.sc-top{grid-template-columns:1fr}.radar{display:none}}
+.tgt{position:relative}
+.tgt.st-DEAD{opacity:.55;filter:grayscale(.7)}
+.tgt.st-ARMED{box-shadow:0 0 30px rgba(0,240,255,.25),0 10px 40px rgba(0,0,0,.45)}
+.tgt.st-TRIGGERED,.tgt.hot{box-shadow:0 0 34px rgba(255,43,214,.4),0 10px 40px rgba(0,0,0,.45)}
+.tgt.st-INTRADE{box-shadow:0 0 30px rgba(0,255,157,.25),0 10px 40px rgba(0,0,0,.45)}
+.th{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.th .nm{font-family:Orbitron;font-weight:900;font-size:20px;color:var(--cy);letter-spacing:.05em}
+.th .em{font-size:22px}
+.badge{margin-left:auto;font-family:Orbitron;font-size:10px;letter-spacing:.18em;padding:4px 9px;border-radius:8px;border:1px solid}
+.b-WAITING{color:var(--am);border-color:rgba(255,176,32,.5);background:rgba(255,176,32,.08)}
+.b-ARMED{color:var(--cy);border-color:var(--cy);background:rgba(0,240,255,.1);animation:pulse 1.4s infinite}
+.b-TRIGGERED{color:var(--mg);border-color:var(--mg);background:rgba(255,43,214,.12);animation:pulse 1s infinite}
+.b-INTRADE{color:var(--gr);border-color:var(--gr);background:rgba(0,255,157,.1)}
+.b-DEAD{color:var(--mu);border-color:var(--line)}
+.setup{font-family:'JetBrains Mono';font-size:11px;color:var(--mg);letter-spacing:.06em;text-transform:uppercase}
+.why{font-size:12.5px;color:#c6cdea;line-height:1.5;margin:6px 0 10px}
+.lp{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.lp .px{font-family:Orbitron;font-weight:800;font-size:28px}
+.lp .dist{font-family:'JetBrains Mono';font-size:13px}
+.lock{height:12px;border-radius:6px;background:rgba(255,255,255,.06);position:relative;overflow:hidden;margin:8px 0 3px}
+.lock i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:linear-gradient(90deg,#8b5cf6,var(--cy),var(--mg));box-shadow:0 0 14px var(--cy);transition:width .5s}
+.lock b{position:absolute;right:6px;top:-1px;font-family:'JetBrains Mono';font-size:9.5px;color:#fff;mix-blend-mode:difference}
+.lk{display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-size:10px;color:var(--mu)}
+.conds{list-style:none;margin:12px 0;font-size:12.5px}
+.conds li{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.06)}
+.conds .ck{flex:none;width:18px;height:18px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.conds .ok .ck{background:rgba(0,255,157,.15);color:var(--gr);border:1px solid var(--gr)}
+.conds .no .ck{background:rgba(255,56,100,.1);color:var(--rd);border:1px solid rgba(255,56,100,.5)}
+.conds .src{margin-left:auto;font-family:'JetBrains Mono';font-size:9px;letter-spacing:.1em;padding:2px 5px;border-radius:4px;color:var(--mu);border:1px solid var(--line);flex:none}
+.conds .src.live{color:var(--cy);border-color:rgba(0,240,255,.4)}
+.lv{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-family:'JetBrains Mono';font-size:11px;color:var(--mu)}
+.lv div b{display:block;color:var(--tx);font-size:13px;margin-top:2px}
+@media(max-width:700px){.lv{grid-template-columns:repeat(2,1fr)}}
+.condsum{font-family:'JetBrains Mono';font-size:11px;color:var(--mu)}
+/* hunt (full r) */
+#v-hunt{padding:14px 14px 30px;max-width:900px;margin:0 auto}
+.hn-hero{text-align:center;padding:18px 12px;border-radius:24px;border:2px solid rgba(255,43,214,.5);background:var(--card);box-shadow:0 0 50px rgba(255,43,214,.2),inset 0 0 60px rgba(255,43,214,.08)}
+.hn-hero h2{font-family:Orbitron;font-weight:900;font-size:clamp(26px,8vw,54px);color:var(--mg);text-shadow:0 0 30px var(--mg);line-height:1}
+.hn-hero p{font-size:clamp(15px,4.2vw,20px);font-weight:700;margin-top:10px}
+.hn{border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin-top:10px;background:var(--card);font-size:clamp(16px,4.5vw,20px);font-weight:700;line-height:1.4}
+.hn .hd{display:flex;align-items:center;gap:8px;font-family:Orbitron;font-size:clamp(18px,5vw,24px);font-weight:900;margin-bottom:6px}
+.hn .hd .badge{font-size:9px}
+.hn small{display:block;font-size:14px;font-weight:400;color:#c6cdea;margin-top:8px;line-height:1.55}
+.hn .away{font-family:Orbitron;color:var(--cy)}
+.hn.dead{opacity:.6}.hn.intrade{border-color:rgba(0,255,157,.5)}.hn.armed{border-color:rgba(0,240,255,.6)}.hn.hot{border-color:var(--mg);box-shadow:0 0 30px rgba(255,43,214,.3)}
+.hn-upd{text-align:center;margin-top:16px;font-family:'JetBrains Mono';font-size:13px;color:var(--mu)}
+.sb-title{font-family:Orbitron;font-size:12px;letter-spacing:.3em;color:var(--mu);margin-bottom:6px}
+@media(max-width:700px){.vtabs{flex-wrap:wrap}.vtabs a{flex:1 1 45%;font-size:10px;padding:6px 6px;letter-spacing:.06em}}
 footer{text-align:center;color:var(--mu);font-size:11px;padding:20px;font-family:'JetBrains Mono'}
 footer a{color:var(--cy)}
 </style>
@@ -137,7 +196,7 @@ footer a{color:var(--cy)}
 <div id="bg"></div><div id="grid"></div>
 <header>
   <div class="logo">DEATH//DESK<small>HYPERLIQUID · LIVE</small></div>
-  <nav class="vtabs" id="vtabs"><a href="#pro" data-v="pro">PRO</a><a href="#smooth" data-v="smooth">🧠 SMOOTH BRAIN</a></nav>
+  <nav class="vtabs" id="vtabs"><a href="#pro" data-v="pro">PRO</a><a href="#scope" data-v="scope">🎯 SNIPER SCOPE</a><a href="#fullr" data-v="smooth">🤪 FULL (R) MODE</a><a href="#hunt" data-v="hunt">🎯 WHAT WE'RE HUNTING</a></nav>
   <div class="hdr-r">
     <span id="conn"><span class="dot" id="dot"></span><span id="connTxt">CONNECTING</span></span>
     <span>TICK <span class="clock" id="lastUpd">--</span> <span class="ago" id="ago"></span></span>
@@ -235,6 +294,7 @@ footer a{color:var(--cy)}
 </div>
 <div id="v-smooth" class="view">
   <div class="sb-hero" id="sbHero">
+    <div class="sb-title">🤪 FULL (R) MODE</div>
     <div class="sb-verdict" id="sbVerdict">LOADING</div>
     <div id="sbSub" style="font-family:'JetBrains Mono';font-size:14px;color:#c6cdea;margin-top:6px"></div>
     <div class="sb-face" id="sbFace">🤔</div>
@@ -251,6 +311,22 @@ footer a{color:var(--cy)}
   <div id="sbBanked" class="sb-flat">--</div>
   <div class="sb-kill" id="sbKill">--</div>
   <div class="sb-live"><span class="dot" id="sbDot"></span><span id="sbLive">CONNECTING</span></div>
+</div>
+<div id="v-scope" class="view">
+<main>
+  <section class="card c12">
+    <h3>🎯 Sniper Scope · Target List <span class="tag" id="scUpd">--</span></h3>
+    <div class="sc-top"><div class="radar" id="radar"></div>
+      <div class="sc-meta" id="scMeta">Loading the hit list…</div></div>
+    <div class="sc-meta" style="font-size:11px">HOW ENTRY WORKS: a trade only fires when <b>every</b> box is ticked. <span style="color:var(--cy)">LIVE</span> boxes tick themselves off the websocket price feed. <span>SCAN</span> boxes (candle closes, retests, volume) are checked by the bot's hourly run from the 1h/15m candles. Long only, 5% of equity risked per trade, stop on the exchange the moment it fills.</div>
+  </section>
+  <div class="sc-grid" id="scGrid" style="margin-top:14px"></div>
+</main>
+</div>
+<div id="v-hunt" class="view">
+  <div class="hn-hero"><div class="sb-title">🤪 FULL (R) MODE</div><h2>🎯 WHAT WE'RE HUNTING</h2><p id="hnSub">Loading the hit list…</p></div>
+  <div id="hnList"></div>
+  <div class="hn-upd" id="hnUpd">--</div>
 </div>
 <footer>Live straight from api.hyperliquid.xyz in your browser (websocket + 2.5s REST fallback) · wallet <a id="wl" target="_blank" rel="noopener"></a> · notes.json only for bot lessons/plan</footer>
 
@@ -276,7 +352,7 @@ function touch(){S.lastMsg=Date.now();$('lastUpd').textContent=melTime(Date.now(
 function liveStatus(){const stale=Date.now()-S.lastMsg;if(!S.lastMsg)return['dot','CONNECTING'];if(S.wsOk&&stale<15000)return['dot live','LIVE'];if(stale<15000)return['dot live','LIVE (REST)'];return['dot dead','STALE']}
 setInterval(()=>{$('clock').textContent=melTime(Date.now())+' MEL';const [c,t]=liveStatus();$('dot').className=c;$('connTxt').textContent=t;
  const ago=S.lastMsg?Math.max(0,Math.round((Date.now()-S.lastMsg)/1000)):null;$('ago').textContent=ago==null?'':'('+ago+'s ago)';
- $('sbDot').className=c;$('sbLive').textContent=t+(S.lastMsg?' · last tick '+melTime(S.lastMsg)+' MEL ('+ago+'s ago)':'')},500);
+ updAgo();$('sbDot').className=c;$('sbLive').textContent=t+(S.lastMsg?' · last tick '+melTime(S.lastMsg)+' MEL ('+ago+'s ago)':'')},500);
 
 /* ---------- derived state ---------- */
 function positions(){if(!S.ch)return[];return S.ch.assetPositions.map(a=>a.position).filter(p=>+p.szi!==0)}
@@ -356,7 +432,7 @@ function renderSmooth(){const eq=liveEquity();if(eq==null)return;const open=dayO
  $('sbEq').textContent=usd(eq);
  $('sbSub').textContent=d==null?'':`TODAY ${sgn(d)} · OVERALL ${sgn(a)}`+(d>=0&&a<0?' · clawing it back 🧗':d<0&&a>=0?' · still up overall, chill':'');
  setCap(moodOf(eq,dp));
- document.title=(d!=null?sgn(d)+' today · ':'')+'DEATH//DESK';
+ document.title=(d!=null?sgn(d)+' today · ':'')+({smooth:'FULL (R) MODE · ',scope:'SNIPER SCOPE · ',hunt:'HUNTING · '}[S.view]||'')+'DEATH//DESK';
  const ps=positions();
  $('sbTrades').innerHTML=ps.length?ps.map(p=>{const m=markOf(p.coin)||+p.entryPx,e=+p.entryPx,sz=+p.szi,u=(m-e)*sz,lng=sz>0,st=stopFor(p.coin),tps=tpFor(p.coin),tp=tps.length?(lng?Math.min(...tps):Math.max(...tps)):null,nm=nice(p.coin),em=EMO[nm]||'🎰';
   const freeRoll=st&&(lng?st>=e*0.998:st<=e*1.002);const stopLoss=st?(st-e)*sz:null;
@@ -368,9 +444,54 @@ function renderSmooth(){const eq=liveEquity();if(eq==null)return;const open=dayO
  const room=eq-KILL,used=Math.max(0,Math.min(1,(START-eq)/(START-KILL)));const bo=open?open*(1-BRK):null;
  $('sbKill').innerHTML=`<div>💀 Kill switch at ${usd(KILL)}: we're <b>${usd(room)}</b> away. ${used<.25?'Nowhere near it, relax.':used<.6?'Bit closer than I\u2019d like.':'Getting spicy. 🌶️'}</div><div class="bar"><i style="left:0;width:${(used*100).toFixed(1)}%;background:linear-gradient(90deg,#ffb020,#ff3864);box-shadow:0 0 12px #ff3864"></i></div><div style="color:var(--mu);font-size:13px">${bo?`Daily breaker trips if the pot drops under ${usd(bo)} today (${usd(eq-bo)} of room).`:''}</div>`}
 
+/* ---------- sniper scope + hunting ---------- */
+S.snipes=null;S.view='pro';
+async function loadSnipes(){try{const n=await fetch('snipes.json?'+Date.now()).then(r=>r.ok?r.json():null);if(n){S.snipes=n;renderSnipes(true)}}catch(e){console.warn('snipes',e)}}
+function agoTxt(){if(!S.snipes)return'--';const m=Math.max(0,Math.round((Date.now()-Date.parse(S.snipes.updated_at))/60000));return m<1?'just now':m<60?m+' min ago':Math.floor(m/60)+'h '+(m%60)+'m ago'}
+function updAgo(){if(!S.snipes)return;const t='LIST LAST UPDATED '+agoTxt().toUpperCase()+' · '+melDT(Date.parse(S.snipes.updated_at))+' MEL';const a=$('scUpd'),b=$('hnUpd');if(a)a.textContent=t;if(b)b.textContent='📋 Hit list last updated '+agoTxt()+' ('+melDT(Date.parse(S.snipes.updated_at))+' MEL). Prices tick live.'}
+function condOk(c){if(c.auto){const m=markOf(c.auto.coin);if(!m)return null;const p=+c.auto.px;return c.auto.op==='>'?m>p:c.auto.op==='>='?m>=p:c.auto.op==='<'?m<p:m<=p}return !!c.ok}
+function snipeCalc(s){const m=markOf(s.coin)||s.price_at_scan;const lo=Math.min(...s.zone),hi=Math.max(...s.zone);let need,inZone=false;
+ if(s.dir==='below'){need=m<=hi?0:hi/m-1;inZone=m<=hi&&m>=lo*0.995}else{need=m>=s.trigger?0:s.trigger/m-1;inZone=m>=s.trigger}
+ const conds=s.conditions.map(c=>({...c,v:condOk(c)}));const okN=conds.filter(c=>c.v).length;const lock=Math.max(0,Math.min(1,1-Math.abs(need)/0.10));
+ let st=s.status;let hot=false;if((st==='WAITING'||st==='ARMED')&&inZone){hot=true;if(okN===conds.length)st='TRIGGERED'}
+ const pos=positions().find(p=>p.coin===s.coin);const u=pos?(m-+pos.entryPx)*+pos.szi:null;
+ return {m,need,inZone,conds,okN,lock,st,hot,u,pos}}
+const stc=st=>st.replace(' ','');
+let rsT=0;
+function renderSnipes(force){if(!S.snipes)return;const n=performance.now();if(!force&&n-rsT<700)return;if(S.view!=='scope'&&S.view!=='hunt'&&!force)return;rsT=n;updAgo();
+ const L=S.snipes.snipes.map(s=>({s,c:snipeCalc(s)}));const ord={'IN TRADE':0,TRIGGERED:1,ARMED:2,WAITING:3,DEAD:4};L.sort((a,b)=>(ord[a.c.st]-ord[b.c.st])||(Math.abs(a.c.need)-Math.abs(b.c.need)));
+ const cnt={};L.forEach(x=>cnt[x.c.st]=(cnt[x.c.st]||0)+1);
+ if(S.view==='scope'||force)renderScope(L,cnt);if(S.view==='hunt'||force)renderHunt(L,cnt)}
+function renderScope(L,cnt){const sn=S.snipes;
+ $('scMeta').innerHTML=`<div><b>${L.length}</b> targets · ${['IN TRADE','TRIGGERED','ARMED','WAITING','DEAD'].filter(k=>cnt[k]).map(k=>`<span class="badge b-${stc(k)}" style="margin:0 4px;padding:2px 6px">${k} ${cnt[k]}</span>`).join('')}</div><div>equity at scan <b>${usd(sn.equity)}</b> · risk per trade <b>${usd(sn.risk_per_trade)}</b> (5%) · BTC <b>${px(markOf('BTC'))}</b></div><div class="note">${sn.scan_note||''}</div><div class="note" style="color:var(--mu)">📡 ${sn.x_list_note||''}</div>`;
+ const col={WAITING:'#ffb020',ARMED:'#00f0ff',TRIGGERED:'#ff2bd6','IN TRADE':'#00ff9d',DEAD:'#7d88aa'};
+ $('radar').innerHTML=L.map((x,i)=>{const r=8+Math.min(1,Math.abs(x.c.need)/0.1)*40;const a=i/L.length*6.283+0.6;return `<i style="left:${60+r*Math.cos(a)}px;top:${60+r*Math.sin(a)}px;color:${col[x.c.st]}" title="${x.s.coin}"></i>`}).join('');
+ $('scGrid').innerHTML=L.map(({s,c})=>{const it=c.st==='IN TRADE';
+  const dist=it?`<span class="${cls(c.u||0)}">${c.u!=null?sgn(c.u)+' live':''}</span> · to TP ${pct(s.targets[s.targets.length-1]/c.m-1)}`:c.st==='DEAD'?'setup invalidated':c.need===0?(c.inZone?'<span style="color:var(--mg)">IN THE ZONE · checking boxes</span>':'at trigger'):`${s.dir==='below'?'needs to DROP':'needs to RISE'} <b class="${s.dir==='below'?'dn':'up'}">${(Math.abs(c.need)*100).toFixed(2)}%</b> to ${px(s.dir==='below'?Math.max(...s.zone):s.trigger)}`;
+  const lockPct=it?Math.max(0,Math.min(1,(c.m-s.stop)/(s.targets[s.targets.length-1]-s.stop))):c.lock;
+  return `<section class="card tgt st-${stc(c.st)} ${c.hot?'hot':''}"><div class="th"><span class="em">${s.emoji||'🎰'}</span><span class="nm">${s.coin}</span><span class="setup">${s.setup}</span><span class="badge b-${stc(c.st)}">${c.st}</span></div>
+  <div class="why">${s.why}</div>
+  <div class="lp"><span class="px num" data-sc="${s.id}">${px(c.m)}</span><span class="dist">${dist}</span></div>
+  <div class="lock"><i style="width:${(lockPct*100).toFixed(1)}%"></i><b>${it?'TO TARGET':'LOCK-ON'} ${(lockPct*100).toFixed(0)}%</b></div><div class="lk"><span>${it?'stop '+px(s.stop):'10% away'}</span><span>${it?'TP '+px(s.targets[s.targets.length-1]):'trigger '+(s.zone[0]===s.zone[1]?px(s.zone[0]):px(Math.min(...s.zone))+'–'+px(Math.max(...s.zone)))}</span></div>
+  <ul class="conds">${c.conds.map(k=>`<li class="${k.v?'ok':'no'}"><span class="ck">${k.v?'✓':'✗'}</span><span>${k.t}</span><span class="src ${k.auto?'live':''}">${k.auto?'LIVE':'SCAN'}</span></li>`).join('')}</ul>
+  <div class="condsum">${c.okN}/${c.conds.length} conditions true ${!it&&c.st!=='DEAD'?(c.okN===c.conds.length?'· <span style="color:var(--mg)">ALL GREEN, PULL THE TRIGGER</span>':'· no entry until all green'):''}</div>
+  <div class="lv" style="margin-top:10px"><div>entry<b>${px(s.entry)}</b></div><div>stop<b class="dn">${px(s.stop)}</b></div><div>target${s.targets.length>1?'s':''}<b class="up">${s.targets.map(px).join(' / ')}</b></div><div>R:R<b>${s.rr.map(r=>r.toFixed(1)+'R').join(' / ')}</b></div>
+  <div>size<b>${f2(it?s.size:s.size,s.size>=100?0:2)}</b></div><div>notional<b>${usd(s.notional,0)}</b></div><div>risk<b class="dn">${it&&s.risk_usd<0.5?'~$0 (BE)':usd(s.risk_usd)}</b></div><div>reward<b class="up">${s.reward_usd.map(v=>sgn(v,0)).join(' / ')}</b></div></div>
+  ${s.x_mention?`<div class="why" style="margin-top:8px">📡 X: ${s.x_mention}</div>`:''}${s.rr_note?`<div class="why" style="margin:8px 0 0">${s.rr_note}</div>`:''}</section>`}).join('')}
+const HUNT_SUB=["Bot's in the bushes with binoculars and a meat pie 🥧","Crouched in the long grass like a drop bear. Patience, cobber 🐨","Scope's on. Finger's off the trigger until the boxes go green 🔫","We don't chase. Chasing is for dogs and ex-girlfriends 🐕","Sniping degen shit so you don't have to look at charts 📈"];
+function renderHunt(L,cnt){const live=L.filter(x=>x.c.st!=='DEAD'&&x.c.st!=='IN TRADE');const hot=L.filter(x=>x.c.hot).length;
+ $('hnSub').textContent=`${cnt['IN TRADE']||0} on, ${live.length} in the crosshairs${hot?`, ${hot} IN THE ZONE RIGHT NOW 🚨`:''}. `+HUNT_SUB[Math.floor(Date.now()/20000)%HUNT_SUB.length];
+ $('hnList').innerHTML=L.map(({s,c})=>{const nm=nice(s.coin),em=s.emoji||EMO[nm]||'🎰';const tgt=s.targets[s.targets.length-1],rw=s.reward_usd[s.reward_usd.length-1];const ticks=c.conds.map(k=>(k.v?'✅ ':'❌ ')+k.t).join('<br>');
+  if(c.st==='IN TRADE'){const be=s.stop>=s.entry*0.998;return `<div class="hn intrade"><div class="hd">${em} ${nm} <span class="badge b-INTRADE">WE'RE IN</span></div>We're long ${nm}, currently <span class="${cls(c.u||0)}">${c.u!=null?(c.u>=0?'up ':'down ')+usd(Math.abs(c.u)):'--'}</span>. ${be?'Stop is at breakeven, so worst case we walk out square 🛡️':'Stop at '+px(s.stop)+'.'} Riding it to ${px(tgt)} (${sgn(rw,0)} if it gets there, ${pct(tgt/c.m-1,1)} away). No half-take, letting the fucker run 🏃<small>${ticks}</small></div>`}
+  if(c.st==='DEAD')return `<div class="hn dead"><div class="hd">${em} ${nm} <span class="badge b-DEAD">DEAD 🪦</span></div>${s.why} We don't buy corpses.<small>${ticks}</small></div>`;
+  const away=c.need===0?`<span class="away" style="color:var(--mg)">IT'S IN THE ZONE 🚨</span> Now we wait for the candle to close and the boxes to go green. Finger on the trigger 🔫`:`Currently <span class="away">${(Math.abs(c.need)*100).toFixed(1)}%</span> away (${s.dir==='below'?'needs to drop':'needs to pump'}). 🎯`;
+  const trig=c.st==='TRIGGERED'?'<b style="color:var(--mg)">ALL BOXES TICKED. BOT BUYS ON THE NEXT RUN. 🚀</b> ':'';
+  return `<div class="hn ${c.hot?'hot':c.st==='ARMED'?'armed':''}"><div class="hd">${em} ${nm} <span class="badge b-${stc(c.st)}">${c.st}</span></div>${trig}Waiting for ${nm} to ${s.plain||('get to '+px(s.trigger)+' and hold')}. If it does we buy around ${px(s.entry)}, stop at ${px(s.stop)} (we lose ${usd(s.risk_usd,0)} if it shits the bed), aim for ${px(tgt)} (that's ${sgn(rw,0)}). ${away}<small>Now ${px(c.m)} · ${s.why}<br><b>Boxes that ALL need ticking:</b><br>${ticks}</small></div>`}).join('')}
+
 /* ---------- view tabs (hash) ---------- */
-function setView(){const v=location.hash==='#smooth'?'smooth':'pro';document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+v));document.querySelectorAll('#vtabs a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
- if(v==='pro')requestAnimationFrame(()=>{try{chart.applyOptions({width:$('chart').clientWidth});ec.applyOptions({width:$('eqchart').clientWidth});ec.timeScale().fitContent();drawSpark()}catch(e){}});else{renderSmooth();if(sbState)setCap(sbState,true)}}
+const VIEWS={'#pro':'pro','#scope':'scope','#sniper':'scope','#smooth':'smooth','#fullr':'smooth','#hunt':'hunt'};
+function setView(){const v=VIEWS[location.hash]||'pro';S.view=v;document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+v));document.querySelectorAll('#vtabs a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+ if(v==='pro')requestAnimationFrame(()=>{try{chart.applyOptions({width:$('chart').clientWidth});ec.applyOptions({width:$('eqchart').clientWidth});ec.timeScale().fitContent();drawSpark()}catch(e){}});else if(v==='smooth'){renderSmooth();if(sbState)setCap(sbState,true)}else renderSnipes(true)}
 window.addEventListener('hashchange',setView);
 
 /* ---------- positions ---------- */
@@ -448,7 +569,7 @@ async function loadFills(){mergeFills(await post({type:'userFills',user:U}),true
 async function loadFunding(){S.funding=await post({type:'userFunding',user:U,startTime:Date.now()-30*864e5});renderFunding();renderEquity()}
 async function loadNotes(){try{const n=await fetch('notes.json?'+Date.now()).then(r=>r.ok?r.json():null);if(!n)return;S.plan=n.plan||{};if(n.lessons?.length){$('notesCard').style.display='';$('notes').innerHTML='<ol>'+n.lessons.map(l=>`<li>${l}</li>`).join('')+'</ol>'+(n.scoreboard?`<p style="margin-top:8px;color:var(--mu)">${n.scoreboard}</p>`:'');$('notesUpd').textContent=n.updated?('UPDATED '+melDT(n.updated)):''}onState()}catch(e){}}
 function onState(){if(!S.ch)return;if(!S.chartCoin){const ps=positions();S.chartCoin=ps.length?ps[0].coin:'BTC';$('chCoin').textContent=S.chartCoin+' · '+S.tf;loadCandles()}renderEquity();renderPositions();renderOrders();drawLines();renderFunding()}
-let rl=0;function renderLive(){const n=performance.now();if(n-rl<400)return;rl=n;renderEquity();renderPositions();renderOrders();if(n%5000<400)renderTicker()}
+let rl=0;function renderLive(){const n=performance.now();if(n-rl<400)return;rl=n;renderEquity();renderPositions();renderOrders();renderSnipes();if(n%5000<400)renderTicker()}
 
 /* ---------- websocket ---------- */
 let ws=null,wsTimer=null,pingT=null,bboSubs=new Set(),wsBackoff=1000;
@@ -476,11 +597,12 @@ function connectWS(){clearTimeout(wsTimer);if(ws&&ws.readyState<2)return;let soc
 
 /* ---------- boot + polling fallback ---------- */
 setView();
-(async()=>{connectWS();await Promise.allSettled([loadNotes(),loadMarket(),loadMids(),loadPortfolio()]);await Promise.allSettled([loadState(),loadFills(),loadFunding()]);syncBbo()})();
+(async()=>{connectWS();await Promise.allSettled([loadNotes(),loadSnipes(),loadMarket(),loadMids(),loadPortfolio()]);await Promise.allSettled([loadState(),loadFills(),loadFunding()]);syncBbo()})();
 let lastCandlePoll=0;setInterval(()=>{if(!S.wsOk||Date.now()-S.lastMsg>8000){loadMids().catch(()=>{});loadState().catch(()=>{});if(S.chartCoin&&Date.now()-lastCandlePoll>15000){lastCandlePoll=Date.now();loadCandles()}}},2500);
 setInterval(()=>{loadState().catch(()=>{})},15000);
 setInterval(()=>{loadMarket().catch(()=>{});loadPortfolio().catch(()=>{});loadFunding().catch(()=>{})},60000);
 setInterval(()=>{loadFills().catch(()=>{});loadNotes()},120000);
+setInterval(loadSnipes,60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){loadState().catch(()=>{});loadMids().catch(()=>{});loadFills().catch(()=>{});loadCandles();if(!ws||ws.readyState>1)connectWS()}});
 window.addEventListener('online',()=>{if(!ws||ws.readyState>1)connectWS()});
 </script>
