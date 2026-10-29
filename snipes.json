@@ -1,17 +1,279 @@
 {
- "updated_at": "2026-10-29T13:01:20+00:00",
+ "updated_at": "2026-10-29T13:52:14+00:00",
  "equity": 265.78,
  "risk_per_trade": 13.29,
- "scan_note": "00:05 Fri: MANUAL HALT by Danny. No new entries until every gap in the stack is fixed (breaker baseline bug found + fixed). Watchdog protecting, account flat at 265.78.",
- "x_list_note": "X list skim skipped this run: breaker active, no entries possible. Last skim (20:00): no coin calls.",
+ "scan_note": "01:05 Fri: halt lifted, flat at 265.78. HYPE (+14%) and LIT ripping but extended; no clean long with 3R room this hour. BTC 80.2k flat.",
+ "x_list_note": "Intraday run: X list not skimmed (full runs only). Last skim (20:00): no coin calls.",
  "snipes": [
+  {
+   "id": "pump-break",
+   "coin": "PUMP",
+   "name": "PUMP",
+   "emoji": "\ud83d\udc8a",
+   "status": "ARMED",
+   "why": "1h higher lows 0.004321 then 0.00436, pushing the 0.004554 4h highs. Buy a break and hold over the 4h highs, not under them (only 2.5R of room below).",
+   "setup": "Breakout + retest",
+   "dir": "above",
+   "trigger": 0.004555,
+   "zone": [
+    0.004555,
+    0.00459
+   ],
+   "entry": 0.00457,
+   "stop": 0.00444,
+   "targets": [
+    0.00475,
+    0.0049
+   ],
+   "conditions": [
+    {
+     "t": "Price above 0.004555",
+     "auto": {
+      "coin": "PUMP",
+      "op": ">",
+      "px": 0.004555
+     }
+    },
+    {
+     "t": "Holds the 0.00436 1h higher low",
+     "auto": {
+      "coin": "PUMP",
+      "op": ">",
+      "px": 0.00436
+     }
+    },
+    {
+     "t": "15m retest of 0.00455 holds",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "rip through 0.00455, dip back to it and hold",
+   "rr": [
+    1.38,
+    2.54
+   ],
+   "size": 102200.0,
+   "notional": 467.19,
+   "risk_usd": 13.29,
+   "reward_usd": [
+    18.4,
+    33.74
+   ],
+   "price_at_scan": 0.004417
+  },
+  {
+   "id": "hype-dip",
+   "coin": "HYPE",
+   "name": "HYPE",
+   "emoji": "\ud83d\ude80",
+   "status": "WAITING",
+   "why": "Ripped 79 to 92 on a billion in volume. Way too late to chase (rule 3); buy the first real pullback into the 23:00 base.",
+   "setup": "Base bounce (dip buy)",
+   "dir": "below",
+   "trigger": 88.6,
+   "zone": [
+    88.0,
+    88.6
+   ],
+   "entry": 88.3,
+   "stop": 87.3,
+   "targets": [
+    92.1,
+    94.0
+   ],
+   "conditions": [
+    {
+     "t": "Price dips into 88.0-88.6",
+     "auto": {
+      "coin": "HYPE",
+      "op": "<=",
+      "px": 88.6
+     }
+    },
+    {
+     "t": "Holds the 87.37 23:00 1h low",
+     "auto": {
+      "coin": "HYPE",
+      "op": ">",
+      "px": 87.37
+     }
+    },
+    {
+     "t": "15m higher low prints in the zone",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "dump to about 88 and bounce without losing 87.4",
+   "rr": [
+    3.8,
+    5.7
+   ],
+   "size_note": "capped at 4x equity notional",
+   "size": 12.04,
+   "notional": 1063.1,
+   "risk_usd": 12.04,
+   "reward_usd": [
+    45.75,
+    68.63
+   ],
+   "price_at_scan": 90.949
+  },
+  {
+   "id": "lit-retest",
+   "coin": "LIT",
+   "name": "LIT",
+   "emoji": "\ud83d\udd25",
+   "status": "WAITING",
+   "why": "23:30 15m candle squeezed 2.96 to 3.22 on 10M volume, now fading. Retest of the 3.0-3.07 breakout shelf is the entry, not the top.",
+   "setup": "Breakout + retest",
+   "dir": "below",
+   "trigger": 3.07,
+   "zone": [
+    3.0,
+    3.07
+   ],
+   "entry": 3.04,
+   "stop": 2.92,
+   "targets": [
+    3.24,
+    3.45
+   ],
+   "conditions": [
+    {
+     "t": "Price dips into 3.00-3.07",
+     "auto": {
+      "coin": "LIT",
+      "op": "<=",
+      "px": 3.07
+     }
+    },
+    {
+     "t": "Holds the 2.9236 23:00 low",
+     "auto": {
+      "coin": "LIT",
+      "op": ">",
+      "px": 2.9236
+     }
+    },
+    {
+     "t": "15m close back above 3.07 from the zone",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "drop back to about 3.05 and hold it",
+   "rr": [
+    1.67,
+    3.42
+   ],
+   "size": 110.7,
+   "notional": 336.68,
+   "risk_usd": 13.29,
+   "reward_usd": [
+    22.15,
+    45.41
+   ],
+   "price_at_scan": 3.12505
+  },
+  {
+   "id": "ena-hl",
+   "coin": "ENA",
+   "name": "ENA",
+   "emoji": "\u26a1",
+   "status": "WAITING",
+   "why": "Stepping up: 1h lows 0.20036 then 0.2033, under the 0.2088 day high. Too little room at 0.2058; buy a retest of the 0.2033 low.",
+   "setup": "Higher low hold",
+   "dir": "below",
+   "trigger": 0.2041,
+   "zone": [
+    0.2034,
+    0.2041
+   ],
+   "entry": 0.2038,
+   "stop": 0.2026,
+   "targets": [
+    0.2088,
+    0.214
+   ],
+   "conditions": [
+    {
+     "t": "Price dips into 0.2034-0.2041",
+     "auto": {
+      "coin": "ENA",
+      "op": "<=",
+      "px": 0.2041
+     }
+    },
+    {
+     "t": "Holds 0.2033",
+     "auto": {
+      "coin": "ENA",
+      "op": ">",
+      "px": 0.2033
+     }
+    },
+    {
+     "t": "15m higher low in the zone",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "dip to 0.204 and hold 0.2033",
+   "rr": [
+    4.17,
+    8.5
+   ],
+   "size_note": "capped at 4x equity notional",
+   "size": 5216.0,
+   "notional": 1063.1,
+   "risk_usd": 6.26,
+   "reward_usd": [
+    26.08,
+    53.21
+   ],
+   "price_at_scan": 0.205675
+  },
   {
    "id": "kpepe-reload",
    "coin": "kPEPE",
    "name": "PEPE",
    "emoji": "\ud83d\udc38",
-   "status": "HALTED",
-   "why": "Broke the 0.004866 higher low at 21:00 (low 0.004784), now bouncing to 0.00494. New base is 0.004784; reload only on a 1h close back over 0.00503.",
+   "status": "WAITING",
+   "why": "Base at 0.004784 after the 21:00 break; chopping 0.00485-0.00496 under the 0.00503 reclaim level.",
    "setup": "Higher low hold + reclaim",
    "dir": "above",
    "trigger": 0.00503,
@@ -26,10 +288,6 @@
     0.00542
    ],
    "conditions": [
-    {
-     "t": "Manual halt lifted by Danny",
-     "ok": false
-    },
     {
      "t": "Price back above 0.00503",
      "auto": {
@@ -72,458 +330,43 @@
     5.96,
     16.96
    ],
-   "price_at_scan": 0.004914
-  },
-  {
-   "id": "pump-reclaim",
-   "coin": "PUMP",
-   "name": "PUMP",
-   "emoji": "\ud83d\udc8a",
-   "status": "HALTED",
-   "why": "Second PUMP leg: if the open trade runs, a 1h close over 0.0045 is the add (only with the stop at breakeven).",
-   "setup": "Flag reclaim",
-   "dir": "above",
-   "trigger": 0.0045,
-   "zone": [
-    0.0045,
-    0.00453
-   ],
-   "entry": 0.00452,
-   "stop": 0.00441,
-   "targets": [
-    0.004647,
-    0.00484
-   ],
-   "conditions": [
-    {
-     "t": "Manual halt lifted by Danny",
-     "ok": false
-    },
-    {
-     "t": "Price back above 0.0045",
-     "auto": {
-      "coin": "PUMP",
-      "op": ">",
-      "px": 0.0045
-     }
-    },
-    {
-     "t": "1h candle CLOSES above 0.0045",
-     "ok": false
-    },
-    {
-     "t": "Next 1h makes a higher low above 0.00445 (retest holds)",
-     "ok": false
-    },
-    {
-     "t": "1h volume over $3M on the reclaim",
-     "ok": false
-    },
-    {
-     "t": "BTC not nuking: above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "get back over 0.0045, close an hour up there and hold it",
-   "rr": [
-    1.15,
-    2.91
-   ],
-   "size": 120800.0,
-   "notional": 546.1,
-   "risk_usd": 13.29,
-   "reward_usd": [
-    15.34,
-    38.66
-   ],
-   "price_at_scan": 0.004439
-  },
-  {
-   "id": "pump-dbl",
-   "coin": "PUMP",
-   "name": "PUMP",
-   "emoji": "\ud83d\udc8a",
-   "status": "DEAD",
-   "why": "Flattened by the daily loss breaker at 23:16 (0.004338, -0.5R), not by its stop: lows held 0.004321 over the 0.00431 stop. Setup itself still intact at 0.00438.",
-   "setup": "Double bottom + 1h higher low",
-   "dir": "above",
-   "trigger": 0.00435,
-   "zone": [
-    0.00435,
-    0.00437
-   ],
-   "entry": 0.004366,
-   "stop": 0.00431,
-   "targets": [
-    0.004478,
-    0.00455
-   ],
-   "conditions": [
-    {
-     "t": "Price above 0.00435 (13:00 1h high)",
-     "auto": {
-      "coin": "PUMP",
-      "op": ">",
-      "px": 0.00435
-     }
-    },
-    {
-     "t": "1h close above 0.00435",
-     "ok": true
-    },
-    {
-     "t": "1h higher low printed above 0.004165",
-     "ok": true
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "hold the 0.004165 bottom, then bust over 0.00435 and close an hour up there",
-   "rr": [
-    2.0,
-    3.29
-   ],
-   "size": 237300.0,
-   "notional": 1036.15,
-   "risk_usd": 13.29,
-   "reward_usd": [
-    26.58,
-    43.67
-   ],
-   "price_at_scan": 0.004439
-  },
-  {
-   "id": "hype-retest",
-   "coin": "HYPE",
-   "name": "HYPE",
-   "emoji": "\ud83d\udfe2",
-   "status": "HALTED",
-   "why": "HYPE ran 79 to 89.5 on 500M+ volume in 3 hours. Not chasing; want a dip into the 86.0-86.6 15m higher-low zone once the breaker lifts.",
-   "setup": "Spike retest (dip buy)",
-   "dir": "below",
-   "trigger": 86.5,
-   "zone": [
-    86.0,
-    86.6
-   ],
-   "entry": 86.3,
-   "stop": 85.7,
-   "targets": [
-    88.15,
-    90.0
-   ],
-   "conditions": [
-    {
-     "t": "Manual halt lifted by Danny",
-     "ok": false
-    },
-    {
-     "t": "Dips into 86.0-86.6",
-     "auto": {
-      "coin": "HYPE",
-      "op": "<=",
-      "px": 86.6
-     }
-    },
-    {
-     "t": "Stays above 85.7 (15m structure stop)",
-     "auto": {
-      "coin": "HYPE",
-      "op": ">",
-      "px": 85.7
-     }
-    },
-    {
-     "t": "15m higher low prints in the zone",
-     "ok": false
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "dip back to about 86, hold it and bounce",
-   "rr": [
-    3.08,
-    6.17
-   ],
-   "size_note": "capped at 4x equity notional",
-   "size": 12.32,
-   "notional": 1063.1,
-   "risk_usd": 7.39,
-   "reward_usd": [
-    22.79,
-    45.58
-   ],
-   "price_at_scan": 89.8485
-  },
-  {
-   "id": "init-break",
-   "coin": "INIT",
-   "name": "INIT",
-   "emoji": "\ud83e\uddec",
-   "status": "HALTED",
-   "why": "Biggest mover on HL: +37% day. Got dumped to 0.2063 with BTC then bounced to 0.2187. Funding negative, shorts still fighting it.",
-   "setup": "Range-high breakout + retest",
-   "dir": "above",
-   "trigger": 0.2285,
-   "zone": [
-    0.224,
-    0.2285
-   ],
-   "entry": 0.229,
-   "stop": 0.216,
-   "targets": [
-    0.2547,
-    0.2582
-   ],
-   "conditions": [
-    {
-     "t": "Manual halt lifted by Danny",
-     "ok": false
-    },
-    {
-     "t": "Price above today's 0.2282 high",
-     "auto": {
-      "coin": "INIT",
-      "op": ">",
-      "px": 0.2285
-     }
-    },
-    {
-     "t": "1h close above 0.2285",
-     "ok": false
-    },
-    {
-     "t": "Retest of 0.224-0.2285 holds on 15m",
-     "ok": false
-    },
-    {
-     "t": "Spread under 10bp at entry (3x max lev, thin book)",
-     "ok": true
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "punch through today's 0.2282 high, close above it and hold the retest",
-   "rr": [
-    1.98,
-    2.25
-   ],
-   "size": 1022.0,
-   "notional": 234.11,
-   "risk_usd": 13.29,
-   "reward_usd": [
-    26.27,
-    29.85
-   ],
-   "price_at_scan": 0.22269
-  },
-  {
-   "id": "fart-reclaim",
-   "coin": "FARTCOIN",
-   "name": "FARTCOIN",
-   "emoji": "\ud83d\udca8",
-   "status": "HALTED",
-   "why": "OG Solana/pump.fun meme. Lost its 0.1292-0.1305 floor in the BTC dump; bounced to 0.13086 at 16:00 and got rejected at 0.1305 again, back to 0.1283. Reclaim = trapped shorts.",
-   "setup": "Lost-support reclaim",
-   "dir": "above",
-   "trigger": 0.1305,
-   "zone": [
-    0.1305,
-    0.131
-   ],
-   "entry": 0.1308,
-   "stop": 0.1268,
-   "targets": [
-    0.1367,
-    0.142
-   ],
-   "conditions": [
-    {
-     "t": "Manual halt lifted by Danny",
-     "ok": false
-    },
-    {
-     "t": "Price back above 0.1305",
-     "auto": {
-      "coin": "FARTCOIN",
-      "op": ">",
-      "px": 0.1305
-     }
-    },
-    {
-     "t": "1h close above 0.1305",
-     "ok": false
-    },
-    {
-     "t": "Holds above 0.1292 on the retest",
-     "ok": false
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    },
-    {
-     "t": "24h volume back over $5M (only 4.3M now)",
-     "ok": false
-    }
-   ],
-   "x_mention": null,
-   "plain": "climb back over 0.1305 (the floor it just fell through) and stay there",
-   "rr": [
-    1.47,
-    2.8
-   ],
-   "size": 3322.0,
-   "notional": 434.58,
-   "risk_usd": 13.29,
-   "reward_usd": [
-    19.6,
-    37.21
-   ],
-   "price_at_scan": 0.13051
+   "price_at_scan": 0.004876
   },
   {
    "id": "xpl-reclaim",
    "coin": "XPL",
    "name": "XPL",
-   "emoji": "\u26a1",
-   "status": "HALTED",
-   "why": "21:00 hour closed over 0.0772 but 22:00 slipped back to 0.0770 and spread was too wide. Need a fresh 1h close over 0.0772 with a tight book.",
-   "setup": "Downtrend break",
+   "emoji": "\ud83e\uddea",
+   "status": "WAITING",
+   "why": "Lost the 0.0772 reclaim again (0.0767), thin volume and wide spread. Needs a clean 1h close over 0.0776.",
+   "setup": "Range reclaim",
    "dir": "above",
-   "trigger": 0.0772,
+   "trigger": 0.0776,
    "zone": [
-    0.0772,
-    0.0775
+    0.0776,
+    0.0779
    ],
-   "entry": 0.0773,
-   "stop": 0.0759,
+   "entry": 0.0777,
+   "stop": 0.0761,
    "targets": [
     0.0792,
     0.0803
    ],
    "conditions": [
     {
-     "t": "Manual halt lifted by Danny",
-     "ok": false
-    },
-    {
-     "t": "Price above 0.0772 (last lower high)",
+     "t": "Price above 0.0776",
      "auto": {
       "coin": "XPL",
       "op": ">",
-      "px": 0.0772
+      "px": 0.0776
      }
     },
     {
-     "t": "1h close above 0.0772",
-     "ok": true
-    },
-    {
-     "t": "Higher low prints above 0.0759",
+     "t": "1h close above 0.0776",
      "ok": false
     },
     {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    },
-    {
-     "t": "Spread under 5bp at entry",
-     "ok": false
-    }
-   ],
-   "x_mention": null,
-   "plain": "break the downtrend by closing over 0.0772",
-   "rr": [
-    1.36,
-    2.14
-   ],
-   "size": 9493.0,
-   "notional": 733.8,
-   "risk_usd": 13.29,
-   "reward_usd": [
-    18.04,
-    28.48
-   ],
-   "price_at_scan": 0.077269
-  },
-  {
-   "id": "uni-break",
-   "coin": "UNI",
-   "name": "UNI",
-   "emoji": "\ud83e\udd84",
-   "status": "HALTED",
-   "why": "Was the cleanest higher-low chart this morning. Rejected 7.35 twice, now 6.98 after the dump. Long only back over 7.35.",
-   "setup": "Break and retest of 7.35",
-   "dir": "above",
-   "trigger": 7.35,
-   "zone": [
-    7.3,
-    7.35
-   ],
-   "entry": 7.37,
-   "stop": 7.18,
-   "targets": [
-    7.6,
-    7.78
-   ],
-   "conditions": [
-    {
-     "t": "Manual halt lifted by Danny",
-     "ok": false
-    },
-    {
-     "t": "Price above 7.35",
-     "auto": {
-      "coin": "UNI",
-      "op": ">",
-      "px": 7.35
-     }
-    },
-    {
-     "t": "1h close above 7.35",
-     "ok": false
-    },
-    {
-     "t": "Retest of 7.30-7.35 holds",
-     "ok": false
-    },
-    {
-     "t": "1h volume over $1M on the break",
+     "t": "Spread under 5bp",
      "ok": false
     },
     {
@@ -536,19 +379,19 @@
     }
    ],
    "x_mention": null,
-   "plain": "finally bust through 7.35 (it's bounced off it twice) and hold it on the retest",
+   "plain": "close an hour over 0.0776 with a tight spread",
    "rr": [
-    1.21,
-    2.16
+    0.94,
+    1.62
    ],
-   "size": 69.95,
-   "notional": 515.51,
+   "size": 8306.0,
+   "notional": 645.4,
    "risk_usd": 13.29,
    "reward_usd": [
-    16.09,
-    28.68
+    12.46,
+    21.6
    ],
-   "price_at_scan": 7.23905
+   "price_at_scan": 0.076814
   }
  ]
 }
