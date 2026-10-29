@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-29T07:55:18+00:00",
+ "updated_at": "2026-10-29T08:52:15+00:00",
  "equity": 273.95,
  "risk_per_trade": 13.7,
- "scan_note": "19:00 intraday: kPEPE runner stopped at 0.00491 for +$3.3. BTC 79.8k drifting lower, not nuking. Whole $5M+ board red except INIT (3x, thin). PUMP holding 0.00419 above its 0.004165 bottom, HYPE 78.6, FARTCOIN 0.127. No trigger, no trade.",
- "x_list_note": "X list skim (16:00 run): no coin calls, just GMs and banter (Bobby_1111888 'more bullish than ever'). Next skim on the 20:00 full run.",
+ "scan_note": "20:00 full run: flat after the kPEPE runner stopped (+$3.3). BTC 79.9k chopping under the 80.5k lower high, not dumping. Whole $5M+ board red except INIT (+13%, 3x, choppy). kPEPE 0.00496 holding its 0.004866 higher low, PUMP 0.00422 still above the 0.004165 bottom. No trigger, no trade.",
+ "x_list_note": "X list skim (20:00 run): no coin calls. blackwidowbtc says 'Bitcoin winter is ending, entering SPRING'; rest is banter.",
  "snipes": [
   {
    "id": "kpepe-reload",
@@ -68,7 +68,7 @@
     8.91,
     25.35
    ],
-   "price_at_scan": 0.004904
+   "price_at_scan": 0.004953
   },
   {
    "id": "pump-reclaim",
@@ -133,7 +133,7 @@
     15.82,
     39.85
    ],
-   "price_at_scan": 0.004207
+   "price_at_scan": 0.004212
   },
   {
    "id": "pump-dbl",
@@ -141,7 +141,7 @@
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
    "status": "WAITING",
-   "why": "Stopped us at 0.0042, wicked to 0.004165. 18:00 1h dipped to 0.004188, still a higher low above that bottom. Bust over 0.00435 = cheap re-entry with a tight stop.",
+   "why": "Stopped us at 0.0042, wicked to 0.004165. 18:00/19:00 1h lows 0.004188/0.004204 keep making higher lows above that bottom. Bust over 0.00435 = cheap re-entry with a tight stop.",
    "setup": "Double bottom + 1h higher low",
    "dir": "above",
    "trigger": 0.00435,
@@ -194,7 +194,7 @@
     13.7,
     25.44
    ],
-   "price_at_scan": 0.004207
+   "price_at_scan": 0.004212
   },
   {
    "id": "hype-reclaim",
@@ -202,7 +202,7 @@
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
    "status": "WAITING",
-   "why": "The house coin. Dumped 80.0 to 78.09 with BTC, bounced to 79.47 and faded back to 78.9. Reclaim of 80 flips the breakdown.",
+   "why": "The house coin. Dumped 80.0 to 78.09 with BTC, bounced to 79.47, now chopping 78.5-79.2 with a 78.479 1h higher low. Reclaim 80.05 and we're in.",
    "setup": "Lost-level reclaim",
    "dir": "above",
    "trigger": 80.05,
@@ -211,7 +211,7 @@
     80.25
    ],
    "entry": 80.15,
-   "stop": 78.9,
+   "stop": 78.4,
    "targets": [
     81.5,
     82.0
@@ -245,17 +245,17 @@
    "x_mention": null,
    "plain": "climb back over 80 (where it broke down) and hold it",
    "rr": [
-    1.08,
-    1.48
+    0.77,
+    1.06
    ],
-   "size": 10.96,
-   "notional": 878.44,
+   "size": 7.829,
+   "notional": 627.46,
    "risk_usd": 13.7,
    "reward_usd": [
-    14.8,
-    20.28
+    10.57,
+    14.48
    ],
-   "price_at_scan": 78.6555
+   "price_at_scan": 78.7925
   },
   {
    "id": "init-break",
@@ -320,7 +320,7 @@
     27.08,
     30.77
    ],
-   "price_at_scan": 0.207365
+   "price_at_scan": 0.20938
   },
   {
    "id": "fart-reclaim",
@@ -385,7 +385,7 @@
     20.21,
     38.36
    ],
-   "price_at_scan": 0.12711
+   "price_at_scan": 0.12784
   },
   {
    "id": "xpl-reclaim",
@@ -446,7 +446,7 @@
     18.59,
     29.36
    ],
-   "price_at_scan": 0.0749
+   "price_at_scan": 0.075007
   },
   {
    "id": "uni-break",
@@ -511,7 +511,7 @@
     16.58,
     29.56
    ],
-   "price_at_scan": 6.99215
+   "price_at_scan": 6.9946
   }
  ]
 }
