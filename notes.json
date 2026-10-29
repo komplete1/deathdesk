@@ -1,5 +1,5 @@
 {
- "updated": 1793311303541,
+ "updated": 1793314814244,
  "plan": {
   "HYPE": {
    "side": "long",
@@ -11,7 +11,7 @@
    "opened": "2026-10-30 09:00 Melb",
    "setup": "1h pullback to higher low (91.48 HL above 89.9 flush low), snipe hype-dip",
    "partial_trigger": null,
-   "time_exit": "~15:00 Melb if not +1R (95.09)"
+   "time_exit": "~15:00 Melb if not +1R (93.79); 2R=95.09 -> stop to BE/1h HL"
   }
  },
  "lessons": [

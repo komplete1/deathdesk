@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T22:01:27+00:00",
- "equity": 257.06,
- "risk_per_trade": 12.85,
- "scan_note": "09:05 Fri intraday: BTC bounced off the 78.2k flush low to 79.8k and is drifting at ~79.0k, not dumping. HYPE printed its 1h higher low at 91.48 and closed 92.77, so the dip snipe fired: long 5.73 HYPE @ 92.50. Rest of the board still under water.",
+ "updated_at": "2026-10-29T23:00:01+00:00",
+ "equity": 250.27,
+ "risk_per_trade": 12.51,
+ "scan_note": "10:05 Fri intraday (ran ~09:57): alts are still bleeding after the 07:00 flush (kPEPE -11%, ENA -16%, PUMP -10% over 24h, with fresh lower lows in the 09:00 hour). BTC is flat at ~79.0k above the 78.2k low. No Turtle triggers on any validated coin. TRX is the only one above its 55-bar high, so it hinges on the 11:00 4h close. Sitting flat apart from HYPE.",
  "x_list_note": "Full skim since 04:00: macro risk-off (Geiger: AMZN -8%, INTC -18% after hours), glassnode says alt buyers are back to selling at a loss, gum joking CZ hacked Binance to stop HYPE ATHs, whale_alert shows huge BTC/USDC/USDT outflows from Binance. milkroad shilling Hyperliquid. No specific coin long calls.",
  "snipes": [
   {
@@ -11,7 +11,7 @@
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
    "status": "IN TRADE",
-   "why": "Strongest chart on the board: flushed to 89.9 with BTC, dipped to 91.48 for a 1h higher low and closed back at 92.77. We're in.",
+   "why": "Pullback long from 92.50. Alts kept bleeding through the 09:00 hour and HYPE is hugging the 91.2 stop (low 91.18). Stop and TP 97.0 are on the exchange; time exit ~15:00.",
    "setup": "Pullback to higher low (dip buy)",
    "dir": "below",
    "trigger": 91.6,
@@ -66,47 +66,161 @@
     25.8,
     42.99
    ],
-   "price_at_scan": 92.6775
+   "price_at_scan": 91.4405
   },
   {
-   "id": "kpepe-base",
+   "id": "trx-turtle",
+   "coin": "TRX",
+   "name": "TRX",
+   "emoji": "\ud83d\udd3a",
+   "status": "ARMED",
+   "why": "Validated Turtle coin. TRX ripped to 0.3649 in the 08:00 hour and sits at ~0.3496, above the 0.33341 55-bar 4h high. If the 11:00 4h candle closes above it, it's a Turtle long. Spike candle, so the 2 ATR stop is wide relative to TRX's usual range.",
+   "setup": "Turtle 4h breakout (55-bar high)",
+   "dir": "above",
+   "trigger": 0.33341,
+   "zone": [
+    0.33341,
+    0.3496
+   ],
+   "entry": 0.3496,
+   "stop": 0.3447,
+   "targets": [
+    0.37,
+    0.39
+   ],
+   "conditions": [
+    {
+     "t": "4h close above the 55-bar high 0.33341",
+     "ok": false
+    },
+    {
+     "t": "Price above 0.33341",
+     "auto": {
+      "coin": "TRX",
+      "op": ">",
+      "px": 0.33341
+     }
+    },
+    {
+     "t": "Hold above 0.3334 into the 11:00 close",
+     "auto": {
+      "coin": "TRX",
+      "op": ">",
+      "px": 0.33341
+     }
+    },
+    {
+     "t": "BTC holds the 78.2k flush low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 78200
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "close the 11am 4h candle above 0.3334 (it's at 0.35 now)",
+   "rr": [
+    4.16,
+    8.24
+   ],
+   "size": 2553.0,
+   "notional": 892.55,
+   "risk_usd": 12.51,
+   "reward_usd": [
+    52.08,
+    103.14
+   ],
+   "price_at_scan": 0.348395
+  },
+  {
+   "id": "zec-turtle",
+   "coin": "ZEC",
+   "name": "ZEC",
+   "emoji": "\ud83d\udee1\ufe0f",
+   "status": "WAITING",
+   "why": "Validated Turtle coin. Flushed 1327 to 1198 in the 07:00 hour, now 1245. Needs a 4h close over the 1368.3 55-bar high, ~10% away.",
+   "setup": "Turtle 4h breakout (55-bar high)",
+   "dir": "above",
+   "trigger": 1368.3,
+   "zone": [
+    1368.3,
+    1381.983
+   ],
+   "entry": 1368.3,
+   "stop": 1282.0,
+   "targets": [
+    1450,
+    1550
+   ],
+   "conditions": [
+    {
+     "t": "4h close above the 55-bar high 1368.3",
+     "ok": false
+    },
+    {
+     "t": "Price above 1368.3",
+     "auto": {
+      "coin": "ZEC",
+      "op": ">",
+      "px": 1368.3
+     }
+    },
+    {
+     "t": "BTC holds the 78.2k flush low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 78200
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "close a 4h candle above 1368",
+   "rr": [
+    0.95,
+    2.11
+   ],
+   "size": 0.145,
+   "notional": 198.35,
+   "risk_usd": 12.51,
+   "reward_usd": [
+    11.84,
+    26.34
+   ],
+   "price_at_scan": 1245.05
+  },
+  {
+   "id": "kpepe-turtle",
    "coin": "kPEPE",
    "name": "kPEPE",
    "emoji": "\ud83d\udc38",
    "status": "WAITING",
-   "why": "The 0.00478 floor broke (low 0.004659 in the 08:00 hour). Needs a reclaim of 0.00478 on a 1h close before it's a long again.",
-   "setup": "Failed breakdown reclaim",
+   "why": "Validated Turtle coin, but it dumped from 0.0055 to 0.00446 since 07:00 on huge volume (76M in the 09:00 hour). Needs a 4h close over 0.005512, ~24% away. Dead money for now.",
+   "setup": "Turtle 4h breakout (55-bar high)",
    "dir": "above",
-   "trigger": 0.00478,
+   "trigger": 0.005512,
    "zone": [
-    0.00478,
-    0.00482
+    0.005512,
+    0.00556712
    ],
-   "entry": 0.0048,
-   "stop": 0.00464,
+   "entry": 0.005512,
+   "stop": 0.00506,
    "targets": [
-    0.00525,
-    0.0055
+    0.006,
+    0.0065
    ],
    "conditions": [
     {
-     "t": "Price back above 0.00478",
-     "auto": {
-      "coin": "kPEPE",
-      "op": ">",
-      "px": 0.00478
-     }
-    },
-    {
-     "t": "1h close above 0.00478",
+     "t": "4h close above the 55-bar high 0.005512",
      "ok": false
     },
     {
-     "t": "Holds the 0.004659 low",
+     "t": "Price above 0.005512",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.004659
+      "px": 0.005512
      }
     },
     {
@@ -119,59 +233,51 @@
     }
    ],
    "x_mention": null,
-   "plain": "claw back above 0.00478 and close an hour there",
+   "plain": "get back above 0.0055 on a 4h close",
    "rr": [
-    2.81,
-    4.38
+    1.08,
+    2.19
    ],
-   "size": 80310.0,
-   "notional": 385.5,
-   "risk_usd": 12.85,
+   "size": 27680.0,
+   "notional": 152.56,
+   "risk_usd": 12.51,
    "reward_usd": [
-    36.14,
-    56.22
+    13.51,
+    27.34
    ],
-   "price_at_scan": 0.004622
+   "price_at_scan": 0.004471
   },
   {
-   "id": "pump-reclaim",
+   "id": "pump-turtle",
    "coin": "PUMP",
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
-   "status": "ARMED",
-   "why": "Broke the 0.004165 double bottom and dumped to 0.003942. Only a 1h close back over 0.004165 turns that into a trapped-shorts reclaim.",
-   "setup": "Failed breakdown reclaim",
+   "status": "WAITING",
+   "why": "Validated Turtle coin. Fell from 0.00442 to 0.00394 in the 07:00 flush and is flatlining at 0.00409, just under the 20-bar 4h low. Turtle trigger is 0.00523, 28% away.",
+   "setup": "Turtle 4h breakout (55-bar high)",
    "dir": "above",
-   "trigger": 0.00417,
+   "trigger": 0.00523,
    "zone": [
-    0.00417,
-    0.00421
+    0.00523,
+    0.0052823
    ],
-   "entry": 0.00418,
-   "stop": 0.00393,
+   "entry": 0.00523,
+   "stop": 0.00488,
    "targets": [
-    0.00466,
-    0.00488
+    0.0057,
+    0.0062
    ],
    "conditions": [
     {
-     "t": "Price back above 0.00417",
+     "t": "4h close above the 55-bar high 0.00523",
+     "ok": false
+    },
+    {
+     "t": "Price above 0.00523",
      "auto": {
       "coin": "PUMP",
       "op": ">",
-      "px": 0.00417
-     }
-    },
-    {
-     "t": "1h close above 0.004165",
-     "ok": false
-    },
-    {
-     "t": "Holds the 0.003942 flush low",
-     "auto": {
-      "coin": "PUMP",
-      "op": ">",
-      "px": 0.003942
+      "px": 0.00523
      }
     },
     {
@@ -184,56 +290,52 @@
     }
    ],
    "x_mention": null,
-   "plain": "claw back above 0.00417 and close an hour there",
+   "plain": "close a 4h candle above 0.00523",
    "rr": [
-    1.92,
-    2.8
+    1.34,
+    2.77
    ],
-   "size": 51400.0,
-   "notional": 214.85,
-   "risk_usd": 12.85,
+   "size": 35740.0,
+   "notional": 186.94,
+   "risk_usd": 12.51,
    "reward_usd": [
-    24.67,
-    35.98
+    16.8,
+    34.67
    ],
-   "price_at_scan": 0.004097
+   "price_at_scan": 0.004096
   },
   {
-   "id": "zec-reclaim",
-   "coin": "ZEC",
-   "name": "ZEC",
-   "emoji": "\ud83d\udee1\ufe0f",
-   "status": "ARMED",
-   "why": "Nuked 1400 to 1198 in two 4h candles, under the 1230 base. A 1h close back over 1230 means the breakdown failed.",
-   "setup": "Failed breakdown reclaim",
+   "id": "ena-turtle",
+   "coin": "ENA",
+   "name": "ENA",
+   "emoji": "\u26a1",
+   "status": "WAITING",
+   "why": "Validated Turtle coin, but it's in freefall (0.209 to 0.176 since 07:00, still making lower lows). Turtle trigger is 0.22608, ~28% away.",
+   "setup": "Turtle 4h breakout (55-bar high)",
    "dir": "above",
-   "trigger": 1232,
+   "trigger": 0.22608,
    "zone": [
-    1232,
-    1242
+    0.22608,
+    0.2283408
    ],
-   "entry": 1236,
-   "stop": 1194,
+   "entry": 0.22608,
+   "stop": 0.2076,
    "targets": [
-    1320,
-    1400
+    0.245,
+    0.26
    ],
    "conditions": [
     {
-     "t": "Price back above 1232",
-     "auto": {
-      "coin": "ZEC",
-      "op": ">",
-      "px": 1232
-     }
-    },
-    {
-     "t": "1h close above 1230 (08:00 closed 1262)",
-     "ok": true
-    },
-    {
-     "t": "Next 1h holds above 1230 (higher low)",
+     "t": "4h close above the 55-bar high 0.22608",
      "ok": false
+    },
+    {
+     "t": "Price above 0.22608",
+     "auto": {
+      "coin": "ENA",
+      "op": ">",
+      "px": 0.22608
+     }
     },
     {
      "t": "BTC holds the 78.2k flush low",
@@ -245,84 +347,19 @@
     }
    ],
    "x_mention": null,
-   "plain": "stay back above 1230 and print a higher low",
+   "plain": "close a 4h candle above 0.226",
    "rr": [
-    2.0,
-    3.9
+    1.02,
+    1.84
    ],
-   "size": 0.306,
-   "notional": 378.16,
-   "risk_usd": 12.85,
+   "size": 676.9,
+   "notional": 153.04,
+   "risk_usd": 12.51,
    "reward_usd": [
-    25.7,
-    50.18
+    12.81,
+    22.96
    ],
-   "price_at_scan": 1264.3
-  },
-  {
-   "id": "xmr-dip",
-   "coin": "XMR",
-   "name": "XMR",
-   "emoji": "\ud83d\udd76\ufe0f",
-   "status": "ARMED",
-   "why": "Went the other way during the dump: spiked 601 to 659 on 25.8M, now 625. One spike candle (ORGANIC fail), so only a dip that holds the 600 base gets bought.",
-   "setup": "Pullback to base (dip buy)",
-   "dir": "below",
-   "trigger": 610,
-   "zone": [
-    604,
-    610
-   ],
-   "entry": 607,
-   "stop": 597,
-   "targets": [
-    640,
-    659
-   ],
-   "conditions": [
-    {
-     "t": "Price dips into 604-610",
-     "auto": {
-      "coin": "XMR",
-      "op": "<=",
-      "px": 610
-     }
-    },
-    {
-     "t": "Holds the 598 base",
-     "auto": {
-      "coin": "XMR",
-      "op": ">",
-      "px": 598
-     }
-    },
-    {
-     "t": "1h higher low printed above 600",
-     "ok": false
-    },
-    {
-     "t": "BTC holds the 78.2k flush low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 78200
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "pull back to about 607 and hold the 600 floor",
-   "rr": [
-    3.3,
-    5.2
-   ],
-   "size": 1.285,
-   "notional": 780.0,
-   "risk_usd": 12.85,
-   "reward_usd": [
-    42.4,
-    66.82
-   ],
-   "price_at_scan": 614.245
+   "price_at_scan": 0.175745
   }
  ]
 }
