@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T04:54:45+00:00",
- "equity": 280.12,
- "risk_per_trade": 14.01,
- "scan_note": "16:00 full run: BTC bouncing off 79.7k to 80.2k after the noon dump, whole board bouncing but no 1h higher lows confirmed yet. kPEPE still green with stop at 0.00491. Flat otherwise: waiting for reclaims, not chasing a dead-cat bounce.",
+ "updated_at": "2026-10-29T05:57:08+00:00",
+ "equity": 280.72,
+ "risk_per_trade": 14.04,
+ "scan_note": "17:00 intraday: BTC holding the bounce ~80.2k. kPEPE green, poked 0.00518 then back to 0.00506; stop 0.00491. PUMP printed a 1h higher low (0.004181) but hasn't broken 0.00435; HYPE and FARTCOIN just under their reclaim levels. No trigger, no trade.",
  "x_list_note": "X list skim (16:00 run): no coin calls, just GMs and banter (Bobby_1111888 'more bullish than ever'). Next skim on the 20:00 full run.",
  "snipes": [
   {
@@ -26,7 +26,7 @@
     0.00542
    ],
    "size": 46000,
-   "rr_note": "Stop 0.00491 under the 14:00/15:00 1h higher lows (0.004925/0.004928). ~+$3.4 locked. TP 0.00542.",
+   "rr_note": "Stop 0.00491 under the 14:00/15:00 1h higher lows (0.004925/0.004928). ~+$3.4 locked. 16:00 1h low 0.005021 is the next trail level once that candle closes. TP 0.00542.",
    "conditions": [
     {
      "t": "Holding above trailed stop 0.00491",
@@ -58,7 +58,7 @@
    "reward_usd": [
     26.82
    ],
-   "price_at_scan": 0.00504
+   "price_at_scan": 0.005053
   },
   {
    "id": "pump-reclaim",
@@ -116,14 +116,14 @@
     1.15,
     2.91
    ],
-   "size": 127400.0,
-   "notional": 575.68,
-   "risk_usd": 14.01,
+   "size": 127600.0,
+   "notional": 576.92,
+   "risk_usd": 14.04,
    "reward_usd": [
-    16.18,
-    40.76
+    16.21,
+    40.84
    ],
-   "price_at_scan": 0.004281
+   "price_at_scan": 0.004274
   },
   {
    "id": "pump-dbl",
@@ -160,7 +160,7 @@
     },
     {
      "t": "1h higher low printed above 0.004165",
-     "ok": false
+     "ok": true
     },
     {
      "t": "BTC above the 79.2k weekly low",
@@ -177,21 +177,21 @@
     1.0,
     1.86
    ],
-   "size": 100100.0,
-   "notional": 436.31,
-   "risk_usd": 14.01,
+   "size": 100300.0,
+   "notional": 437.25,
+   "risk_usd": 14.04,
    "reward_usd": [
-    14.01,
-    26.02
+    14.04,
+    26.07
    ],
-   "price_at_scan": 0.004281
+   "price_at_scan": 0.004274
   },
   {
    "id": "hype-reclaim",
    "coin": "HYPE",
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "The house coin, 364M volume. Dumped from 80.0 to 78.09 with BTC, double-tapped 78.1 and is bouncing. Reclaim of 80 flips the breakdown.",
    "setup": "Lost-level reclaim",
    "dir": "above",
@@ -238,14 +238,14 @@
     1.08,
     1.48
    ],
-   "size": 11.21,
-   "notional": 898.32,
-   "risk_usd": 14.01,
+   "size": 11.23,
+   "notional": 900.24,
+   "risk_usd": 14.04,
    "reward_usd": [
-    15.13,
-    20.73
+    15.16,
+    20.78
    ],
-   "price_at_scan": 79.1405
+   "price_at_scan": 79.2195
   },
   {
    "id": "init-break",
@@ -303,21 +303,21 @@
     1.98,
     2.25
    ],
-   "size": 1078.0,
-   "notional": 246.79,
-   "risk_usd": 14.01,
+   "size": 1080.0,
+   "notional": 247.32,
+   "risk_usd": 14.04,
    "reward_usd": [
-    27.7,
-    31.47
+    27.76,
+    31.54
    ],
-   "price_at_scan": 0.21947
+   "price_at_scan": 0.217365
   },
   {
    "id": "fart-reclaim",
    "coin": "FARTCOIN",
    "name": "FARTCOIN",
    "emoji": "\ud83d\udca8",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "OG Solana/pump.fun meme. Lost its 0.1292-0.1305 floor in the BTC dump, low 0.12696, now bouncing back to 0.1292. Reclaim = trapped shorts.",
    "setup": "Lost-support reclaim",
    "dir": "above",
@@ -356,6 +356,10 @@
       "op": ">",
       "px": 79184
      }
+    },
+    {
+     "t": "24h volume back over $5M (only 4.3M now)",
+     "ok": false
     }
    ],
    "x_mention": null,
@@ -364,14 +368,14 @@
     1.47,
     2.8
    ],
-   "size": 3502.0,
-   "notional": 458.13,
-   "risk_usd": 14.01,
+   "size": 3510.0,
+   "notional": 459.11,
+   "risk_usd": 14.04,
    "reward_usd": [
-    20.66,
-    39.23
+    20.71,
+    39.31
    ],
-   "price_at_scan": 0.1292
+   "price_at_scan": 0.12966
   },
   {
    "id": "xpl-reclaim",
@@ -425,14 +429,14 @@
     1.36,
     2.14
    ],
-   "size": 10010.0,
-   "notional": 773.55,
-   "risk_usd": 14.01,
+   "size": 10030.0,
+   "notional": 775.21,
+   "risk_usd": 14.04,
    "reward_usd": [
-    19.01,
-    30.02
+    19.05,
+    30.09
    ],
-   "price_at_scan": 0.075789
+   "price_at_scan": 0.075717
   },
   {
    "id": "uni-break",
@@ -490,14 +494,14 @@
     1.21,
     2.16
    ],
-   "size": 73.74,
-   "notional": 543.44,
-   "risk_usd": 14.01,
+   "size": 73.89,
+   "notional": 544.6,
+   "risk_usd": 14.04,
    "reward_usd": [
-    16.96,
-    30.23
+    17.0,
+    30.3
    ],
-   "price_at_scan": 7.04925
+   "price_at_scan": 7.07405
   }
  ]
 }
