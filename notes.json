@@ -1,6 +1,18 @@
 {
- "updated": 1793267632418,
- "plan": {},
+ "updated": 1793271696051,
+ "plan": {
+  "PUMP": {
+   "side": "long",
+   "entry": 0.004366,
+   "size": 250000,
+   "sl": 0.00431,
+   "orig_sl": 0.00431,
+   "tp": 0.00455,
+   "opened": "2026-10-29 22:01 AEDT",
+   "setup": "double bottom + 1h higher low, 1h close over 0.00435",
+   "be_trigger_2R": 0.004478
+  }
+ },
  "lessons": [
   "<b>ONE BET, NOT THREE</b> (from BTC/ENA/ZEC, 22 Oct, 3 losses). Alt longs plus BTC long opened together = one correlated BTC bet at ~15% risk. When BTC is the driver, max 2 open longs total until one is at breakeven, and at most 1 new entry per run unless the coins are genuinely uncorrelated.",
   "<b>BTC GATE SCRAPPED BY DANNY</b> (28 Oct 2026). Do NOT block alt longs on BTC structure. Every alt trades on its own chart: own 4h higher low / breakout hold, rising OI, $5M+ vol. BTC context is only a note (if BTC is actively dumping, a 4h close breaking down hard, skip fresh entries that run). Check Danny&#x27;s X list EVERY run.",
