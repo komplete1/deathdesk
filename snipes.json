@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T18:53:36+00:00",
+ "updated_at": "2026-10-29T19:55:00+00:00",
  "equity": 256.68,
  "risk_per_trade": 12.83,
- "scan_note": "06:05 Fri intraday: board still cooling. kPEPE tagged its 0.005244 retest and is basing, LIT printing a higher low, but both need their candle closes before we fire (lesson from the PUMP stop-out). ZEC and PUMP still bleeding.",
+ "scan_note": "07:05 Fri intraday: still cooling. kPEPE undercut its retest low by a hair (0.005226) and waits on the 07:00 4h close; ENA swept the 0.2079 HL and bounced but 1h is still lower lows; LIT broke its higher low and is dead. Flat, no forced trades.",
  "x_list_note": "No new skim (intraday run). Last full skim 04:00: HYPE news flood, gum says no top, ByzGeneral cool on XPL. Nobody called PUMP.",
  "snipes": [
   {
@@ -68,7 +68,7 @@
     18.78,
     38.8
    ],
-   "price_at_scan": 0.004434
+   "price_at_scan": 0.004423
   },
   {
    "id": "kpepe-retest",
@@ -76,7 +76,7 @@
    "name": "PEPE",
    "emoji": "\ud83d\udc38",
    "status": "ARMED",
-   "why": "Dipped to 0.005237 at 05:15, tagging the old 0.005244 4h high, and printed rising 15m lows since. Rule 4 says the 4h candle has to CLOSE back above 0.005244 (07:00) before we pull the trigger.",
+   "why": "Tagged the old 0.005244 4h high, then undercut to 0.005226 at 06:00 without breaking down. Still needs the 03:00 4h candle to CLOSE above 0.005244 at 07:00 and a fresh 15m higher low before we fire.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 0.00528,
@@ -85,23 +85,23 @@
     0.00533
    ],
    "entry": 0.0053,
-   "stop": 0.005221,
+   "stop": 0.00521,
    "targets": [
     0.00563,
     0.00571
    ],
    "conditions": [
     {
-     "t": "Holds 0.005237 retest low",
+     "t": "Holds the 0.005226 low",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.005237
+      "px": 0.005226
      }
     },
     {
-     "t": "15m higher lows in the zone (0.005237, 0.00526, 0.005275)",
-     "ok": true
+     "t": "Fresh 15m higher low above 0.005226",
+     "ok": false
     },
     {
      "t": "4h candle closes above 0.005244 at 07:00 (rule 4)",
@@ -119,17 +119,17 @@
    "x_mention": null,
    "plain": "close the 4h above 0.005244 at 7am without losing 0.005237",
    "rr": [
-    4.18,
-    5.19
+    3.67,
+    4.56
    ],
-   "size": 162400.0,
-   "notional": 860.75,
+   "size": 142600.0,
+   "notional": 755.54,
    "risk_usd": 12.83,
    "reward_usd": [
-    53.59,
-    66.59
+    47.04,
+    58.45
    ],
-   "price_at_scan": 0.005316
+   "price_at_scan": 0.005255
   },
   {
    "id": "ena-hl",
@@ -137,40 +137,36 @@
    "name": "ENA",
    "emoji": "\u26a1",
    "status": "ARMED",
-   "why": "Slid to 0.20901 at 05:30, a hair above the 0.2079-0.209 zone at the 0.20787 1h higher low. Still want the tag and a 15m higher low there.",
+   "why": "Swept the 0.20787 1h HL to 0.20774 at 06:00 and bounced to 0.2094, but 1h is still printing lower highs and lower lows. Needs a 1h close back over 0.2100 with the sweep low intact.",
    "setup": "Base bounce (dip buy)",
-   "dir": "below",
-   "trigger": 0.209,
+   "dir": "above",
+   "trigger": 0.21,
    "zone": [
-    0.2079,
-    0.209
+    0.2085,
+    0.21
    ],
-   "entry": 0.2085,
-   "stop": 0.2072,
+   "entry": 0.2095,
+   "stop": 0.2071,
    "targets": [
     0.218,
     0.225
    ],
    "conditions": [
     {
-     "t": "Price dips into 0.2079-0.209",
-     "auto": {
-      "coin": "ENA",
-      "op": "<=",
-      "px": 0.209
-     }
-    },
-    {
-     "t": "Holds 0.2072",
+     "t": "Holds the 0.20774 sweep low",
      "auto": {
       "coin": "ENA",
       "op": ">",
-      "px": 0.2072
+      "px": 0.20774
      }
     },
     {
-     "t": "15m higher low prints in the zone",
+     "t": "1h close above 0.2100",
      "ok": false
+    },
+    {
+     "t": "15m higher lows since the sweep (0.20774, 0.2086, 0.20914)",
+     "ok": true
     },
     {
      "t": "BTC above the 79.2k weekly low",
@@ -182,28 +178,28 @@
     }
    ],
    "x_mention": null,
-   "plain": "dip to 0.2085 and hold",
+   "plain": "hold the 0.2077 sweep low and close an hour back over 0.21",
    "rr": [
-    7.31,
-    12.69
+    3.54,
+    6.46
    ],
    "size_note": "capped at 4x equity notional",
-   "size": 4924.0,
+   "size": 4901.0,
    "notional": 1026.74,
-   "risk_usd": 6.4,
+   "risk_usd": 11.76,
    "reward_usd": [
-    46.78,
-    81.25
+    41.66,
+    75.96
    ],
-   "price_at_scan": 0.21063
+   "price_at_scan": 0.209475
   },
   {
    "id": "lit-retest",
    "coin": "LIT",
    "name": "LIT",
    "emoji": "\ud83d\udd25",
-   "status": "ARMED",
-   "why": "Dipped to 3.197 in the 05:00 hour, above the 3.1802 04:00 low, so a 1h higher low is forming. Needs the hour to close and hold before entry.",
+   "status": "DEAD",
+   "why": "Broke the 3.18 higher low at 06:00 and dumped to 3.053, straight onto the 01:00 low. Setup invalidated; dropped next run unless a new base forms.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 3.2,
@@ -219,10 +215,6 @@
    ],
    "conditions": [
     {
-     "t": "Price dipped into 3.18-3.2 (3.197 at 05:30)",
-     "ok": true
-    },
-    {
      "t": "Holds 3.165",
      "auto": {
       "coin": "LIT",
@@ -231,7 +223,7 @@
      }
     },
     {
-     "t": "05:00 1h closes with the 3.197 higher low intact",
+     "t": "1h higher low intact",
      "ok": false
     },
     {
@@ -257,7 +249,7 @@
     53.43,
     83.68
    ],
-   "price_at_scan": 3.2311
+   "price_at_scan": 3.06385
   },
   {
    "id": "hype-dip",
@@ -323,7 +315,7 @@
     70.03,
     102.79
    ],
-   "price_at_scan": 94.9315
+   "price_at_scan": 93.6605
   },
   {
    "id": "zec-retest",
@@ -331,7 +323,7 @@
    "name": "ZEC",
    "emoji": "\ud83d\udee1\ufe0f",
    "status": "WAITING",
-   "why": "Sliced through the 1319 retest to 1308 with lower 1h lows (1341, 1329, 1308). Next real level is the 1297 02:00 1h low; want a 15m higher low there.",
+   "why": "06:00 held 1316.8 after the 1308 low; still waiting for the 1298-1305 dip into the 02:00 base and a 15m higher low.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 1325.0,
@@ -389,7 +381,7 @@
     44.16,
     77.28
    ],
-   "price_at_scan": 1320.7
+   "price_at_scan": 1326.05
   }
  ]
 }
