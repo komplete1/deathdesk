@@ -96,6 +96,39 @@ tr:hover td{background:rgba(0,240,255,.04)}
 .notes{font-size:12.5px;line-height:1.6;color:#c6cdea;max-height:260px;overflow:auto}
 .notes li{margin:0 0 8px 16px}.notes b{color:var(--cy)}
 .alert{display:none;grid-column:1/-1;padding:12px 16px;border-radius:14px;font-family:Orbitron;font-size:13px;letter-spacing:.1em;background:rgba(255,56,100,.15);border:1px solid var(--rd);color:var(--rd);animation:pulse 1.2s infinite}
+/* view tabs */
+.vtabs{display:flex;gap:6px}
+.vtabs a{font-family:Orbitron;font-weight:800;font-size:11px;letter-spacing:.14em;text-decoration:none;color:var(--mu);padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.03);white-space:nowrap}
+.vtabs a.on{color:var(--bg);background:linear-gradient(90deg,var(--cy),var(--mg));border-color:transparent;box-shadow:0 0 18px rgba(255,43,214,.45)}
+.view{display:none}.view.on{display:block}
+.ago{color:var(--mu);font-size:11px}
+@media(max-width:700px){header{flex-wrap:wrap;gap:8px}.vtabs{order:3;width:100%}.vtabs a{flex:1;text-align:center}.hdr-r{gap:10px}.logo{font-size:15px}}
+/* smooth brain */
+#v-smooth{padding:14px 14px 30px;max-width:900px;margin:0 auto}
+.sb-hero{text-align:center;padding:22px 12px 18px;border-radius:24px;border:2px solid var(--line);background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);position:relative;overflow:hidden}
+.sb-hero.g{border-color:rgba(0,255,157,.6);box-shadow:0 0 60px rgba(0,255,157,.25),inset 0 0 80px rgba(0,255,157,.12)}
+.sb-hero.r{border-color:rgba(255,56,100,.7);box-shadow:0 0 60px rgba(255,56,100,.3),inset 0 0 80px rgba(255,56,100,.14)}
+.sb-verdict{font-family:Orbitron;font-weight:900;font-size:clamp(40px,12vw,110px);line-height:.95;letter-spacing:.02em}
+.sb-hero.g .sb-verdict{color:var(--gr);text-shadow:0 0 40px var(--gr)}.sb-hero.r .sb-verdict{color:var(--rd);text-shadow:0 0 40px var(--rd)}
+.sb-face{font-size:clamp(60px,18vw,120px);line-height:1.1;margin:6px 0;display:inline-block;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
+.sb-cap{font-size:clamp(17px,4.6vw,26px);font-weight:800;min-height:2.6em;display:flex;align-items:center;justify-content:center;padding:0 6px;transition:opacity .35s}
+.sb-cap.fade{opacity:0}
+.sb-nums{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:560px){.sb-nums{grid-template-columns:1fr}}
+.sb-n{border:1px solid var(--line);border-radius:18px;padding:14px;background:var(--card);text-align:center}
+.sb-n label{display:block;font-family:Orbitron;font-size:11px;letter-spacing:.2em;color:var(--mu);margin-bottom:6px}
+.sb-n b{display:block;font-family:Orbitron;font-weight:900;font-size:clamp(40px,11vw,68px);line-height:1}
+.sb-n small{display:block;font-family:'JetBrains Mono';font-size:16px;margin-top:6px}
+.sb-pot{text-align:center;margin:14px 0 4px;font-size:18px;color:var(--mu)}.sb-pot b{color:var(--tx);font-family:Orbitron;font-size:24px}
+.sb-h{font-family:Orbitron;font-size:13px;letter-spacing:.25em;color:var(--mu);margin:22px 4px 10px}
+.sb-trade{border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin-bottom:10px;background:var(--card);font-size:clamp(18px,5vw,24px);font-weight:800;line-height:1.3}
+.sb-trade small{display:block;font-size:14px;font-weight:400;color:#c6cdea;margin-top:6px;line-height:1.5}
+.sb-trade.g{border-color:rgba(0,255,157,.45)}.sb-trade.r{border-color:rgba(255,56,100,.5)}
+.sb-flat{color:var(--mu);font-size:18px;text-align:center;padding:16px;border:1px dashed var(--line);border-radius:18px}
+.sb-kill{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:14px;background:var(--card);font-size:15px}
+.sb-kill .bar{height:14px}
+.sb-live{text-align:center;margin-top:18px;font-family:'JetBrains Mono';font-size:13px;color:var(--mu)}
 footer{text-align:center;color:var(--mu);font-size:11px;padding:20px;font-family:'JetBrains Mono'}
 footer a{color:var(--cy)}
 </style>
@@ -104,12 +137,14 @@ footer a{color:var(--cy)}
 <div id="bg"></div><div id="grid"></div>
 <header>
   <div class="logo">DEATH//DESK<small>HYPERLIQUID · LIVE</small></div>
+  <nav class="vtabs" id="vtabs"><a href="#pro" data-v="pro">PRO</a><a href="#smooth" data-v="smooth">🧠 SMOOTH BRAIN</a></nav>
   <div class="hdr-r">
     <span id="conn"><span class="dot" id="dot"></span><span id="connTxt">CONNECTING</span></span>
-    <span class="hide-m">UPD <span class="clock" id="lastUpd">--</span></span>
-    <span class="clock" id="clock">--:--:--</span>
+    <span>TICK <span class="clock" id="lastUpd">--</span> <span class="ago" id="ago"></span></span>
+    <span class="clock hide-m" id="clock">--:--:--</span>
   </div>
 </header>
+<div id="v-pro" class="view on">
 <div class="ticker"><div class="track" id="ticker">loading movers…</div></div>
 <main>
   <div class="alert" id="alert"></div>
@@ -150,6 +185,7 @@ footer a{color:var(--cy)}
       <div>day open eq <b id="dayOpen">--</b></div>
       <div>breaker at <b id="brkLvl">--</b></div>
       <div>room left <b id="brkRoom">--</b></div>
+      <div>realised today <b id="realDay">--</b></div>
     </div>
   </section>
 
@@ -196,7 +232,27 @@ footer a{color:var(--cy)}
     <div class="notes" id="notes"></div>
   </section>
 </main>
-<footer>Read-only public data from api.hyperliquid.xyz · wallet <a id="wl" target="_blank" rel="noopener"></a> · websocket live, REST fallback</footer>
+</div>
+<div id="v-smooth" class="view">
+  <div class="sb-hero" id="sbHero">
+    <div class="sb-verdict" id="sbVerdict">LOADING</div>
+    <div id="sbSub" style="font-family:'JetBrains Mono';font-size:14px;color:#c6cdea;margin-top:6px"></div>
+    <div class="sb-face" id="sbFace">🤔</div>
+    <div class="sb-cap" id="sbCap">Hang on, asking the blockchain how bad it is…</div>
+  </div>
+  <div class="sb-nums">
+    <div class="sb-n"><label>TODAY</label><b id="sbDay">--</b><small id="sbDayPct">&nbsp;</small></div>
+    <div class="sb-n"><label>SINCE DAY ONE ($356.90)</label><b id="sbAll">--</b><small id="sbAllPct">&nbsp;</small></div>
+  </div>
+  <div class="sb-pot">The pot: <b id="sbEq">--</b></div>
+  <div class="sb-h">WHAT'S ON RIGHT NOW</div>
+  <div id="sbTrades"><div class="sb-flat">Loading…</div></div>
+  <div class="sb-h">BANKED TODAY</div>
+  <div id="sbBanked" class="sb-flat">--</div>
+  <div class="sb-kill" id="sbKill">--</div>
+  <div class="sb-live"><span class="dot" id="sbDot"></span><span id="sbLive">CONNECTING</span></div>
+</div>
+<footer>Live straight from api.hyperliquid.xyz in your browser (websocket + 2.5s REST fallback) · wallet <a id="wl" target="_blank" rel="noopener"></a> · notes.json only for bot lessons/plan</footer>
 
 <script>
 const U='0xdf75c396a2521688fa6a0ae88a35e83ae714ed07';
@@ -217,8 +273,10 @@ const melTime=(t,opt)=>new Intl.DateTimeFormat('en-AU',Object.assign({timeZone:T
 const melDT=t=>new Intl.DateTimeFormat('en-AU',{timeZone:TZ,day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(t));
 function melMidnight(){const now=new Date();const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}).formatToParts(now).map(x=>[x.type,x.value]));const secs=(+p.hour)*3600+(+p.minute)*60+(+p.second);return now.getTime()-secs*1000-now.getMilliseconds()}
 function touch(){S.lastMsg=Date.now();$('lastUpd').textContent=melTime(Date.now())}
-setInterval(()=>{$('clock').textContent=melTime(Date.now())+' MEL';const stale=Date.now()-S.lastMsg;const d=$('dot');
- if(S.wsOk&&stale<15000){d.className='dot live';$('connTxt').textContent='LIVE WS'}else if(stale<20000){d.className='dot';$('connTxt').textContent='POLLING'}else{d.className='dot dead';$('connTxt').textContent='STALE'}},500);
+function liveStatus(){const stale=Date.now()-S.lastMsg;if(!S.lastMsg)return['dot','CONNECTING'];if(S.wsOk&&stale<15000)return['dot live','LIVE'];if(stale<15000)return['dot live','LIVE (REST)'];return['dot dead','STALE']}
+setInterval(()=>{$('clock').textContent=melTime(Date.now())+' MEL';const [c,t]=liveStatus();$('dot').className=c;$('connTxt').textContent=t;
+ const ago=S.lastMsg?Math.max(0,Math.round((Date.now()-S.lastMsg)/1000)):null;$('ago').textContent=ago==null?'':'('+ago+'s ago)';
+ $('sbDot').className=c;$('sbLive').textContent=t+(S.lastMsg?' · last tick '+melTime(S.lastMsg)+' MEL ('+ago+'s ago)':'')},500);
 
 /* ---------- derived state ---------- */
 function positions(){if(!S.ch)return[];return S.ch.assetPositions.map(a=>a.position).filter(p=>+p.szi!==0)}
@@ -247,11 +305,13 @@ function renderEquity(){const eq=liveEquity();if(eq==null)return;const el=$('eq'
   $('dayOpen').textContent=usd(open);$('brkLvl').textContent=usd(open*(1-BRK));$('brkRoom').textContent=usd(eq-open*(1-BRK));
   const b=$('dayBar');const w=Math.min(50,Math.abs(dp)/BRK*50);b.style.left=d>=0?'50%':(50-w)+'%';b.style.width=w+'%';b.style.background=d>=0?'linear-gradient(90deg,#00ff9d55,#00ff9d)':'linear-gradient(90deg,#ff3864,#ff386455)';b.style.boxShadow=d>=0?'0 0 12px #00ff9d':'0 0 12px #ff3864';
   const al=$('alert');if(eq<=KILL){al.style.display='block';al.textContent='☠ KILL LEVEL HIT · EQUITY ≤ $178.45'}else if(dp<=-BRK){al.style.display='block';al.textContent='⚠ DAILY BREAKER TRIPPED · -10% TODAY · 24H PAUSE'}else al.style.display='none'}
+ const rd=realisedToday();$('realDay').textContent=sgn(rd.net);$('realDay').className=cls(rd.net);
+ renderSmooth();
 }
 function peakEq(){const h=S.portfolio?.allTime?.accountValueHistory;return h?Math.max(...h.map(x=>+x[1])):START}
 function dayOpenEq(){const h=S.portfolio?.day?.accountValueHistory||S.portfolio?.week?.accountValueHistory;if(!h||!h.length)return null;const mid=melMidnight();let best=null;
  const w=S.portfolio?.week?.accountValueHistory||h;for(const x of w){if(x[0]<=mid)best=+x[1]}return best??+h[0][1]}
-function drawSpark(){const c=$('spark'),dpr=devicePixelRatio||1,w=c.clientWidth,h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;const g=c.getContext('2d');g.scale(dpr,dpr);
+function drawSpark(){const c=$('spark'),dpr=devicePixelRatio||1,w=c.clientWidth,h=c.clientHeight;if(!w)return;c.width=w*dpr;c.height=h*dpr;const g=c.getContext('2d');g.scale(dpr,dpr);
  let d=S.spark.slice();const dh=S.portfolio?.day?.accountValueHistory;if(d.length<20&&dh)d=dh.map(x=>+x[1]).concat(d);if(d.length<2)return;
  const mn=Math.min(...d),mx=Math.max(...d),r=mx-mn||1;const X=i=>i/(d.length-1)*w,Y=v=>h-4-(v-mn)/r*(h-8);
  const up=d[d.length-1]>=d[0];const col=up?'#00ff9d':'#ff3864';const gr=g.createLinearGradient(0,0,0,h);gr.addColorStop(0,up?'rgba(0,255,157,.35)':'rgba(255,56,100,.35)');gr.addColorStop(1,'rgba(0,0,0,0)');
@@ -266,6 +326,53 @@ function drawOrb(u){const R=58,C=2*Math.PI*R;const col=u<.33?'#00f0ff':u<.66?'#f
  <circle cx="75" cy="75" r="${R}" fill="none" stroke="url(#og)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${C*u} ${C}" transform="rotate(-90 75 75)" filter="url(#gl)" style="transition:stroke-dasharray .8s"/></svg>
  <div class="val" style="color:${col}">${(u*100).toFixed(0)}%<small>KILL USED</small></div>`}
 
+/* ---------- smooth brain ---------- */
+function realisedToday(){const mid=melMidnight();let net=0;const by={};for(const f of S.fills){if(f.time<mid)continue;const v=+f.closedPnl-+f.fee;net+=v;if(+f.closedPnl!==0||/Close/i.test(f.dir))by[f.coin]=(by[f.coin]||0)+v;else by[f.coin]=(by[f.coin]||0)+v}
+ let fund=0;for(const x of S.funding)if(x.time>=mid)fund+=+x.delta.usdc;return{net,by,fund}}
+const EMO={PEPE:'🐸',BTC:'🟠',ETH:'💎',SOL:'☀️',DOGE:'🐕',WIF:'🐶',BONK:'🦴',SHIB:'🐕',FARTCOIN:'💨',PUMP:'💊',HYPE:'🚀',TRUMP:'🍊',PENGU:'🐧',POPCAT:'🐱',MEW:'🐱',SPX:'📈',XRP:'💧',SUI:'💦',ENA:'🧪',ZEC:'🕵️',FLOKI:'⚔️',MOODENG:'🦛',AI16Z:'🤖',VIRTUAL:'🤖',UNI:'🦄',JELLY:'🪼',TURBO:'🐸',GOAT:'🐐',CHILLGUY:'😎',MELANIA:'👠',BRETT:'🔵',NEIRO:'🐕'};
+const nice=c=>/^k[A-Z]/.test(c)?c.slice(1):c;
+const CAPS={
+ kill:["KILL SWITCH IS SNIFFING AROUND. DON'T LOOK DIRECTLY AT IT 💀","One more stinker and the bot goes to bed without dinner","We're closer to zero than a Bunnings snag is to a vegan. Breaker's armed","Mate. MATE. Put the phone down and go for a walk","This is fine 🔥🐶🔥 (it is fucking not fine)"],
+ breaker:["Daily breaker tripped. Bot's in the sin bin for 24 hours 🟥","Bot's been sent to its room. No trading till tomorrow, ya degenerate","Breaker popped. We live to get rekt another day"],
+ bigwin:["We're printing money like the RBA in 2020 🖨️💸","Fuck me dead, we're actually good at this","Tell your boss to get fucked. (Don't actually. Yet.)","Get the snags on, it's a winner's barbie 🌭🔥","Lambo's not here yet but the Commodore's warming up 🏎️","Absolute scenes. Steak for dinner, not two-minute noodles 🥩","The bot's swinging a bigger dick than Dazza at the Melbourne Cup"],
+ win:["Green is green, ya filthy animal 💚","Up a bit. Enough for a schooner and a parmy 🍺","Not life changing, but the next round's on the market","Slow and steady. Like a tradie on day rate","Small W. Still a W. Shut up and take it","Ticking along nicer than a freshly serviced Hilux"],
+ flat:["Going nowhere faster than the 86 tram in peak hour 🚋","Flatter than a VB left in the ute overnight","Market's doing sweet fuck all. So are we","Nothing happening. Go touch grass, I'll yell if it moves 🌱","Sideways like a crab on the piss 🦀"],
+ loss:["Bit of a flesh wound. She'll be right 🩹","Down a smidge. Don't tell the missus 🤫","Red, but not 'sell the car' red","Market's having a go. Stops are in, chill the fuck out","Minor stink. Like a fart in a ute with the windows down 💨"],
+ bigloss:["Oof. That's a boot straight in the nuts 🥾","We're getting rogered by the market. Stops are doing their job","Bloody hell, someone pass the goon bag 🍷","Down bad. Collingwood-lost-the-Grand-Final bad","Taking it up the clacker today. Breaker's watching 👀"]};
+const FACES={kill:'💀',breaker:'🛑',bigwin:'🤑',win:'😎',flat:'😐',loss:'😬',bigloss:'🤮'};
+let sbState=null,sbCapT=0,sbCapI=0;
+function moodOf(eq,dp){const used=(START-eq)/(START-KILL);if(eq<=KILL||used>=.75)return'kill';if(dp!=null&&dp<=-BRK)return'breaker';if(dp==null)return'flat';
+ if(dp>=.05)return'bigwin';if(dp>=.005)return'win';if(dp>-.005)return'flat';if(dp>-.05)return'loss';return'bigloss'}
+function setCap(st,force){const n=Date.now();if(!force&&st===sbState&&n-sbCapT<9000)return;const arr=CAPS[st];
+ if(st!==sbState)sbCapI=Math.floor(Math.random()*arr.length);else sbCapI=(sbCapI+1)%arr.length;sbState=st;sbCapT=n;const el=$('sbCap');el.classList.add('fade');
+ setTimeout(()=>{el.textContent=arr[sbCapI];el.classList.remove('fade')},300);$('sbFace').textContent=FACES[st]}
+setInterval(()=>{if(sbState)setCap(sbState)},9500);
+function flashNum(el,v){const o=el.dataset.v;if(o!==undefined&&Math.abs(+o-v)>0.0049){el.classList.remove('flash-up','flash-dn');void el.offsetWidth;el.classList.add(v>+o?'flash-up':'flash-dn')}el.dataset.v=v}
+function renderSmooth(){const eq=liveEquity();if(eq==null)return;const open=dayOpenEq();const d=open?eq-open:null,dp=open?d/open:null;const a=eq-START,ap=a/START;
+ const green=(d??a)>=0;$('sbHero').className='sb-hero '+(green?'g':'r');
+ $('sbVerdict').textContent=green?'WE\u2019RE GREEN':'WE\u2019RE RED';
+ const sd=$('sbDay');if(d!=null){sd.textContent=sgn(d);sd.className=cls(d);flashNum(sd,d);$('sbDayPct').textContent=pct(dp);$('sbDayPct').className=cls(dp)}
+ const sa=$('sbAll');sa.textContent=sgn(a);sa.className=cls(a);flashNum(sa,a);$('sbAllPct').textContent=pct(ap)+(a>=0?' 🙌':' 🫠');$('sbAllPct').className=cls(ap);
+ $('sbEq').textContent=usd(eq);
+ $('sbSub').textContent=d==null?'':`TODAY ${sgn(d)} · OVERALL ${sgn(a)}`+(d>=0&&a<0?' · clawing it back 🧗':d<0&&a>=0?' · still up overall, chill':'');
+ setCap(moodOf(eq,dp));
+ document.title=(d!=null?sgn(d)+' today · ':'')+'DEATH//DESK';
+ const ps=positions();
+ $('sbTrades').innerHTML=ps.length?ps.map(p=>{const m=markOf(p.coin)||+p.entryPx,e=+p.entryPx,sz=+p.szi,u=(m-e)*sz,lng=sz>0,st=stopFor(p.coin),tps=tpFor(p.coin),tp=tps.length?(lng?Math.min(...tps):Math.max(...tps)):null,nm=nice(p.coin),em=EMO[nm]||'🎰';
+  const freeRoll=st&&(lng?st>=e*0.998:st<=e*1.002);const stopLoss=st?(st-e)*sz:null;
+  let stTxt=st?(freeRoll?`Stop's at ${px(st)}, basically breakeven or better. Free roll, worst case we walk out square 🛡️`:`Stop at ${px(st)}. If it hits we eat ${usd(Math.abs(stopLoss))} 😤`):`⚠️ NO STOP ON THIS. Someone's getting a kick up the arse`;
+  const tpTxt=tp?` Target ${px(tp)}, ${Math.abs((tp/m-1)*100).toFixed(1)}% away (${sgn((tp-e)*sz)} if it gets there).`:' No TP, letting the fucker run 🏃';
+  return `<div class="sb-trade ${u>=0?'g':'r'}">We're ${lng?'long':'SHORT'} ${nm} ${em}, <span class="${cls(u)}">${u>=0?'up':'down'} ${usd(Math.abs(u))}</span>${u>=0?'':' 😩'}<small>${f2(Math.abs(sz),Math.abs(sz)>=100?0:3)} ${p.coin} (${usd(Math.abs(sz)*m,0)} worth) in at ${px(e)}, now ${px(m)} (${pct((m/e-1)*(lng?1:-1),1)}). ${stTxt}.${tpTxt}</small></div>`}).join(''):'<div class="sb-flat">No trades on. Bot\u2019s out hunting for degen shit 🕵️ Sit tight.</div>';
+ const rd=realisedToday();const ks=Object.entries(rd.by).filter(([,v])=>Math.abs(v)>0.005);
+ $('sbBanked').innerHTML=ks.length||Math.abs(rd.fund)>0.005?`<b class="${cls(rd.net+rd.fund)}" style="font-size:26px;font-family:Orbitron">${sgn(rd.net+rd.fund)}</b> after fees${Math.abs(rd.fund)>0.005?' & funding':''}<br><small>${ks.map(([c,v])=>`${nice(c)} ${EMO[nice(c)]||'🎰'} <span class="${cls(v)}">${sgn(v)}</span>`).join(' · ')||''}</small>`:'Nothing closed yet today. Paper gains don\u2019t buy beers 🍺';
+ const room=eq-KILL,used=Math.max(0,Math.min(1,(START-eq)/(START-KILL)));const bo=open?open*(1-BRK):null;
+ $('sbKill').innerHTML=`<div>💀 Kill switch at ${usd(KILL)}: we're <b>${usd(room)}</b> away. ${used<.25?'Nowhere near it, relax.':used<.6?'Bit closer than I\u2019d like.':'Getting spicy. 🌶️'}</div><div class="bar"><i style="left:0;width:${(used*100).toFixed(1)}%;background:linear-gradient(90deg,#ffb020,#ff3864);box-shadow:0 0 12px #ff3864"></i></div><div style="color:var(--mu);font-size:13px">${bo?`Daily breaker trips if the pot drops under ${usd(bo)} today (${usd(eq-bo)} of room).`:''}</div>`}
+
+/* ---------- view tabs (hash) ---------- */
+function setView(){const v=location.hash==='#smooth'?'smooth':'pro';document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+v));document.querySelectorAll('#vtabs a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+ if(v==='pro')requestAnimationFrame(()=>{try{chart.applyOptions({width:$('chart').clientWidth});ec.applyOptions({width:$('eqchart').clientWidth});ec.timeScale().fitContent();drawSpark()}catch(e){}});else{renderSmooth();if(sbState)setCap(sbState,true)}}
+window.addEventListener('hashchange',setView);
+
 /* ---------- positions ---------- */
 function renderPositions(){const ps=positions();$('posCount').textContent=ps.length+' OPEN';
  if(!ps.length){$('posT').innerHTML='<tr><td colspan="12" class="empty">Flat. No open positions.</td></tr>';$('hud').innerHTML='<div class="empty">Flat. Waiting for a setup.</div>';return}
@@ -277,7 +384,7 @@ function renderPositions(){const ps=positions();$('posCount').textContent=ps.len
   rail=`<div class="rail"><div class="ln"></div>${mk(st,'SL','#ff3864')}${mk(e,'IN','#00f0ff')}${half?mk(half,'½','#ffb020'):''}${mk(tp,'TP','#00ff9d')}<div class="now" style="left:${P(m)}%"></div></div>`}
  const tpR=tp&&st?((tp-e)/(e-st)).toFixed(2):'--';
  $('hud').innerHTML=`<div class="posbig"><div>${p.coin} R<b class="${cls(R)}">${(R>=0?'+':'')+R.toFixed(2)}R</b></div><div>uPnL<b class="${cls(u)}">${sgn(u)}</b></div><div>mark<b>${px(m)}</b></div></div>${rail}
- <div class="kv"><div>risk at stop <b class="dn">${risk?usd(-risk):'--'}</b></div><div>risk % equity <b>${risk?(risk/liveEquity()*100).toFixed(1)+'%':'--'}</b> </div><div>to stop <b>${st?pct(st/m-1):'--'}</b></div>${half?`<div>to half-take <b>${pct(half/m-1)}</b></div>`:''}<div>to TP <b>${tp?pct(tp/m-1):'--'}</b></div><div>TP = <b>${tpR}R</b></div><div>liq <b>${px(p.liquidationPx)} (${pct(p.liquidationPx/m-1,1)})</b></div><div>funding rate <b>${S.ctx[p.coin]?((+S.ctx[p.coin].funding)*100).toFixed(4)+'%/h':'--'}</b></div></div>`;
+ <div class="kv"><div>risk at stop <b class="dn">${risk?usd(-risk):'--'}</b></div><div>risk % equity <b>${risk?(risk/liveEquity()*100).toFixed(1)+'%':'--'}</b> </div><div>to stop <b>${st?pct(st/m-1):'--'}</b></div>${half?`<div>to half-take <b>${pct(half/m-1)}</b></div>`:''}<div>to TP <b>${tp?pct(tp/m-1):'--'}</b></div><div>TP = <b>${tpR}R</b></div><div>liq <b>${p.liquidationPx?px(p.liquidationPx)+' ('+pct(p.liquidationPx/m-1,1)+')':'none (cross, safe)'}</b></div><div>funding rate <b>${S.ctx[p.coin]?((+S.ctx[p.coin].funding)*100).toFixed(4)+'%/h':'--'}</b></div></div>`;
  document.querySelectorAll('.coin[data-c]').forEach(el=>el.onclick=()=>setChartCoin(el.dataset.c));
 }
 function renderOrders(){const o=S.orders;$('ooCount').textContent=o.length;
@@ -329,42 +436,53 @@ es.createPriceLine({price:START,color:'#7d88aa',lineWidth:1,lineStyle:2,title:'S
 function renderEqChart(){const h=S.portfolio?.[S.eqW]?.accountValueHistory;if(!h)return;const seen=new Set();const d=[];for(const x of h){const t=Math.floor(x[0]/1000);if(!seen.has(t)){seen.add(t);d.push({time:t,value:+x[1]})}}
  const le=liveEquity();if(le&&d.length&&Date.now()/1000>d[d.length-1].time+1)d.push({time:Math.floor(Date.now()/1000),value:le});es.setData(d);ec.timeScale().fitContent()}
 $('eqTabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.eqW=b.dataset.w;[...$('eqTabs').children].forEach(x=>x.classList.toggle('on',x===b));renderEqChart()};
-new ResizeObserver(()=>{chart.applyOptions({width:$('chart').clientWidth});ec.applyOptions({width:$('eqchart').clientWidth});drawSpark()}).observe(document.body);
+new ResizeObserver(()=>{if(!$('chart').clientWidth)return;chart.applyOptions({width:$('chart').clientWidth});ec.applyOptions({width:$('eqchart').clientWidth});drawSpark()}).observe(document.body);
 
 /* ---------- data loaders ---------- */
 async function loadState(){const [ch,oo]=await Promise.all([post({type:'clearinghouseState',user:U}),post({type:'frontendOpenOrders',user:U})]);S.ch=ch;S.orders=oo;touch();onState()}
 async function loadMarket(){const [m,ctx]=await post({type:'metaAndAssetCtxs'});S.meta=m;m.universe.forEach((u,i)=>S.ctx[u.name]=ctx[i]);renderTicker();touch()}
 async function loadMids(){S.mids=await post({type:'allMids'});touch();renderLive()}
 async function loadPortfolio(){const p=await post({type:'portfolio',user:U});S.portfolio=Object.fromEntries(p);renderEqChart();renderEquity()}
-async function loadFills(){S.fills=await post({type:'userFills',user:U});renderFills()}
-async function loadFunding(){S.funding=await post({type:'userFunding',user:U,startTime:Date.now()-30*864e5});renderFunding()}
+function mergeFills(arr,replace){const m=new Map();for(const f of (replace?[]:S.fills).concat(arr))m.set(f.tid+':'+f.oid,f);S.fills=[...m.values()].sort((a,b)=>b.time-a.time)}
+async function loadFills(){mergeFills(await post({type:'userFills',user:U}),true);renderFills();renderEquity()}
+async function loadFunding(){S.funding=await post({type:'userFunding',user:U,startTime:Date.now()-30*864e5});renderFunding();renderEquity()}
 async function loadNotes(){try{const n=await fetch('notes.json?'+Date.now()).then(r=>r.ok?r.json():null);if(!n)return;S.plan=n.plan||{};if(n.lessons?.length){$('notesCard').style.display='';$('notes').innerHTML='<ol>'+n.lessons.map(l=>`<li>${l}</li>`).join('')+'</ol>'+(n.scoreboard?`<p style="margin-top:8px;color:var(--mu)">${n.scoreboard}</p>`:'');$('notesUpd').textContent=n.updated?('UPDATED '+melDT(n.updated)):''}onState()}catch(e){}}
 function onState(){if(!S.ch)return;if(!S.chartCoin){const ps=positions();S.chartCoin=ps.length?ps[0].coin:'BTC';$('chCoin').textContent=S.chartCoin+' · '+S.tf;loadCandles()}renderEquity();renderPositions();renderOrders();drawLines();renderFunding()}
 let rl=0;function renderLive(){const n=performance.now();if(n-rl<400)return;rl=n;renderEquity();renderPositions();renderOrders();if(n%5000<400)renderTicker()}
 
 /* ---------- websocket ---------- */
-let ws=null,wsTimer=null,pingT=null;
-function wsSend(method,subscription){ws.send(JSON.stringify({method,subscription}))}
-function connectWS(){try{ws=new WebSocket(WSU)}catch(e){S.wsOk=false;setTimeout(connectWS,5000);return}
- ws.onopen=()=>{S.wsOk=true;[{type:'allMids'},{type:'clearinghouseState',user:U},{type:'openOrders',user:U},{type:'userFills',user:U},{type:'userFundings',user:U}].forEach(s=>wsSend('subscribe',s));
-  if(S.chartCoin){candleSub={type:'candle',coin:S.chartCoin,interval:S.tf};wsSend('subscribe',candleSub)}
-  clearInterval(pingT);pingT=setInterval(()=>ws.readyState===1&&ws.send('{"method":"ping"}'),25000)};
- ws.onmessage=e=>{const m=JSON.parse(e.data);touch();switch(m.channel){
-  case 'allMids':Object.assign(S.mids,m.data.mids);renderLive();break;
-  case 'clearinghouseState':S.ch=m.data.clearinghouseState;onState();break;
-  case 'openOrders':S.orders=m.data.orders;renderOrders();drawLines();renderPositions();break;
-  case 'userFills':if(!m.data.isSnapshot){S.fills=m.data.fills.concat(S.fills);renderFills();loadState();loadPortfolio()}break;
-  case 'userFundings':if(!m.data.isSnapshot){loadFunding()}break;
-  case 'candle':onCandle(m.data);break}};
- ws.onclose=ws.onerror=()=>{S.wsOk=false;clearInterval(pingT);clearTimeout(wsTimer);wsTimer=setTimeout(connectWS,3000)}}
+let ws=null,wsTimer=null,pingT=null,bboSubs=new Set(),wsBackoff=1000;
+function wsSend(method,subscription){if(ws&&ws.readyState===1)ws.send(JSON.stringify({method,subscription}))}
+function syncBbo(){if(!ws||ws.readyState!==1)return;const want=new Set(positions().map(p=>p.coin));if(S.chartCoin)want.add(S.chartCoin);
+ for(const c of bboSubs)if(!want.has(c)){wsSend('unsubscribe',{type:'bbo',coin:c});bboSubs.delete(c)}
+ for(const c of want)if(!bboSubs.has(c)){wsSend('subscribe',{type:'bbo',coin:c});bboSubs.add(c)}}
+function connectWS(){clearTimeout(wsTimer);if(ws&&ws.readyState<2)return;let sock;try{sock=ws=new WebSocket(WSU)}catch(e){S.wsOk=false;wsTimer=setTimeout(connectWS,wsBackoff);return}
+ sock.onopen=()=>{if(ws!==sock)return;S.wsOk=true;wsBackoff=1000;bboSubs=new Set();S.wsLast=Date.now();
+  [{type:'allMids'},{type:'clearinghouseState',user:U},{type:'openOrders',user:U},{type:'userFills',user:U},{type:'userFundings',user:U}].forEach(s=>wsSend('subscribe',s));
+  if(S.chartCoin){candleSub={type:'candle',coin:S.chartCoin,interval:S.tf};wsSend('subscribe',candleSub)}syncBbo();
+  // resync anything missed while disconnected
+  loadState().catch(()=>{});loadFills().catch(()=>{});loadFunding().catch(()=>{});loadPortfolio().catch(()=>{});
+  clearInterval(pingT);pingT=setInterval(()=>{if(sock.readyState===1)sock.send('{"method":"ping"}');if(Date.now()-S.wsLast>25000){console.warn('ws silent, recycling');try{sock.close()}catch(e){}}},10000)};
+ sock.onmessage=e=>{if(ws!==sock)return;const m=JSON.parse(e.data);S.wsLast=Date.now();if(m.channel==='pong'||m.channel==='subscriptionResponse')return;touch();const d=m.data;switch(m.channel){
+  case 'allMids':if(!d.dex){for(const [k,v] of Object.entries(d.mids))if(!S.bbo?.[k]||Date.now()-S.bbo[k]>8000)S.mids[k]=v}renderLive();break;
+  case 'bbo':{const b=d.bbo;if(b&&b[0]&&b[1]){S.mids[d.coin]=String((+b[0].px+ +b[1].px)/2);(S.bbo=S.bbo||{})[d.coin]=Date.now();renderLive()}break}
+  case 'clearinghouseState':if(d.dex)break;S.ch=d.clearinghouseState;onState();syncBbo();break;
+  case 'openOrders':if(d.dex)break;S.orders=d.orders;renderOrders();drawLines();renderPositions();break;
+  case 'userFills':mergeFills(d.fills||[]);renderFills();renderEquity();if(!d.isSnapshot){loadState().catch(()=>{});loadPortfolio().catch(()=>{})}break;
+  case 'userFundings':if(!d.isSnapshot){loadFunding().catch(()=>{})}break;
+  case 'candle':onCandle(d);break}};
+ const down=()=>{if(ws!==sock)return;S.wsOk=false;clearInterval(pingT);clearTimeout(wsTimer);wsTimer=setTimeout(connectWS,wsBackoff);wsBackoff=Math.min(wsBackoff*2,15000)};
+ sock.onclose=down;sock.onerror=()=>{try{sock.close()}catch(e){}}}
 
 /* ---------- boot + polling fallback ---------- */
-(async()=>{await Promise.allSettled([loadNotes(),loadMarket(),loadMids(),loadPortfolio()]);await Promise.allSettled([loadState(),loadFills(),loadFunding()]);connectWS()})();
-setInterval(()=>{if(!S.wsOk||Date.now()-S.lastMsg>8000){loadMids().catch(()=>{});loadState().catch(()=>{});if(S.chartCoin)loadCandles()}},3000);
+setView();
+(async()=>{connectWS();await Promise.allSettled([loadNotes(),loadMarket(),loadMids(),loadPortfolio()]);await Promise.allSettled([loadState(),loadFills(),loadFunding()]);syncBbo()})();
+let lastCandlePoll=0;setInterval(()=>{if(!S.wsOk||Date.now()-S.lastMsg>8000){loadMids().catch(()=>{});loadState().catch(()=>{});if(S.chartCoin&&Date.now()-lastCandlePoll>15000){lastCandlePoll=Date.now();loadCandles()}}},2500);
 setInterval(()=>{loadState().catch(()=>{})},15000);
 setInterval(()=>{loadMarket().catch(()=>{});loadPortfolio().catch(()=>{});loadFunding().catch(()=>{})},60000);
 setInterval(()=>{loadFills().catch(()=>{});loadNotes()},120000);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){loadState();loadMids();loadCandles();if(!ws||ws.readyState>1)connectWS()}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){loadState().catch(()=>{});loadMids().catch(()=>{});loadFills().catch(()=>{});loadCandles();if(!ws||ws.readyState>1)connectWS()}});
+window.addEventListener('online',()=>{if(!ws||ws.readyState>1)connectWS()});
 </script>
 </body>
 </html>
