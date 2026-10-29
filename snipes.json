@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-29T02:27:36+00:00",
- "equity": 293.2,
- "risk_per_trade": 14.66,
- "scan_note": "13:20 scan: BTC dumped 81.1k to 79.9k in the 12:00 hour and dragged every alt down 2-6%. Nothing is triggered. Everything below is a level we wait for, not a chase. kPEPE is the only live trade.",
- "x_list_note": "X list skim (12:00 run): no coin calls from the list. Bobby_1111888 macro bull, blackwidowbtc BTC chop, ColdBloodShill ETH support. Nothing actionable.",
+ "updated_at": "2026-10-29T02:57:05+00:00",
+ "equity": 295.08,
+ "risk_per_trade": 14.75,
+ "scan_note": "14:00 scan: BTC still bleeding (79.67k low, sitting 79.9k), alts red 2-6%. PUMP tagged its overnight floor and bounced, so we took it. kPEPE runner holding above breakeven.",
+ "x_list_note": "X list skim (12:00 run): no coin calls from the list. Nothing actionable since.",
  "snipes": [
   {
    "id": "kpepe-runner",
@@ -58,7 +58,67 @@
    "reward_usd": [
     26.82
    ],
-   "price_at_scan": 0.00497
+   "price_at_scan": 0.005021
+  },
+  {
+   "id": "pump-base",
+   "coin": "PUMP",
+   "name": "PUMP",
+   "emoji": "\ud83d\udc8a",
+   "status": "IN TRADE",
+   "why": "pump.fun's own token. Dipped into the 0.00416-0.00422 overnight floor (low 0.004216, a 4h higher low over 0.004155), 15m printed a higher low and closed back over 0.00424. Bought it.",
+   "setup": "Base bounce (dip buy)",
+   "dir": "below",
+   "trigger": 0.00422,
+   "zone": [
+    0.00416,
+    0.00422
+   ],
+   "entry": 0.00427,
+   "stop": 0.0042,
+   "orig_stop": 0.0042,
+   "targets": [
+    0.0045
+   ],
+   "size": 220000,
+   "rr_note": "Stop 0.0042 just under the 0.004216 low, TP 0.0045 (the flag it lost) is ~3.3R. No half-take.",
+   "conditions": [
+    {
+     "t": "Holding above stop 0.0042",
+     "auto": {
+      "coin": "PUMP",
+      "op": ">",
+      "px": 0.0042
+     }
+    },
+    {
+     "t": "Tagged the 0.00416-0.00422 base (low 0.004216)",
+     "ok": true
+    },
+    {
+     "t": "15m higher low (0.004227) then close back above 0.00424",
+     "ok": true
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "dip into the 0.00416-0.00422 floor and bounce off it like a drunk off a bouncer (it did, we're in)",
+   "rr": [
+    3.29
+   ],
+   "risk_usd": 15.4,
+   "notional": 939.4,
+   "reward_usd": [
+    50.6
+   ],
+   "price_at_scan": 0.004269
   },
   {
    "id": "pump-reclaim",
@@ -116,79 +176,14 @@
     1.15,
     2.91
    ],
-   "size": 133300.0,
-   "notional": 602.39,
-   "risk_usd": 14.66,
+   "size": 134100.0,
+   "notional": 606.09,
+   "risk_usd": 14.75,
    "reward_usd": [
-    16.93,
-    42.65
+    17.03,
+    42.91
    ],
-   "price_at_scan": 0.004264
-  },
-  {
-   "id": "pump-base",
-   "coin": "PUMP",
-   "name": "PUMP",
-   "emoji": "\ud83d\udc8a",
-   "status": "ARMED",
-   "why": "Same coin, the dip-buy version. Overnight base at 0.00416-0.00422 held three times before this morning's rip.",
-   "setup": "Base bounce (dip buy)",
-   "dir": "below",
-   "trigger": 0.00422,
-   "zone": [
-    0.00416,
-    0.00422
-   ],
-   "entry": 0.00423,
-   "stop": 0.00407,
-   "targets": [
-    0.0045,
-    0.004647
-   ],
-   "conditions": [
-    {
-     "t": "Price tags the 0.00416-0.00422 base",
-     "auto": {
-      "coin": "PUMP",
-      "op": "<=",
-      "px": 0.00422
-     }
-    },
-    {
-     "t": "Doesn't break the 0.00409 3-day low",
-     "auto": {
-      "coin": "PUMP",
-      "op": ">",
-      "px": 0.00409
-     }
-    },
-    {
-     "t": "15m prints a higher low then closes back above 0.00424",
-     "ok": false
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "dip into the 0.00416-0.00422 floor and bounce off it like a drunk off a bouncer",
-   "rr": [
-    1.69,
-    2.61
-   ],
-   "size": 91620.0,
-   "notional": 387.57,
-   "risk_usd": 14.66,
-   "reward_usd": [
-    24.74,
-    38.21
-   ],
-   "price_at_scan": 0.004264
+   "price_at_scan": 0.004269
   },
   {
    "id": "init-break",
@@ -196,7 +191,7 @@
    "name": "INIT",
    "emoji": "\ud83e\uddec",
    "status": "WAITING",
-   "why": "Biggest mover on HL: +38% day, doubled off the 0.113 low this week. New-listing style squeeze, funding negative (shorts paying), so shorts are still fighting it.",
+   "why": "Biggest mover on HL: +37% day. Got dumped to 0.2063 with BTC then bounced to 0.2187. Funding negative, shorts still fighting it.",
    "setup": "Range-high breakout + retest",
    "dir": "above",
    "trigger": 0.2285,
@@ -246,14 +241,14 @@
     1.98,
     2.25
    ],
-   "size": 1128.0,
-   "notional": 258.24,
-   "risk_usd": 14.66,
+   "size": 1135.0,
+   "notional": 259.83,
+   "risk_usd": 14.75,
    "reward_usd": [
-    28.98,
-    32.93
+    29.16,
+    33.13
    ],
-   "price_at_scan": 0.219295
+   "price_at_scan": 0.219255
   },
   {
    "id": "fart-reclaim",
@@ -261,7 +256,7 @@
    "name": "FARTCOIN",
    "emoji": "\ud83d\udca8",
    "status": "WAITING",
-   "why": "OG Solana/pump.fun meme. Lost its 0.1292-0.1305 overnight floor in the BTC dump. Reclaim = trapped shorts.",
+   "why": "OG Solana/pump.fun meme. Lost its 0.1292-0.1305 floor in the BTC dump, low 0.12696. Reclaim = trapped shorts.",
    "setup": "Lost-support reclaim",
    "dir": "above",
    "trigger": 0.1305,
@@ -307,22 +302,22 @@
     1.47,
     2.8
    ],
-   "size": 3665.0,
-   "notional": 479.38,
-   "risk_usd": 14.66,
+   "size": 3687.0,
+   "notional": 482.32,
+   "risk_usd": 14.75,
    "reward_usd": [
-    21.62,
-    41.05
+    21.76,
+    41.3
    ],
-   "price_at_scan": 0.12787
+   "price_at_scan": 0.12833
   },
   {
    "id": "cashcat-reclaim",
    "coin": "CASHCAT",
    "name": "CASHCAT",
    "emoji": "\ud83d\udc31",
-   "status": "WAITING",
-   "why": "Fresh small-cap cat meme, 3x max, 21M OI on 6M volume. Lost 0.098 support. Swept back = squeeze fuel.",
+   "status": "DEAD",
+   "why": "Broke the 0.0970 low (hit 0.0946) in the BTC bleed. Setup gone; back only on a 1h close over 0.099.",
    "setup": "Lost-support reclaim",
    "dir": "above",
    "trigger": 0.099,
@@ -376,14 +371,14 @@
     1.67,
     3.15
    ],
-   "size": 5430.0,
-   "notional": 538.62,
-   "risk_usd": 14.66,
+   "size": 5463.0,
+   "notional": 541.93,
+   "risk_usd": 14.75,
    "reward_usd": [
-    24.43,
-    46.15
+    24.58,
+    46.44
    ],
-   "price_at_scan": 0.096558
+   "price_at_scan": 0.09701
   },
   {
    "id": "xpl-reclaim",
@@ -391,7 +386,7 @@
    "name": "XPL",
    "emoji": "\u26a1",
    "status": "WAITING",
-   "why": "Momentum small cap. Lower highs since 0.0792, now at 0.0745. Only a long once it breaks the downtrend.",
+   "why": "Momentum small cap. Lower highs since 0.0792, new low 0.0738. Only a long once it breaks the downtrend.",
    "setup": "Downtrend break",
    "dir": "above",
    "trigger": 0.0772,
@@ -437,14 +432,14 @@
     1.36,
     2.14
    ],
-   "size": 10470.0,
-   "notional": 809.44,
-   "risk_usd": 14.66,
+   "size": 10540.0,
+   "notional": 814.41,
+   "risk_usd": 14.75,
    "reward_usd": [
-    19.9,
-    31.41
+    20.02,
+    31.61
    ],
-   "price_at_scan": 0.07439
+   "price_at_scan": 0.074867
   },
   {
    "id": "uni-break",
@@ -452,7 +447,7 @@
    "name": "UNI",
    "emoji": "\ud83e\udd84",
    "status": "WAITING",
-   "why": "Not a meme, but it was the cleanest higher-low chart this morning before the dump. Rejected 7.35 twice.",
+   "why": "Was the cleanest higher-low chart this morning. Rejected 7.35 twice, now 6.98 after the dump. Long only back over 7.35.",
    "setup": "Break and retest of 7.35",
    "dir": "above",
    "trigger": 7.35,
@@ -502,59 +497,14 @@
     1.21,
     2.16
    ],
-   "size": 77.16,
-   "notional": 568.65,
-   "risk_usd": 14.66,
+   "size": 77.63,
+   "notional": 572.14,
+   "risk_usd": 14.75,
    "reward_usd": [
-    17.75,
-    31.63
+    17.86,
+    31.83
    ],
-   "price_at_scan": 6.99645
-  },
-  {
-   "id": "pons-dead",
-   "coin": "PONS",
-   "name": "PONS",
-   "emoji": "\ud83e\udea6",
-   "status": "DEAD",
-   "why": "Was chopping 0.28-0.295. Broke the range floor in the 12:00 dump, now 0.269. Setup gone.",
-   "setup": "Range long (invalidated)",
-   "dir": "above",
-   "trigger": 0.2905,
-   "zone": [
-    0.28,
-    0.2905
-   ],
-   "entry": 0.2905,
-   "stop": 0.2795,
-   "targets": [
-    0.2949
-   ],
-   "conditions": [
-    {
-     "t": "Range floor 0.28 held",
-     "auto": {
-      "coin": "PONS",
-      "op": ">",
-      "px": 0.28
-     }
-    },
-    {
-     "t": "Back from the dead only on a 1h close above 0.29",
-     "ok": false
-    }
-   ],
-   "x_mention": null,
-   "rr": [
-    0.4
-   ],
-   "size": 1333.0,
-   "notional": 387.16,
-   "risk_usd": 14.66,
-   "reward_usd": [
-    5.86
-   ],
-   "price_at_scan": 0.268285
+   "price_at_scan": 6.9923
   }
  ]
 }

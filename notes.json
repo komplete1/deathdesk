@@ -1,5 +1,5 @@
 {
- "updated": 1793240856395,
+ "updated": 1793242640800,
  "plan": {
   "kPEPE": {
    "side": "long",
@@ -11,6 +11,17 @@
    "partial_size": 0,
    "be_price": 0.00485,
    "note": "Danny 29 Oct: NO half-take, let it run to TP"
+  },
+  "PUMP": {
+   "side": "long",
+   "entry": 0.00427,
+   "size": 220000,
+   "sl": 0.0042,
+   "tp": 0.0045,
+   "partial_trigger": null,
+   "partial_size": 0,
+   "be_price": 0.00427,
+   "note": "29 Oct 14:00 dip buy into 0.00416-0.00422 base, 4h HL vs 0.004155. No half-take. Intraday: exit if not +1R (0.00434) by ~20:00."
   }
  },
  "lessons": [
