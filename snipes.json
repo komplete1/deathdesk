@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-29T02:57:05+00:00",
- "equity": 295.08,
- "risk_per_trade": 14.75,
- "scan_note": "14:00 scan: BTC still bleeding (79.67k low, sitting 79.9k), alts red 2-6%. PUMP tagged its overnight floor and bounced, so we took it. kPEPE runner holding above breakeven.",
- "x_list_note": "X list skim (12:00 run): no coin calls from the list. Nothing actionable since.",
+ "updated_at": "2026-10-29T04:00:58+00:00",
+ "equity": 276.31,
+ "risk_per_trade": 13.82,
+ "scan_note": "15:00 intraday: BTC bleeding 79.8k, whole board red. PUMP lost its floor and stopped us out (-1R). kPEPE still green, stop trailed to 0.00491 to lock profit. Sitting flat otherwise, no clean longs.",
+ "x_list_note": "X list skim (12:00 run): no coin calls from the list. Next skim on the 16:00 full run.",
  "snipes": [
   {
    "id": "kpepe-runner",
@@ -20,20 +20,20 @@
     0.004837
    ],
    "entry": 0.004837,
-   "stop": 0.00485,
+   "stop": 0.00491,
    "orig_stop": 0.00469,
    "targets": [
     0.00542
    ],
    "size": 46000,
-   "rr_note": "Stop is at breakeven, so risk is ~$0. Original stop 0.00469 made the TP a 4R trade.",
+   "rr_note": "Stop trailed to 0.00491 under the 14:00 1h higher low 0.004925, so ~$3.3 profit locked. TP 0.00542.",
    "conditions": [
     {
-     "t": "Holding above breakeven stop 0.00485",
+     "t": "Holding above trailed stop 0.00491",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.00485
+      "px": 0.00491
      }
     },
     {
@@ -58,15 +58,15 @@
    "reward_usd": [
     26.82
    ],
-   "price_at_scan": 0.005021
+   "price_at_scan": 0.004957
   },
   {
    "id": "pump-base",
    "coin": "PUMP",
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
-   "status": "IN TRADE",
-   "why": "pump.fun's own token. Dipped into the 0.00416-0.00422 overnight floor (low 0.004216, a 4h higher low over 0.004155), 15m printed a higher low and closed back over 0.00424. Bought it.",
+   "status": "DEAD",
+   "why": "Stopped out 14:22 at 0.004199 (-1R, -$16.5 incl fees). The floor broke with BTC, low 0.004165. Dead.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 0.00422,
@@ -76,12 +76,9 @@
    ],
    "entry": 0.00427,
    "stop": 0.0042,
-   "orig_stop": 0.0042,
    "targets": [
     0.0045
    ],
-   "size": 220000,
-   "rr_note": "Stop 0.0042 just under the 0.004216 low, TP 0.0045 (the flag it lost) is ~3.3R. No half-take.",
    "conditions": [
     {
      "t": "Holding above stop 0.0042",
@@ -109,16 +106,17 @@
     }
    ],
    "x_mention": null,
-   "plain": "dip into the 0.00416-0.00422 floor and bounce off it like a drunk off a bouncer (it did, we're in)",
+   "plain": "hold the 0.0042 floor (it didn't, we got stopped)",
    "rr": [
     3.29
    ],
-   "risk_usd": 15.4,
-   "notional": 939.4,
+   "size": 197400.0,
+   "notional": 843.02,
+   "risk_usd": 13.82,
    "reward_usd": [
-    50.6
+    45.41
    ],
-   "price_at_scan": 0.004269
+   "price_at_scan": 0.004203
   },
   {
    "id": "pump-reclaim",
@@ -176,14 +174,14 @@
     1.15,
     2.91
    ],
-   "size": 134100.0,
-   "notional": 606.09,
-   "risk_usd": 14.75,
+   "size": 125600.0,
+   "notional": 567.88,
+   "risk_usd": 13.82,
    "reward_usd": [
-    17.03,
-    42.91
+    15.96,
+    40.2
    ],
-   "price_at_scan": 0.004269
+   "price_at_scan": 0.004203
   },
   {
    "id": "init-break",
@@ -241,14 +239,14 @@
     1.98,
     2.25
    ],
-   "size": 1135.0,
-   "notional": 259.83,
-   "risk_usd": 14.75,
+   "size": 1063.0,
+   "notional": 243.44,
+   "risk_usd": 13.82,
    "reward_usd": [
-    29.16,
-    33.13
+    27.32,
+    31.04
    ],
-   "price_at_scan": 0.219255
+   "price_at_scan": 0.21096
   },
   {
    "id": "fart-reclaim",
@@ -302,83 +300,14 @@
     1.47,
     2.8
    ],
-   "size": 3687.0,
-   "notional": 482.32,
-   "risk_usd": 14.75,
+   "size": 3455.0,
+   "notional": 451.91,
+   "risk_usd": 13.82,
    "reward_usd": [
-    21.76,
-    41.3
+    20.38,
+    38.7
    ],
-   "price_at_scan": 0.12833
-  },
-  {
-   "id": "cashcat-reclaim",
-   "coin": "CASHCAT",
-   "name": "CASHCAT",
-   "emoji": "\ud83d\udc31",
-   "status": "DEAD",
-   "why": "Broke the 0.0970 low (hit 0.0946) in the BTC bleed. Setup gone; back only on a 1h close over 0.099.",
-   "setup": "Lost-support reclaim",
-   "dir": "above",
-   "trigger": 0.099,
-   "zone": [
-    0.099,
-    0.0995
-   ],
-   "entry": 0.0992,
-   "stop": 0.0965,
-   "targets": [
-    0.1037,
-    0.1077
-   ],
-   "conditions": [
-    {
-     "t": "Price back above 0.099",
-     "auto": {
-      "coin": "CASHCAT",
-      "op": ">",
-      "px": 0.099
-     }
-    },
-    {
-     "t": "1h close above 0.099",
-     "ok": false
-    },
-    {
-     "t": "Holds the 0.0970 low (no new lows first)",
-     "auto": {
-      "coin": "CASHCAT",
-      "op": ">",
-      "px": 0.097
-     }
-    },
-    {
-     "t": "Spread under 10bp (3x max lev)",
-     "ok": true
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "claw back over 0.099 without making new lows first",
-   "rr": [
-    1.67,
-    3.15
-   ],
-   "size": 5463.0,
-   "notional": 541.93,
-   "risk_usd": 14.75,
-   "reward_usd": [
-    24.58,
-    46.44
-   ],
-   "price_at_scan": 0.09701
+   "price_at_scan": 0.12776
   },
   {
    "id": "xpl-reclaim",
@@ -432,14 +361,14 @@
     1.36,
     2.14
    ],
-   "size": 10540.0,
-   "notional": 814.41,
-   "risk_usd": 14.75,
+   "size": 9871.0,
+   "notional": 763.06,
+   "risk_usd": 13.82,
    "reward_usd": [
-    20.02,
-    31.61
+    18.76,
+    29.61
    ],
-   "price_at_scan": 0.074867
+   "price_at_scan": 0.074519
   },
   {
    "id": "uni-break",
@@ -497,14 +426,14 @@
     1.21,
     2.16
    ],
-   "size": 77.63,
-   "notional": 572.14,
-   "risk_usd": 14.75,
+   "size": 72.74,
+   "notional": 536.07,
+   "risk_usd": 13.82,
    "reward_usd": [
-    17.86,
-    31.83
+    16.73,
+    29.82
    ],
-   "price_at_scan": 6.9923
+   "price_at_scan": 6.9715
   }
  ]
 }
