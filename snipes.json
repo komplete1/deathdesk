@@ -1,64 +1,74 @@
 {
- "updated_at": "2026-10-29T06:54:12+00:00",
- "equity": 279.57,
- "risk_per_trade": 13.98,
- "scan_note": "18:00 intraday: BTC slipped back to 79.9k (lower high under 80.5k), not nuking. kPEPE chopping 0.0050-0.00508, stop still 0.00491. PUMP lower high at 0.00429, HYPE faded to 78.9, FARTCOIN rejected 0.1305 again. No trigger, no trade.",
+ "updated_at": "2026-10-29T07:55:18+00:00",
+ "equity": 273.95,
+ "risk_per_trade": 13.7,
+ "scan_note": "19:00 intraday: kPEPE runner stopped at 0.00491 for +$3.3. BTC 79.8k drifting lower, not nuking. Whole $5M+ board red except INIT (3x, thin). PUMP holding 0.00419 above its 0.004165 bottom, HYPE 78.6, FARTCOIN 0.127. No trigger, no trade.",
  "x_list_note": "X list skim (16:00 run): no coin calls, just GMs and banter (Bobby_1111888 'more bullish than ever'). Next skim on the 20:00 full run.",
  "snipes": [
   {
-   "id": "kpepe-runner",
+   "id": "kpepe-reload",
    "coin": "kPEPE",
    "name": "PEPE",
    "emoji": "\ud83d\udc38",
-   "status": "IN TRADE",
-   "why": "Danny's call. Meme leader, +10% day, biggest meme volume on HL. Runner left on after the half banked +$13.5.",
-   "setup": "Runner, free roll",
+   "status": "WAITING",
+   "why": "Runner got stopped at 0.00491 for a small win (+$3.3). Still the strongest meme on the board. If 0.004866 holds as the 1h higher low and it gets back over 0.00503, we reload.",
+   "setup": "Higher low hold + reclaim",
    "dir": "above",
-   "trigger": 0.004837,
+   "trigger": 0.00503,
    "zone": [
-    0.004837,
-    0.004837
+    0.00503,
+    0.00506
    ],
-   "entry": 0.004837,
-   "stop": 0.00491,
-   "orig_stop": 0.00469,
+   "entry": 0.00505,
+   "stop": 0.00485,
    "targets": [
+    0.00518,
     0.00542
    ],
-   "size": 46000,
-   "rr_note": "Stop 0.00491 under the 15:00 1h higher low 0.004928. 16:00 low 0.005021 got undercut by 17:00 (0.005005), so the next trail is under whichever 1h low holds once a new higher low confirms. TP 0.00542.",
    "conditions": [
     {
-     "t": "Holding above trailed stop 0.00491",
+     "t": "Price back above 0.00503",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.00491
+      "px": 0.00503
      }
     },
     {
-     "t": "No half-take, let the fucker run (Danny)",
-     "ok": true
-    },
-    {
-     "t": "ADD only on a 1h close above the 0.005244 spike high",
+     "t": "1h low holds above 0.004866 (13:00 higher low)",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.005244
+      "px": 0.004866
+     }
+    },
+    {
+     "t": "1h close above 0.00503",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
      }
     }
    ],
    "x_mention": null,
+   "plain": "hold above 0.004866, then get back over 0.00503 and close an hour up there",
    "rr": [
-    3.97
+    0.65,
+    1.85
    ],
-   "risk_usd": 0.0,
-   "notional": 222.5,
+   "size": 68500.0,
+   "notional": 345.93,
+   "risk_usd": 13.7,
    "reward_usd": [
-    26.82
+    8.91,
+    25.35
    ],
-   "price_at_scan": 0.005028
+   "price_at_scan": 0.004904
   },
   {
    "id": "pump-reclaim",
@@ -116,14 +126,14 @@
     1.15,
     2.91
    ],
-   "size": 127100.0,
-   "notional": 574.45,
-   "risk_usd": 13.98,
+   "size": 124500.0,
+   "notional": 562.95,
+   "risk_usd": 13.7,
    "reward_usd": [
-    16.14,
-    40.67
+    15.82,
+    39.85
    ],
-   "price_at_scan": 0.004243
+   "price_at_scan": 0.004207
   },
   {
    "id": "pump-dbl",
@@ -131,7 +141,7 @@
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
    "status": "WAITING",
-   "why": "Stopped us at 0.0042, wicked to 0.004165 and is now ripping back to 0.00428. If that 0.004165 low holds as a double bottom, it's a cheap re-entry with a tight stop.",
+   "why": "Stopped us at 0.0042, wicked to 0.004165. 18:00 1h dipped to 0.004188, still a higher low above that bottom. Bust over 0.00435 = cheap re-entry with a tight stop.",
    "setup": "Double bottom + 1h higher low",
    "dir": "above",
    "trigger": 0.00435,
@@ -177,21 +187,21 @@
     1.0,
     1.86
    ],
-   "size": 99860.0,
-   "notional": 435.38,
-   "risk_usd": 13.98,
+   "size": 97860.0,
+   "notional": 426.66,
+   "risk_usd": 13.7,
    "reward_usd": [
-    13.98,
-    25.96
+    13.7,
+    25.44
    ],
-   "price_at_scan": 0.004243
+   "price_at_scan": 0.004207
   },
   {
    "id": "hype-reclaim",
    "coin": "HYPE",
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
-   "status": "ARMED",
+   "status": "WAITING",
    "why": "The house coin. Dumped 80.0 to 78.09 with BTC, bounced to 79.47 and faded back to 78.9. Reclaim of 80 flips the breakdown.",
    "setup": "Lost-level reclaim",
    "dir": "above",
@@ -238,14 +248,14 @@
     1.08,
     1.48
    ],
-   "size": 11.18,
-   "notional": 896.4,
-   "risk_usd": 13.98,
+   "size": 10.96,
+   "notional": 878.44,
+   "risk_usd": 13.7,
    "reward_usd": [
-    15.1,
-    20.69
+    14.8,
+    20.28
    ],
-   "price_at_scan": 78.8975
+   "price_at_scan": 78.6555
   },
   {
    "id": "init-break",
@@ -303,14 +313,14 @@
     1.98,
     2.25
    ],
-   "size": 1075.0,
-   "notional": 246.26,
-   "risk_usd": 13.98,
+   "size": 1054.0,
+   "notional": 241.33,
+   "risk_usd": 13.7,
    "reward_usd": [
-    27.64,
-    31.4
+    27.08,
+    30.77
    ],
-   "price_at_scan": 0.2125
+   "price_at_scan": 0.207365
   },
   {
    "id": "fart-reclaim",
@@ -368,14 +378,14 @@
     1.47,
     2.8
    ],
-   "size": 3495.0,
-   "notional": 457.15,
-   "risk_usd": 13.98,
+   "size": 3425.0,
+   "notional": 447.99,
+   "risk_usd": 13.7,
    "reward_usd": [
-    20.62,
-    39.14
+    20.21,
+    38.36
    ],
-   "price_at_scan": 0.12828
+   "price_at_scan": 0.12711
   },
   {
    "id": "xpl-reclaim",
@@ -429,14 +439,14 @@
     1.36,
     2.14
    ],
-   "size": 9986.0,
-   "notional": 771.9,
-   "risk_usd": 13.98,
+   "size": 9786.0,
+   "notional": 756.44,
+   "risk_usd": 13.7,
    "reward_usd": [
-    18.97,
-    29.96
+    18.59,
+    29.36
    ],
-   "price_at_scan": 0.074648
+   "price_at_scan": 0.0749
   },
   {
    "id": "uni-break",
@@ -494,14 +504,14 @@
     1.21,
     2.16
    ],
-   "size": 73.58,
-   "notional": 542.28,
-   "risk_usd": 13.98,
+   "size": 72.11,
+   "notional": 531.42,
+   "risk_usd": 13.7,
    "reward_usd": [
-    16.92,
-    30.17
+    16.58,
+    29.56
    ],
-   "price_at_scan": 7.00745
+   "price_at_scan": 6.99215
   }
  ]
 }
