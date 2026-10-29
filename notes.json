@@ -1,23 +1,11 @@
 {
- "updated": 1793293250134,
- "plan": {
-  "PUMP": {
-   "side": "long",
-   "entry": 0.004582,
-   "size": 108039.0,
-   "sl": 0.004504,
-   "tp": 0.00488,
-   "orig_sl": 0.004504,
-   "opened": "2026-10-30 04:0x Melb",
-   "setup": "4h lid 0.004554 breakout + 15m retest",
-   "partial_trigger": null
-  }
- },
+ "updated": 1793296888852,
+ "plan": {},
  "lessons": [
   "<b>ONE BET, NOT THREE</b> (from BTC/ENA/ZEC, 22 Oct, 3 losses). Alt longs plus BTC long opened together = one correlated BTC bet at ~15% risk. When BTC is the driver, max 2 open longs total until one is at breakeven, and at most 1 new entry per run unless the coins are genuinely uncorrelated.",
   "<b>BTC GATE SCRAPPED BY DANNY</b> (28 Oct 2026). Do NOT block alt longs on BTC structure. Every alt trades on its own chart: own 4h higher low / breakout hold, rising OI, $5M+ vol. BTC context is only a note (if BTC is actively dumping, a 4h close breaking down hard, skip fresh entries that run). Check Danny&#x27;s X list EVERY run.",
   "<b>NO CHASING THE GREEN-BOARD DAY</b> (same 3 losses). After a board-wide +10-30% day, don&#x27;t buy &quot;retests&quot; right into it at the open of the next session. Wait for a real pullback that holds (higher low printed on 4h) before entering.",
-  "<b>BREAKOUT-HOLD LONGS ARE 0/4</b> (BTC, ENA, ZEC 22 Oct; HYPE 28 Oct). Buying after a few 4h closes above a fresh breakout keeps getting faded back into the range. Only take a breakout long after price has actually retested the level (4h wick into it) and closed back above, or buy the next 4h higher low after that retest. Trail stops under a higher low with a buffer (~0.3-0.5x ATR), not a few ticks under it."
+  "<b>BREAKOUT-HOLD LONGS ARE 0/5</b> (BTC, ENA, ZEC 22 Oct; HYPE 28 Oct; PUMP 30 Oct on a 15m-only retest). Buying after a few 4h closes above a fresh breakout keeps getting faded back into the range. Only take a breakout long after price has actually retested the level (4h wick into it) and the 4h candle has CLOSED back above (a 15m/1h retest alone does not count), or buy the next 4h higher low after that retest. Trail stops under a higher low with a buffer (~0.3-0.5x ATR), not a few ticks under it."
  ],
- "scoreboard": "Scoreboard: breakout-hold setups 0/4 wins, avg -0.94R."
+ "scoreboard": "Scoreboard: breakout-hold setups 0/5 wins, avg -0.97R."
 }
