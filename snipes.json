@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-29T04:00:58+00:00",
- "equity": 276.31,
- "risk_per_trade": 13.82,
- "scan_note": "15:00 intraday: BTC bleeding 79.8k, whole board red. PUMP lost its floor and stopped us out (-1R). kPEPE still green, stop trailed to 0.00491 to lock profit. Sitting flat otherwise, no clean longs.",
- "x_list_note": "X list skim (12:00 run): no coin calls from the list. Next skim on the 16:00 full run.",
+ "updated_at": "2026-10-29T04:54:45+00:00",
+ "equity": 280.12,
+ "risk_per_trade": 14.01,
+ "scan_note": "16:00 full run: BTC bouncing off 79.7k to 80.2k after the noon dump, whole board bouncing but no 1h higher lows confirmed yet. kPEPE still green with stop at 0.00491. Flat otherwise: waiting for reclaims, not chasing a dead-cat bounce.",
+ "x_list_note": "X list skim (16:00 run): no coin calls, just GMs and banter (Bobby_1111888 'more bullish than ever'). Next skim on the 20:00 full run.",
  "snipes": [
   {
    "id": "kpepe-runner",
@@ -26,7 +26,7 @@
     0.00542
    ],
    "size": 46000,
-   "rr_note": "Stop trailed to 0.00491 under the 14:00 1h higher low 0.004925, so ~$3.3 profit locked. TP 0.00542.",
+   "rr_note": "Stop 0.00491 under the 14:00/15:00 1h higher lows (0.004925/0.004928). ~+$3.4 locked. TP 0.00542.",
    "conditions": [
     {
      "t": "Holding above trailed stop 0.00491",
@@ -58,65 +58,7 @@
    "reward_usd": [
     26.82
    ],
-   "price_at_scan": 0.004957
-  },
-  {
-   "id": "pump-base",
-   "coin": "PUMP",
-   "name": "PUMP",
-   "emoji": "\ud83d\udc8a",
-   "status": "DEAD",
-   "why": "Stopped out 14:22 at 0.004199 (-1R, -$16.5 incl fees). The floor broke with BTC, low 0.004165. Dead.",
-   "setup": "Base bounce (dip buy)",
-   "dir": "below",
-   "trigger": 0.00422,
-   "zone": [
-    0.00416,
-    0.00422
-   ],
-   "entry": 0.00427,
-   "stop": 0.0042,
-   "targets": [
-    0.0045
-   ],
-   "conditions": [
-    {
-     "t": "Holding above stop 0.0042",
-     "auto": {
-      "coin": "PUMP",
-      "op": ">",
-      "px": 0.0042
-     }
-    },
-    {
-     "t": "Tagged the 0.00416-0.00422 base (low 0.004216)",
-     "ok": true
-    },
-    {
-     "t": "15m higher low (0.004227) then close back above 0.00424",
-     "ok": true
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "hold the 0.0042 floor (it didn't, we got stopped)",
-   "rr": [
-    3.29
-   ],
-   "size": 197400.0,
-   "notional": 843.02,
-   "risk_usd": 13.82,
-   "reward_usd": [
-    45.41
-   ],
-   "price_at_scan": 0.004203
+   "price_at_scan": 0.00504
   },
   {
    "id": "pump-reclaim",
@@ -174,14 +116,136 @@
     1.15,
     2.91
    ],
-   "size": 125600.0,
-   "notional": 567.88,
-   "risk_usd": 13.82,
+   "size": 127400.0,
+   "notional": 575.68,
+   "risk_usd": 14.01,
    "reward_usd": [
-    15.96,
-    40.2
+    16.18,
+    40.76
    ],
-   "price_at_scan": 0.004203
+   "price_at_scan": 0.004281
+  },
+  {
+   "id": "pump-dbl",
+   "coin": "PUMP",
+   "name": "PUMP",
+   "emoji": "\ud83d\udc8a",
+   "status": "WAITING",
+   "why": "Stopped us at 0.0042, wicked to 0.004165 and is now ripping back to 0.00428. If that 0.004165 low holds as a double bottom, it's a cheap re-entry with a tight stop.",
+   "setup": "Double bottom + 1h higher low",
+   "dir": "above",
+   "trigger": 0.00435,
+   "zone": [
+    0.00435,
+    0.00437
+   ],
+   "entry": 0.00436,
+   "stop": 0.00422,
+   "targets": [
+    0.0045,
+    0.00462
+   ],
+   "conditions": [
+    {
+     "t": "Price above 0.00435 (13:00 1h high)",
+     "auto": {
+      "coin": "PUMP",
+      "op": ">",
+      "px": 0.00435
+     }
+    },
+    {
+     "t": "1h close above 0.00435",
+     "ok": false
+    },
+    {
+     "t": "1h higher low printed above 0.004165",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "hold the 0.004165 bottom, then bust over 0.00435 and close an hour up there",
+   "rr": [
+    1.0,
+    1.86
+   ],
+   "size": 100100.0,
+   "notional": 436.31,
+   "risk_usd": 14.01,
+   "reward_usd": [
+    14.01,
+    26.02
+   ],
+   "price_at_scan": 0.004281
+  },
+  {
+   "id": "hype-reclaim",
+   "coin": "HYPE",
+   "name": "HYPE",
+   "emoji": "\ud83d\udfe2",
+   "status": "WAITING",
+   "why": "The house coin, 364M volume. Dumped from 80.0 to 78.09 with BTC, double-tapped 78.1 and is bouncing. Reclaim of 80 flips the breakdown.",
+   "setup": "Lost-level reclaim",
+   "dir": "above",
+   "trigger": 80.05,
+   "zone": [
+    80.05,
+    80.25
+   ],
+   "entry": 80.15,
+   "stop": 78.9,
+   "targets": [
+    81.5,
+    82.0
+   ],
+   "conditions": [
+    {
+     "t": "Price above 80.05",
+     "auto": {
+      "coin": "HYPE",
+      "op": ">",
+      "px": 80.05
+     }
+    },
+    {
+     "t": "1h close above 80.05",
+     "ok": false
+    },
+    {
+     "t": "1h higher low above 78.9 on the retest",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "climb back over 80 (where it broke down) and hold it",
+   "rr": [
+    1.08,
+    1.48
+   ],
+   "size": 11.21,
+   "notional": 898.32,
+   "risk_usd": 14.01,
+   "reward_usd": [
+    15.13,
+    20.73
+   ],
+   "price_at_scan": 79.1405
   },
   {
    "id": "init-break",
@@ -239,14 +303,14 @@
     1.98,
     2.25
    ],
-   "size": 1063.0,
-   "notional": 243.44,
-   "risk_usd": 13.82,
+   "size": 1078.0,
+   "notional": 246.79,
+   "risk_usd": 14.01,
    "reward_usd": [
-    27.32,
-    31.04
+    27.7,
+    31.47
    ],
-   "price_at_scan": 0.21096
+   "price_at_scan": 0.21947
   },
   {
    "id": "fart-reclaim",
@@ -254,7 +318,7 @@
    "name": "FARTCOIN",
    "emoji": "\ud83d\udca8",
    "status": "WAITING",
-   "why": "OG Solana/pump.fun meme. Lost its 0.1292-0.1305 floor in the BTC dump, low 0.12696. Reclaim = trapped shorts.",
+   "why": "OG Solana/pump.fun meme. Lost its 0.1292-0.1305 floor in the BTC dump, low 0.12696, now bouncing back to 0.1292. Reclaim = trapped shorts.",
    "setup": "Lost-support reclaim",
    "dir": "above",
    "trigger": 0.1305,
@@ -300,14 +364,14 @@
     1.47,
     2.8
    ],
-   "size": 3455.0,
-   "notional": 451.91,
-   "risk_usd": 13.82,
+   "size": 3502.0,
+   "notional": 458.13,
+   "risk_usd": 14.01,
    "reward_usd": [
-    20.38,
-    38.7
+    20.66,
+    39.23
    ],
-   "price_at_scan": 0.12776
+   "price_at_scan": 0.1292
   },
   {
    "id": "xpl-reclaim",
@@ -361,14 +425,14 @@
     1.36,
     2.14
    ],
-   "size": 9871.0,
-   "notional": 763.06,
-   "risk_usd": 13.82,
+   "size": 10010.0,
+   "notional": 773.55,
+   "risk_usd": 14.01,
    "reward_usd": [
-    18.76,
-    29.61
+    19.01,
+    30.02
    ],
-   "price_at_scan": 0.074519
+   "price_at_scan": 0.075789
   },
   {
    "id": "uni-break",
@@ -426,14 +490,14 @@
     1.21,
     2.16
    ],
-   "size": 72.74,
-   "notional": 536.07,
-   "risk_usd": 13.82,
+   "size": 73.74,
+   "notional": 543.44,
+   "risk_usd": 14.01,
    "reward_usd": [
-    16.73,
-    29.82
+    16.96,
+    30.23
    ],
-   "price_at_scan": 6.9715
+   "price_at_scan": 7.04925
   }
  ]
 }
