@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T20:59:28+00:00",
- "equity": 256.68,
- "risk_per_trade": 12.83,
- "scan_note": "08:05 Fri full run: BTC dumped 80.8k to 78.2k in the 07:30-07:45 candles (below the 79.67k 4h low), whole board flushed 5-10% (ENA, ZEC, PUMP, kPEPE, FARTCOIN). Rule says skip fresh entries while BTC is actively dumping, so flat and waiting for a held higher low. HYPE and XMR are the only names showing strength.",
+ "updated_at": "2026-10-29T22:01:27+00:00",
+ "equity": 257.06,
+ "risk_per_trade": 12.85,
+ "scan_note": "09:05 Fri intraday: BTC bounced off the 78.2k flush low to 79.8k and is drifting at ~79.0k, not dumping. HYPE printed its 1h higher low at 91.48 and closed 92.77, so the dip snipe fired: long 5.73 HYPE @ 92.50. Rest of the board still under water.",
  "x_list_note": "Full skim since 04:00: macro risk-off (Geiger: AMZN -8%, INTC -18% after hours), glassnode says alt buyers are back to selling at a loss, gum joking CZ hacked Binance to stop HYPE ATHs, whale_alert shows huge BTC/USDC/USDT outflows from Binance. milkroad shilling Hyperliquid. No specific coin long calls.",
  "snipes": [
   {
@@ -10,8 +10,8 @@
    "coin": "HYPE",
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
-   "status": "WAITING",
-   "why": "Strongest chart on the board: flushed to 89.9 with BTC and ripped straight back to 93-95. Wants a dip that holds above the 89.9 flush low once BTC stops falling.",
+   "status": "IN TRADE",
+   "why": "Strongest chart on the board: flushed to 89.9 with BTC, dipped to 91.48 for a 1h higher low and closed back at 92.77. We're in.",
    "setup": "Pullback to higher low (dip buy)",
    "dir": "below",
    "trigger": 91.6,
@@ -19,23 +19,19 @@
     91.0,
     91.6
    ],
-   "entry": 91.3,
-   "stop": 89.6,
+   "entry": 92.497,
+   "stop": 91.2,
    "targets": [
-    97.1,
+    97.0,
     100.0
    ],
    "conditions": [
     {
-     "t": "Price dips into 91.0-91.6",
-     "auto": {
-      "coin": "HYPE",
-      "op": "<=",
-      "px": 91.6
-     }
+     "t": "Dipped into 91.0-91.6 (low 91.48)",
+     "ok": true
     },
     {
-     "t": "Holds the 89.9 flush low",
+     "t": "Held the 89.9 flush low",
      "auto": {
       "coin": "HYPE",
       "op": ">",
@@ -43,11 +39,11 @@
      }
     },
     {
-     "t": "1h candle closes back above 91 with a higher low",
-     "ok": false
+     "t": "08:00 1h closed 92.77 with a higher low",
+     "ok": true
     },
     {
-     "t": "BTC holds the 78.2k flush low (not still dumping)",
+     "t": "BTC holds the 78.2k flush low",
      "auto": {
       "coin": "BTC",
       "op": ">",
@@ -56,19 +52,21 @@
     }
    ],
    "x_mention": "gumsays joking CZ is stopping HYPE ATHs; milkroad shilling Hyperliquid",
-   "plain": "dip to about 91 and bounce without breaking the 89.9 low",
+   "plain": "already bought it at 92.50, stop 91.20, cashing out at 97",
+   "size": 5.73,
+   "orig_stop": 91.2,
+   "rr_note": "~3.5R to 97.0",
    "rr": [
-    3.41,
-    5.12
+    3.47,
+    5.78
    ],
-   "size": 7.547,
-   "notional": 689.05,
-   "risk_usd": 12.83,
+   "risk_usd": 7.43,
+   "notional": 530.01,
    "reward_usd": [
-    43.77,
-    65.66
+    25.8,
+    42.99
    ],
-   "price_at_scan": 92.854
+   "price_at_scan": 92.6775
   },
   {
    "id": "kpepe-base",
@@ -76,40 +74,40 @@
    "name": "kPEPE",
    "emoji": "\ud83d\udc38",
    "status": "WAITING",
-   "why": "Got flushed from 0.00525 to 0.004763, just under yesterday's 0.004784 4h low. If that floor holds on a retest it's a cheap base buy with big room back to 0.00525.",
-   "setup": "Base retest (dip buy)",
-   "dir": "below",
-   "trigger": 0.00484,
+   "why": "The 0.00478 floor broke (low 0.004659 in the 08:00 hour). Needs a reclaim of 0.00478 on a 1h close before it's a long again.",
+   "setup": "Failed breakdown reclaim",
+   "dir": "above",
+   "trigger": 0.00478,
    "zone": [
     0.00478,
-    0.00484
+    0.00482
    ],
-   "entry": 0.00481,
-   "stop": 0.004745,
+   "entry": 0.0048,
+   "stop": 0.00464,
    "targets": [
     0.00525,
     0.0055
    ],
    "conditions": [
     {
-     "t": "Price dips into 0.00478-0.00484",
-     "auto": {
-      "coin": "kPEPE",
-      "op": "<=",
-      "px": 0.00484
-     }
-    },
-    {
-     "t": "Holds the 0.004763 flush low",
+     "t": "Price back above 0.00478",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.004763
+      "px": 0.00478
      }
     },
     {
-     "t": "1h close back above 0.0049 after the retest",
+     "t": "1h close above 0.00478",
      "ok": false
+    },
+    {
+     "t": "Holds the 0.004659 low",
+     "auto": {
+      "coin": "kPEPE",
+      "op": ">",
+      "px": 0.004659
+     }
     },
     {
      "t": "BTC holds the 78.2k flush low",
@@ -121,26 +119,26 @@
     }
    ],
    "x_mention": null,
-   "plain": "retest the 0.0048 floor and hold it this time",
+   "plain": "claw back above 0.00478 and close an hour there",
    "rr": [
-    6.77,
-    10.62
+    2.81,
+    4.38
    ],
-   "size": 197400.0,
-   "notional": 949.42,
-   "risk_usd": 12.83,
+   "size": 80310.0,
+   "notional": 385.5,
+   "risk_usd": 12.85,
    "reward_usd": [
-    86.85,
-    136.2
+    36.14,
+    56.22
    ],
-   "price_at_scan": 0.004914
+   "price_at_scan": 0.004622
   },
   {
    "id": "pump-reclaim",
    "coin": "PUMP",
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "Broke the 0.004165 double bottom and dumped to 0.003942. Only a 1h close back over 0.004165 turns that into a trapped-shorts reclaim.",
    "setup": "Failed breakdown reclaim",
    "dir": "above",
@@ -191,21 +189,21 @@
     1.92,
     2.8
    ],
-   "size": 51320.0,
-   "notional": 214.52,
-   "risk_usd": 12.83,
+   "size": 51400.0,
+   "notional": 214.85,
+   "risk_usd": 12.85,
    "reward_usd": [
-    24.63,
-    35.92
+    24.67,
+    35.98
    ],
-   "price_at_scan": 0.004073
+   "price_at_scan": 0.004097
   },
   {
    "id": "zec-reclaim",
    "coin": "ZEC",
    "name": "ZEC",
    "emoji": "\ud83d\udee1\ufe0f",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "Nuked 1400 to 1198 in two 4h candles, under the 1230 base. A 1h close back over 1230 means the breakdown failed.",
    "setup": "Failed breakdown reclaim",
    "dir": "above",
@@ -230,8 +228,8 @@
      }
     },
     {
-     "t": "1h close above 1230",
-     "ok": false
+     "t": "1h close above 1230 (08:00 closed 1262)",
+     "ok": true
     },
     {
      "t": "Next 1h holds above 1230 (higher low)",
@@ -252,21 +250,21 @@
     2.0,
     3.9
    ],
-   "size": 0.3055,
-   "notional": 377.57,
-   "risk_usd": 12.83,
+   "size": 0.306,
+   "notional": 378.16,
+   "risk_usd": 12.85,
    "reward_usd": [
-    25.66,
-    50.1
+    25.7,
+    50.18
    ],
-   "price_at_scan": 1249.6
+   "price_at_scan": 1264.3
   },
   {
    "id": "xmr-dip",
    "coin": "XMR",
    "name": "XMR",
    "emoji": "\ud83d\udd76\ufe0f",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "Went the other way during the dump: spiked 601 to 659 on 25.8M, now 625. One spike candle (ORGANIC fail), so only a dip that holds the 600 base gets bought.",
    "setup": "Pullback to base (dip buy)",
    "dir": "below",
@@ -317,60 +315,14 @@
     3.3,
     5.2
    ],
-   "size": 1.283,
-   "notional": 778.78,
-   "risk_usd": 12.83,
+   "size": 1.285,
+   "notional": 780.0,
+   "risk_usd": 12.85,
    "reward_usd": [
-    42.34,
-    66.72
+    42.4,
+    66.82
    ],
-   "price_at_scan": 626.245
-  },
-  {
-   "id": "ena-hl",
-   "coin": "ENA",
-   "name": "ENA",
-   "emoji": "\ud83d\udc80",
-   "status": "DEAD",
-   "why": "Was armed at the 0.2079 higher low, then the dump smashed it to 0.184. 1h downtrend, setup gone.",
-   "setup": "Pullback to higher low",
-   "dir": "below",
-   "trigger": 0.209,
-   "zone": [
-    0.2079,
-    0.209
-   ],
-   "entry": 0.2085,
-   "stop": 0.2071,
-   "targets": [
-    0.2164,
-    0.2218
-   ],
-   "conditions": [
-    {
-     "t": "Holds 0.2079",
-     "auto": {
-      "coin": "ENA",
-      "op": ">",
-      "px": 0.2079
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "nothing, it broke down",
-   "rr": [
-    5.64,
-    9.5
-   ],
-   "size_note": "capped at 4x equity notional",
-   "size": 4924.0,
-   "notional": 1026.74,
-   "risk_usd": 6.89,
-   "reward_usd": [
-    38.9,
-    65.49
-   ],
-   "price_at_scan": 0.18798
+   "price_at_scan": 614.245
   }
  ]
 }
