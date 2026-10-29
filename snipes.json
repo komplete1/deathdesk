@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T08:52:15+00:00",
+ "updated_at": "2026-10-29T09:53:52+00:00",
  "equity": 273.95,
  "risk_per_trade": 13.7,
- "scan_note": "20:00 full run: flat after the kPEPE runner stopped (+$3.3). BTC 79.9k chopping under the 80.5k lower high, not dumping. Whole $5M+ board red except INIT (+13%, 3x, choppy). kPEPE 0.00496 holding its 0.004866 higher low, PUMP 0.00422 still above the 0.004165 bottom. No trigger, no trade.",
+ "scan_note": "21:00 intraday: still flat. BTC bounced to 80.2k, not dumping. kPEPE wicked 0.005065 at 20:00 but sits 0.00497, no hourly close over 0.00503 yet. HYPE 79.3 and XPL 0.0767 creeping up on their triggers, PUMP 0.00427 holding above the 0.004165 bottom. No trigger, no trade.",
  "x_list_note": "X list skim (20:00 run): no coin calls. blackwidowbtc says 'Bitcoin winter is ending, entering SPRING'; rest is banter.",
  "snipes": [
   {
@@ -10,7 +10,7 @@
    "coin": "kPEPE",
    "name": "PEPE",
    "emoji": "\ud83d\udc38",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "Runner got stopped at 0.00491 for a small win (+$3.3). Still the strongest meme on the board. If 0.004866 holds as the 1h higher low and it gets back over 0.00503, we reload.",
    "setup": "Higher low hold + reclaim",
    "dir": "above",
@@ -68,7 +68,7 @@
     8.91,
     25.35
    ],
-   "price_at_scan": 0.004953
+   "price_at_scan": 0.00497
   },
   {
    "id": "pump-reclaim",
@@ -133,7 +133,7 @@
     15.82,
     39.85
    ],
-   "price_at_scan": 0.004212
+   "price_at_scan": 0.004269
   },
   {
    "id": "pump-dbl",
@@ -194,14 +194,14 @@
     13.7,
     25.44
    ],
-   "price_at_scan": 0.004212
+   "price_at_scan": 0.004269
   },
   {
    "id": "hype-reclaim",
    "coin": "HYPE",
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "The house coin. Dumped 80.0 to 78.09 with BTC, bounced to 79.47, now chopping 78.5-79.2 with a 78.479 1h higher low. Reclaim 80.05 and we're in.",
    "setup": "Lost-level reclaim",
    "dir": "above",
@@ -255,7 +255,7 @@
     10.57,
     14.48
    ],
-   "price_at_scan": 78.7925
+   "price_at_scan": 79.2745
   },
   {
    "id": "init-break",
@@ -320,7 +320,7 @@
     27.08,
     30.77
    ],
-   "price_at_scan": 0.20938
+   "price_at_scan": 0.21668
   },
   {
    "id": "fart-reclaim",
@@ -385,14 +385,14 @@
     20.21,
     38.36
    ],
-   "price_at_scan": 0.12784
+   "price_at_scan": 0.12876
   },
   {
    "id": "xpl-reclaim",
    "coin": "XPL",
    "name": "XPL",
    "emoji": "\u26a1",
-   "status": "WAITING",
+   "status": "ARMED",
    "why": "Momentum small cap. Lower highs since 0.0792, new low 0.0738. Only a long once it breaks the downtrend.",
    "setup": "Downtrend break",
    "dir": "above",
@@ -446,7 +446,7 @@
     18.59,
     29.36
    ],
-   "price_at_scan": 0.075007
+   "price_at_scan": 0.076703
   },
   {
    "id": "uni-break",
@@ -511,7 +511,7 @@
     16.58,
     29.56
    ],
-   "price_at_scan": 6.9946
+   "price_at_scan": 7.0411
   }
  ]
 }
