@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T13:52:14+00:00",
+ "updated_at": "2026-10-29T15:00:29+00:00",
  "equity": 265.78,
  "risk_per_trade": 13.29,
- "scan_note": "01:05 Fri: halt lifted, flat at 265.78. HYPE (+14%) and LIT ripping but extended; no clean long with 3R room this hour. BTC 80.2k flat.",
+ "scan_note": "02:05 Fri: flat at 265.78. BTC ripped 80.3k to 81.5k this hour; kPEPE and ENA pushed with it but sit right under 4h highs with under 3R of room. No entry.",
  "x_list_note": "Intraday run: X list not skimmed (full runs only). Last skim (20:00): no coin calls.",
  "snipes": [
   {
@@ -10,8 +10,8 @@
    "coin": "PUMP",
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
-   "status": "ARMED",
-   "why": "1h higher lows 0.004321 then 0.00436, pushing the 0.004554 4h highs. Buy a break and hold over the 4h highs, not under them (only 2.5R of room below).",
+   "status": "WAITING",
+   "why": "1h higher lows 0.00436 then 0.004376, 01:30 poke to 0.004485 faded. Still under the 0.004554 4h highs; buy the break and a held retest, not under the ceiling.",
    "setup": "Breakout + retest",
    "dir": "above",
    "trigger": 0.004555,
@@ -35,11 +35,11 @@
      }
     },
     {
-     "t": "Holds the 0.00436 1h higher low",
+     "t": "Holds the 0.004376 1h higher low",
      "auto": {
       "coin": "PUMP",
       "op": ">",
-      "px": 0.00436
+      "px": 0.004376
      }
     },
     {
@@ -68,7 +68,7 @@
     18.4,
     33.74
    ],
-   "price_at_scan": 0.004417
+   "price_at_scan": 0.00443
   },
   {
    "id": "hype-dip",
@@ -76,7 +76,7 @@
    "name": "HYPE",
    "emoji": "\ud83d\ude80",
    "status": "WAITING",
-   "why": "Ripped 79 to 92 on a billion in volume. Way too late to chase (rule 3); buy the first real pullback into the 23:00 base.",
+   "why": "Ripped 79 to 92.1 on a billion in volume, now chopping 90.5-91.8. Way too late to chase (rule 3); buy the first real pullback into the 23:00 base.",
    "setup": "Base bounce (dip buy)",
    "dir": "below",
    "trigger": 88.6,
@@ -134,7 +134,7 @@
     45.75,
     68.63
    ],
-   "price_at_scan": 90.949
+   "price_at_scan": 90.873
   },
   {
    "id": "lit-retest",
@@ -142,7 +142,7 @@
    "name": "LIT",
    "emoji": "\ud83d\udd25",
    "status": "WAITING",
-   "why": "23:30 15m candle squeezed 2.96 to 3.22 on 10M volume, now fading. Retest of the 3.0-3.07 breakout shelf is the entry, not the top.",
+   "why": "23:30 squeeze 2.92 to 3.24 faded; 01:00 tagged 3.057 inside the shelf but printed a lower 1h low. Needs a 1h higher low in 3.0-3.07 before it's a buy.",
    "setup": "Breakout + retest",
    "dir": "below",
    "trigger": 3.07,
@@ -199,7 +199,7 @@
     22.15,
     45.41
    ],
-   "price_at_scan": 3.12505
+   "price_at_scan": 3.09365
   },
   {
    "id": "ena-hl",
@@ -207,39 +207,39 @@
    "name": "ENA",
    "emoji": "\u26a1",
    "status": "WAITING",
-   "why": "Stepping up: 1h lows 0.20036 then 0.2033, under the 0.2088 day high. Too little room at 0.2058; buy a retest of the 0.2033 low.",
+   "why": "Broke the 0.2088 day high to 0.21177 at 01:30. Too little room under the 0.2146-0.2164 4h highs from 0.209; buy a retest of the 0.2056 1h low.",
    "setup": "Higher low hold",
    "dir": "below",
-   "trigger": 0.2041,
+   "trigger": 0.2065,
    "zone": [
-    0.2034,
-    0.2041
+    0.2056,
+    0.2065
    ],
-   "entry": 0.2038,
-   "stop": 0.2026,
+   "entry": 0.206,
+   "stop": 0.2045,
    "targets": [
-    0.2088,
-    0.214
+    0.2146,
+    0.2164
    ],
    "conditions": [
     {
-     "t": "Price dips into 0.2034-0.2041",
+     "t": "Price dips into 0.2056-0.2065",
      "auto": {
       "coin": "ENA",
       "op": "<=",
-      "px": 0.2041
+      "px": 0.2065
      }
     },
     {
-     "t": "Holds 0.2033",
+     "t": "Holds 0.2045",
      "auto": {
       "coin": "ENA",
       "op": ">",
-      "px": 0.2033
+      "px": 0.2045
      }
     },
     {
-     "t": "15m higher low in the zone",
+     "t": "15m higher low prints in the zone",
      "ok": false
     },
     {
@@ -252,60 +252,60 @@
     }
    ],
    "x_mention": null,
-   "plain": "dip to 0.204 and hold 0.2033",
+   "plain": "dip back to 0.2056-0.2065 and hold",
    "rr": [
-    4.17,
-    8.5
+    5.73,
+    6.93
    ],
    "size_note": "capped at 4x equity notional",
-   "size": 5216.0,
+   "size": 5161.0,
    "notional": 1063.1,
-   "risk_usd": 6.26,
+   "risk_usd": 7.74,
    "reward_usd": [
-    26.08,
-    53.21
+    44.38,
+    53.67
    ],
-   "price_at_scan": 0.205675
+   "price_at_scan": 0.208775
   },
   {
    "id": "kpepe-reload",
    "coin": "kPEPE",
    "name": "PEPE",
    "emoji": "\ud83d\udc38",
-   "status": "WAITING",
-   "why": "Base at 0.004784 after the 21:00 break; chopping 0.00485-0.00496 under the 0.00503 reclaim level.",
-   "setup": "Higher low hold + reclaim",
+   "status": "ARMED",
+   "why": "Reclaimed 0.00503 on the 01:30 15m push (0.005069) and held a 15m retest at 0.004986. Now pinned under the 0.00507 4h highs; only 2.4R of room here, so wait for a break and retest of 0.00507.",
+   "setup": "Breakout + retest",
    "dir": "above",
-   "trigger": 0.00503,
+   "trigger": 0.00507,
    "zone": [
-    0.00503,
-    0.00506
+    0.00507,
+    0.0051
    ],
-   "entry": 0.00505,
-   "stop": 0.00476,
+   "entry": 0.00508,
+   "stop": 0.00497,
    "targets": [
-    0.00518,
-    0.00542
+    0.00524,
+    0.0054
    ],
    "conditions": [
     {
-     "t": "Price back above 0.00503",
+     "t": "Price above 0.00507",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.00503
+      "px": 0.00507
      }
     },
     {
-     "t": "Holds above the 0.004784 21:00 low",
+     "t": "Holds the 0.004986 15m retest low",
      "auto": {
       "coin": "kPEPE",
       "op": ">",
-      "px": 0.004784
+      "px": 0.004986
      }
     },
     {
-     "t": "1h close above 0.00503",
+     "t": "15m retest of 0.00507 holds",
      "ok": false
     },
     {
@@ -318,19 +318,19 @@
     }
    ],
    "x_mention": null,
-   "plain": "hold above 0.004784, then get back over 0.00503 and close an hour up there",
+   "plain": "break 0.00507, dip back to it and hold",
    "rr": [
-    0.45,
-    1.28
+    1.45,
+    2.91
    ],
-   "size": 45830.0,
-   "notional": 231.43,
+   "size": 120800.0,
+   "notional": 613.76,
    "risk_usd": 13.29,
    "reward_usd": [
-    5.96,
-    16.96
+    19.33,
+    38.66
    ],
-   "price_at_scan": 0.004876
+   "price_at_scan": 0.005038
   },
   {
    "id": "xpl-reclaim",
@@ -391,7 +391,7 @@
     12.46,
     21.6
    ],
-   "price_at_scan": 0.076814
+   "price_at_scan": 0.077027
   }
  ]
 }
