@@ -1,15 +1,16 @@
 {
- "updated": 1793232116298,
+ "updated": 1793234118273,
  "plan": {
   "kPEPE": {
    "side": "long",
    "entry": 0.004836,
-   "size": 92000,
-   "sl": 0.00493,
+   "size": 46000,
+   "sl": 0.00485,
    "tp": 0.00542,
-   "partial_trigger": 0.005128,
-   "partial_size": 46000,
-   "be_price": 0.00493
+   "partial_trigger": null,
+   "partial_size": 0,
+   "be_price": 0.00485,
+   "note": "Danny 29 Oct: NO half-take, let it run to TP"
   }
  },
  "lessons": [
