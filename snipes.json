@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-29T15:00:29+00:00",
+ "updated_at": "2026-10-29T15:56:07+00:00",
  "equity": 265.78,
  "risk_per_trade": 13.29,
- "scan_note": "02:05 Fri: flat at 265.78. BTC ripped 80.3k to 81.5k this hour; kPEPE and ENA pushed with it but sit right under 4h highs with under 3R of room. No entry.",
+ "scan_note": "03:05 Fri: flat at 265.78. BTC ripped again to 81.9k; whole board green (HYPE +18%, kPEPE +11%, LIT +10%). Everything is extended or pinned under 4h highs, so no chase (rule 3/4). No entry.",
  "x_list_note": "Intraday run: X list not skimmed (full runs only). Last skim (20:00): no coin calls.",
  "snipes": [
   {
@@ -10,8 +10,8 @@
    "coin": "PUMP",
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
-   "status": "WAITING",
-   "why": "1h higher lows 0.00436 then 0.004376, 01:30 poke to 0.004485 faded. Still under the 0.004554 4h highs; buy the break and a held retest, not under the ceiling.",
+   "status": "ARMED",
+   "why": "New 1h higher low 0.004424, now 0.00452 pressing the 0.004554 4h ceiling (3 touches). Buy the break and a held retest, not under the lid.",
    "setup": "Breakout + retest",
    "dir": "above",
    "trigger": 0.004555,
@@ -20,7 +20,7 @@
     0.00459
    ],
    "entry": 0.00457,
-   "stop": 0.00444,
+   "stop": 0.00441,
    "targets": [
     0.00475,
     0.0049
@@ -35,11 +35,11 @@
      }
     },
     {
-     "t": "Holds the 0.004376 1h higher low",
+     "t": "Holds the 0.004424 1h higher low",
      "auto": {
       "coin": "PUMP",
       "op": ">",
-      "px": 0.004376
+      "px": 0.004424
      }
     },
     {
@@ -58,53 +58,53 @@
    "x_mention": null,
    "plain": "rip through 0.00455, dip back to it and hold",
    "rr": [
-    1.38,
-    2.54
+    1.12,
+    2.06
    ],
-   "size": 102200.0,
-   "notional": 467.19,
+   "size": 83060.0,
+   "notional": 379.6,
    "risk_usd": 13.29,
    "reward_usd": [
-    18.4,
-    33.74
+    14.95,
+    27.41
    ],
-   "price_at_scan": 0.00443
+   "price_at_scan": 0.004522
   },
   {
-   "id": "hype-dip",
-   "coin": "HYPE",
-   "name": "HYPE",
-   "emoji": "\ud83d\ude80",
+   "id": "kpepe-retest",
+   "coin": "kPEPE",
+   "name": "PEPE",
+   "emoji": "\ud83d\udc38",
    "status": "WAITING",
-   "why": "Ripped 79 to 92.1 on a billion in volume, now chopping 90.5-91.8. Way too late to chase (rule 3); buy the first real pullback into the 23:00 base.",
-   "setup": "Base bounce (dip buy)",
+   "why": "Broke 0.00507 and the 0.005244 4h high in one go, ran to 0.005433 on 9.5M. Missed the retest; buy a dip back into the old 0.00524 high if it holds.",
+   "setup": "Breakout + retest",
    "dir": "below",
-   "trigger": 88.6,
+   "trigger": 0.00527,
    "zone": [
-    88.0,
-    88.6
+    0.00522,
+    0.00527
    ],
-   "entry": 88.3,
-   "stop": 87.3,
+   "entry": 0.005245,
+   "stop": 0.00513,
    "targets": [
-    92.1,
-    94.0
+    0.0055,
+    0.0058
    ],
    "conditions": [
     {
-     "t": "Price dips into 88.0-88.6",
+     "t": "Price dips into 0.00522-0.00527",
      "auto": {
-      "coin": "HYPE",
+      "coin": "kPEPE",
       "op": "<=",
-      "px": 88.6
+      "px": 0.00527
      }
     },
     {
-     "t": "Holds the 87.37 23:00 1h low",
+     "t": "Holds 0.00513",
      "auto": {
-      "coin": "HYPE",
+      "coin": "kPEPE",
       "op": ">",
-      "px": 87.37
+      "px": 0.00513
      }
     },
     {
@@ -121,85 +121,19 @@
     }
    ],
    "x_mention": null,
-   "plain": "dump to about 88 and bounce without losing 87.4",
+   "plain": "dip back to the old 0.00524 high and bounce",
    "rr": [
-    3.8,
-    5.7
+    2.22,
+    4.83
    ],
-   "size_note": "capped at 4x equity notional",
-   "size": 12.04,
-   "notional": 1063.1,
-   "risk_usd": 12.04,
-   "reward_usd": [
-    45.75,
-    68.63
-   ],
-   "price_at_scan": 90.873
-  },
-  {
-   "id": "lit-retest",
-   "coin": "LIT",
-   "name": "LIT",
-   "emoji": "\ud83d\udd25",
-   "status": "WAITING",
-   "why": "23:30 squeeze 2.92 to 3.24 faded; 01:00 tagged 3.057 inside the shelf but printed a lower 1h low. Needs a 1h higher low in 3.0-3.07 before it's a buy.",
-   "setup": "Breakout + retest",
-   "dir": "below",
-   "trigger": 3.07,
-   "zone": [
-    3.0,
-    3.07
-   ],
-   "entry": 3.04,
-   "stop": 2.92,
-   "targets": [
-    3.24,
-    3.45
-   ],
-   "conditions": [
-    {
-     "t": "Price dips into 3.00-3.07",
-     "auto": {
-      "coin": "LIT",
-      "op": "<=",
-      "px": 3.07
-     }
-    },
-    {
-     "t": "Holds the 2.9236 23:00 low",
-     "auto": {
-      "coin": "LIT",
-      "op": ">",
-      "px": 2.9236
-     }
-    },
-    {
-     "t": "15m close back above 3.07 from the zone",
-     "ok": false
-    },
-    {
-     "t": "BTC above the 79.2k weekly low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 79184
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "drop back to about 3.05 and hold it",
-   "rr": [
-    1.67,
-    3.42
-   ],
-   "size": 110.7,
-   "notional": 336.68,
+   "size": 115600.0,
+   "notional": 606.14,
    "risk_usd": 13.29,
    "reward_usd": [
-    22.15,
-    45.41
+    29.47,
+    64.14
    ],
-   "price_at_scan": 3.09365
+   "price_at_scan": 0.005379
   },
   {
    "id": "ena-hl",
@@ -207,35 +141,35 @@
    "name": "ENA",
    "emoji": "\u26a1",
    "status": "WAITING",
-   "why": "Broke the 0.2088 day high to 0.21177 at 01:30. Too little room under the 0.2146-0.2164 4h highs from 0.209; buy a retest of the 0.2056 1h low.",
+   "why": "0.2124 sitting right under the 0.2145-0.2164 4h highs, no room. Buy a pullback into the 02:00 1h low 0.2079.",
    "setup": "Higher low hold",
    "dir": "below",
-   "trigger": 0.2065,
+   "trigger": 0.209,
    "zone": [
-    0.2056,
-    0.2065
+    0.2079,
+    0.209
    ],
-   "entry": 0.206,
-   "stop": 0.2045,
+   "entry": 0.2085,
+   "stop": 0.2065,
    "targets": [
-    0.2146,
+    0.2145,
     0.2164
    ],
    "conditions": [
     {
-     "t": "Price dips into 0.2056-0.2065",
+     "t": "Price dips into 0.2079-0.2090",
      "auto": {
       "coin": "ENA",
       "op": "<=",
-      "px": 0.2065
+      "px": 0.209
      }
     },
     {
-     "t": "Holds 0.2045",
+     "t": "Holds 0.2065",
      "auto": {
       "coin": "ENA",
       "op": ">",
-      "px": 0.2045
+      "px": 0.2065
      }
     },
     {
@@ -252,60 +186,60 @@
     }
    ],
    "x_mention": null,
-   "plain": "dip back to 0.2056-0.2065 and hold",
+   "plain": "dip back to about 0.208 and hold",
    "rr": [
-    5.73,
-    6.93
+    3.0,
+    3.95
    ],
    "size_note": "capped at 4x equity notional",
-   "size": 5161.0,
+   "size": 5099.0,
    "notional": 1063.1,
-   "risk_usd": 7.74,
+   "risk_usd": 10.2,
    "reward_usd": [
-    44.38,
-    53.67
+    30.59,
+    40.28
    ],
-   "price_at_scan": 0.208775
+   "price_at_scan": 0.212135
   },
   {
-   "id": "kpepe-reload",
-   "coin": "kPEPE",
-   "name": "PEPE",
-   "emoji": "\ud83d\udc38",
-   "status": "ARMED",
-   "why": "Reclaimed 0.00503 on the 01:30 15m push (0.005069) and held a 15m retest at 0.004986. Now pinned under the 0.00507 4h highs; only 2.4R of room here, so wait for a break and retest of 0.00507.",
+   "id": "lit-retest",
+   "coin": "LIT",
+   "name": "LIT",
+   "emoji": "\ud83d\udd25",
+   "status": "WAITING",
+   "why": "Poked above the 3.242 high to 3.256 with no retest yet. Buy a held retest of 3.20-3.23.",
    "setup": "Breakout + retest",
-   "dir": "above",
-   "trigger": 0.00507,
+   "dir": "below",
+   "trigger": 3.23,
    "zone": [
-    0.00507,
-    0.0051
+    3.2,
+    3.23
    ],
-   "entry": 0.00508,
-   "stop": 0.00497,
+   "entry": 3.215,
+   "stop": 3.115,
    "targets": [
-    0.00524,
-    0.0054
+    3.45,
+    3.55
    ],
    "conditions": [
     {
-     "t": "Price above 0.00507",
+     "t": "Price dips into 3.20-3.23",
      "auto": {
-      "coin": "kPEPE",
-      "op": ">",
-      "px": 0.00507
+      "coin": "LIT",
+      "op": "<=",
+      "px": 3.23
      }
     },
     {
-     "t": "Holds the 0.004986 15m retest low",
+     "t": "Holds 3.12 (02:15 15m low)",
      "auto": {
-      "coin": "kPEPE",
+      "coin": "LIT",
       "op": ">",
-      "px": 0.004986
+      "px": 3.12
      }
     },
     {
-     "t": "15m retest of 0.00507 holds",
+     "t": "15m close back above 3.23 from the zone",
      "ok": false
     },
     {
@@ -318,52 +252,121 @@
     }
    ],
    "x_mention": null,
-   "plain": "break 0.00507, dip back to it and hold",
+   "plain": "dip back to about 3.21 and hold",
    "rr": [
-    1.45,
-    2.91
+    2.35,
+    3.35
    ],
-   "size": 120800.0,
-   "notional": 613.76,
+   "size": 132.9,
+   "notional": 427.27,
    "risk_usd": 13.29,
    "reward_usd": [
-    19.33,
-    38.66
+    31.23,
+    44.52
    ],
-   "price_at_scan": 0.005038
+   "price_at_scan": 3.25645
   },
   {
-   "id": "xpl-reclaim",
+   "id": "hype-dip",
+   "coin": "HYPE",
+   "name": "HYPE",
+   "emoji": "\ud83d\ude80",
+   "status": "WAITING",
+   "why": "New leg 90.6 to 94.6, +18% day on 1.4B. Way too late to chase; buy a pullback into the 90.5-91 1h lows.",
+   "setup": "Base bounce (dip buy)",
+   "dir": "below",
+   "trigger": 91.0,
+   "zone": [
+    90.5,
+    91.0
+   ],
+   "entry": 90.8,
+   "stop": 89.5,
+   "targets": [
+    94.6,
+    97.0
+   ],
+   "conditions": [
+    {
+     "t": "Price dips into 90.5-91.0",
+     "auto": {
+      "coin": "HYPE",
+      "op": "<=",
+      "px": 91.0
+     }
+    },
+    {
+     "t": "Holds 89.5",
+     "auto": {
+      "coin": "HYPE",
+      "op": ">",
+      "px": 89.5
+     }
+    },
+    {
+     "t": "15m higher low prints in the zone",
+     "ok": false
+    },
+    {
+     "t": "BTC above the 79.2k weekly low",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 79184
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "dump to about 91 and bounce",
+   "rr": [
+    2.92,
+    4.77
+   ],
+   "size": 10.22,
+   "notional": 928.26,
+   "risk_usd": 13.29,
+   "reward_usd": [
+    38.85,
+    63.38
+   ],
+   "price_at_scan": 94.3275
+  },
+  {
+   "id": "xpl-retest",
    "coin": "XPL",
    "name": "XPL",
    "emoji": "\ud83e\uddea",
    "status": "WAITING",
-   "why": "Lost the 0.0772 reclaim again (0.0767), thin volume and wide spread. Needs a clean 1h close over 0.0776.",
-   "setup": "Range reclaim",
-   "dir": "above",
-   "trigger": 0.0776,
+   "why": "Finally cleared 0.0776 to 0.0794 but on thin volume (319k this hour). Only a held retest of 0.0780 with a tight spread.",
+   "setup": "Breakout + retest",
+   "dir": "below",
+   "trigger": 0.0781,
    "zone": [
-    0.0776,
-    0.0779
+    0.0778,
+    0.0781
    ],
-   "entry": 0.0777,
-   "stop": 0.0761,
+   "entry": 0.078,
+   "stop": 0.0768,
    "targets": [
-    0.0792,
-    0.0803
+    0.0803,
+    0.083
    ],
    "conditions": [
     {
-     "t": "Price above 0.0776",
+     "t": "Price dips into 0.0778-0.0781",
      "auto": {
       "coin": "XPL",
-      "op": ">",
-      "px": 0.0776
+      "op": "<=",
+      "px": 0.0781
      }
     },
     {
-     "t": "1h close above 0.0776",
-     "ok": false
+     "t": "Holds 0.0768",
+     "auto": {
+      "coin": "XPL",
+      "op": ">",
+      "px": 0.0768
+     }
     },
     {
      "t": "Spread under 5bp",
@@ -379,19 +382,19 @@
     }
    ],
    "x_mention": null,
-   "plain": "close an hour over 0.0776 with a tight spread",
+   "plain": "dip back to 0.078 and hold with a tight spread",
    "rr": [
-    0.94,
-    1.62
+    1.92,
+    4.17
    ],
-   "size": 8306.0,
-   "notional": 645.4,
+   "size": 11070.0,
+   "notional": 863.85,
    "risk_usd": 13.29,
    "reward_usd": [
-    12.46,
-    21.6
+    25.47,
+    55.37
    ],
-   "price_at_scan": 0.077027
+   "price_at_scan": 0.079311
   }
  ]
 }
