@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-29T11:56:12+00:00",
- "equity": 268.53,
- "risk_per_trade": 13.43,
- "scan_note": "23:00 intraday: still IN PUMP (0.00435, stop 0.00431, TP 0.00455), 15m lows holding 0.00434. HYPE kept ripping to 88.1 with no pullback, still not chasing. BTC 80.15k, flat.",
- "x_list_note": "X list skim (20:00 run): no coin calls. blackwidowbtc says 'Bitcoin winter is ending, entering SPRING'; rest is banter.",
+ "updated_at": "2026-10-29T12:55:25+00:00",
+ "equity": 265.78,
+ "risk_per_trade": 13.29,
+ "scan_note": "00:00 full run: DAILY BREAKER fired 23:16 Thu (equity 266.26, down 10.6% on the day) and flattened PUMP at 0.004338. No new entries until Fri 23:16 Melb. HYPE 89.2 still running, BTC 80.0k flat.",
+ "x_list_note": "X list skim skipped this run: breaker active, no entries possible. Last skim (20:00): no coin calls.",
  "snipes": [
   {
    "id": "kpepe-reload",
@@ -26,6 +26,10 @@
     0.00542
    ],
    "conditions": [
+    {
+     "t": "Daily loss breaker off (after Fri 30 Oct 23:16 Melb)",
+     "ok": false
+    },
     {
      "t": "Price back above 0.00503",
      "auto": {
@@ -61,14 +65,14 @@
     0.45,
     1.28
    ],
-   "size": 46310.0,
-   "notional": 233.87,
-   "risk_usd": 13.43,
+   "size": 45830.0,
+   "notional": 231.43,
+   "risk_usd": 13.29,
    "reward_usd": [
-    6.02,
-    17.13
+    5.96,
+    16.96
    ],
-   "price_at_scan": 0.004923
+   "price_at_scan": 0.004893
   },
   {
    "id": "pump-reclaim",
@@ -91,6 +95,10 @@
     0.00484
    ],
    "conditions": [
+    {
+     "t": "Daily loss breaker off (after Fri 30 Oct 23:16 Melb)",
+     "ok": false
+    },
     {
      "t": "Price back above 0.0045",
      "auto": {
@@ -126,22 +134,22 @@
     1.15,
     2.91
    ],
-   "size": 122100.0,
-   "notional": 551.85,
-   "risk_usd": 13.43,
+   "size": 120800.0,
+   "notional": 546.1,
+   "risk_usd": 13.29,
    "reward_usd": [
-    15.51,
-    39.07
+    15.34,
+    38.66
    ],
-   "price_at_scan": 0.004347
+   "price_at_scan": 0.00438
   },
   {
    "id": "pump-dbl",
    "coin": "PUMP",
    "name": "PUMP",
    "emoji": "\ud83d\udc8a",
-   "status": "IN TRADE",
-   "why": "TRIGGERED and filled. Held the 0.004165 double bottom with higher lows, then closed the 21:00 hour at 0.004371 over 0.00435 on 75M day volume. Stop under the 21:45 15m higher low.",
+   "status": "DEAD",
+   "why": "Flattened by the daily loss breaker at 23:16 (0.004338, -0.5R), not by its stop: lows held 0.004321 over the 0.00431 stop. Setup itself still intact at 0.00438.",
    "setup": "Double bottom + 1h higher low",
    "dir": "above",
    "trigger": 0.00435,
@@ -183,20 +191,18 @@
    ],
    "x_mention": null,
    "plain": "hold the 0.004165 bottom, then bust over 0.00435 and close an hour up there",
-   "size": 250000,
-   "orig_stop": 0.00431,
-   "rr_note": "Stop 0.00431, TP 0.00455 under the 0.004554 4h highs, about 3.3R. Breakeven move at 2R (0.004478).",
    "rr": [
     2.0,
     3.29
    ],
-   "risk_usd": 14.0,
-   "notional": 1091.5,
+   "size": 237300.0,
+   "notional": 1036.15,
+   "risk_usd": 13.29,
    "reward_usd": [
-    28.0,
-    46.0
+    26.58,
+    43.67
    ],
-   "price_at_scan": 0.004347
+   "price_at_scan": 0.00438
   },
   {
    "id": "hype-retest",
@@ -204,7 +210,7 @@
    "name": "HYPE",
    "emoji": "\ud83d\udfe2",
    "status": "WAITING",
-   "why": "HYPE ran 79 to 88 on 750M volume. Not buying the top: want a dip into the 86.0-86.6 15m higher lows and a hold.",
+   "why": "HYPE ran 79 to 89.5 on 500M+ volume in 3 hours. Not chasing; want a dip into the 86.0-86.6 15m higher-low zone once the breaker lifts.",
    "setup": "Spike retest (dip buy)",
    "dir": "below",
    "trigger": 86.5,
@@ -219,6 +225,10 @@
     90.0
    ],
    "conditions": [
+    {
+     "t": "Daily loss breaker off (after Fri 30 Oct 23:16 Melb)",
+     "ok": false
+    },
     {
      "t": "Dips into 86.0-86.6",
      "auto": {
@@ -255,14 +265,14 @@
     6.17
    ],
    "size_note": "capped at 4x equity notional",
-   "size": 12.45,
-   "notional": 1074.11,
-   "risk_usd": 7.47,
+   "size": 12.32,
+   "notional": 1063.1,
+   "risk_usd": 7.39,
    "reward_usd": [
-    23.03,
-    46.05
+    22.79,
+    45.58
    ],
-   "price_at_scan": 87.4415
+   "price_at_scan": 89.214
   },
   {
    "id": "init-break",
@@ -285,6 +295,10 @@
     0.2582
    ],
    "conditions": [
+    {
+     "t": "Daily loss breaker off (after Fri 30 Oct 23:16 Melb)",
+     "ok": false
+    },
     {
      "t": "Price above today's 0.2282 high",
      "auto": {
@@ -320,14 +334,14 @@
     1.98,
     2.25
    ],
-   "size": 1033.0,
-   "notional": 236.57,
-   "risk_usd": 13.43,
+   "size": 1022.0,
+   "notional": 234.11,
+   "risk_usd": 13.29,
    "reward_usd": [
-    26.55,
-    30.17
+    26.27,
+    29.85
    ],
-   "price_at_scan": 0.229555
+   "price_at_scan": 0.223855
   },
   {
    "id": "fart-reclaim",
@@ -350,6 +364,10 @@
     0.142
    ],
    "conditions": [
+    {
+     "t": "Daily loss breaker off (after Fri 30 Oct 23:16 Melb)",
+     "ok": false
+    },
     {
      "t": "Price back above 0.1305",
      "auto": {
@@ -385,21 +403,21 @@
     1.47,
     2.8
    ],
-   "size": 3357.0,
-   "notional": 439.16,
-   "risk_usd": 13.43,
+   "size": 3322.0,
+   "notional": 434.58,
+   "risk_usd": 13.29,
    "reward_usd": [
-    19.81,
-    37.6
+    19.6,
+    37.21
    ],
-   "price_at_scan": 0.12943
+   "price_at_scan": 0.1297
   },
   {
    "id": "xpl-reclaim",
    "coin": "XPL",
    "name": "XPL",
    "emoji": "\u26a1",
-   "status": "ARMED",
+   "status": "WAITING",
    "why": "21:00 hour closed over 0.0772 but 22:00 slipped back to 0.0770 and spread was too wide. Need a fresh 1h close over 0.0772 with a tight book.",
    "setup": "Downtrend break",
    "dir": "above",
@@ -415,6 +433,10 @@
     0.0803
    ],
    "conditions": [
+    {
+     "t": "Daily loss breaker off (after Fri 30 Oct 23:16 Melb)",
+     "ok": false
+    },
     {
      "t": "Price above 0.0772 (last lower high)",
      "auto": {
@@ -450,14 +472,14 @@
     1.36,
     2.14
    ],
-   "size": 9593.0,
-   "notional": 741.53,
-   "risk_usd": 13.43,
+   "size": 9493.0,
+   "notional": 733.8,
+   "risk_usd": 13.29,
    "reward_usd": [
-    18.23,
-    28.78
+    18.04,
+    28.48
    ],
-   "price_at_scan": 0.076971
+   "price_at_scan": 0.076936
   },
   {
    "id": "uni-break",
@@ -480,6 +502,10 @@
     7.78
    ],
    "conditions": [
+    {
+     "t": "Daily loss breaker off (after Fri 30 Oct 23:16 Melb)",
+     "ok": false
+    },
     {
      "t": "Price above 7.35",
      "auto": {
@@ -515,14 +541,14 @@
     1.21,
     2.16
    ],
-   "size": 70.68,
-   "notional": 520.94,
-   "risk_usd": 13.43,
+   "size": 69.95,
+   "notional": 515.51,
+   "risk_usd": 13.29,
    "reward_usd": [
-    16.26,
-    28.98
+    16.09,
+    28.68
    ],
-   "price_at_scan": 7.19265
+   "price_at_scan": 7.2012
   }
  ]
 }
