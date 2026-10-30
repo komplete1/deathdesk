@@ -1,17 +1,27 @@
 {
- "updated": 1793314814244,
+ "updated": 1793319150824,
  "plan": {
-  "HYPE": {
-   "side": "long",
-   "entry": 92.497,
-   "size": 5.73,
-   "sl": 91.2,
-   "tp": 97.0,
-   "orig_sl": 91.2,
-   "opened": "2026-10-30 09:00 Melb",
-   "setup": "1h pullback to higher low (91.48 HL above 89.9 flush low), snipe hype-dip",
-   "partial_trigger": null,
-   "time_exit": "~15:00 Melb if not +1R (93.79); 2R=95.09 -> stop to BE/1h HL"
+  "ENA": {
+   "side": "short",
+   "setup": "turtle_short_4h",
+   "entry": 0.17127,
+   "sl": 0.1926,
+   "orig_sl": 0.1926,
+   "size": 106,
+   "risk_cap": 0.01,
+   "exit": "trail on 20-bar 4h high (stop only moves down)",
+   "opened": "2026-10-30 11:10 AEDT"
+  },
+  "NEAR": {
+   "side": "short",
+   "setup": "turtle_short_4h",
+   "entry": 4.0472,
+   "sl": 4.4,
+   "orig_sl": 4.4,
+   "size": 6.2,
+   "risk_cap": 0.01,
+   "exit": "trail on 20-bar 4h high (stop only moves down)",
+   "opened": "2026-10-30 11:10 AEDT"
   }
  },
  "lessons": [

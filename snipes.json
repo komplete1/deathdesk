@@ -1,137 +1,371 @@
 {
- "updated_at": "2026-10-29T23:00:01+00:00",
- "equity": 250.27,
- "risk_per_trade": 12.51,
- "scan_note": "10:05 Fri intraday (ran ~09:57): alts are still bleeding after the 07:00 flush (kPEPE -11%, ENA -16%, PUMP -10% over 24h, with fresh lower lows in the 09:00 hour). BTC is flat at ~79.0k above the 78.2k low. No Turtle triggers on any validated coin. TRX is the only one above its 55-bar high, so it hinges on the 11:00 4h close. Sitting flat apart from HYPE.",
- "x_list_note": "Full skim since 04:00: macro risk-off (Geiger: AMZN -8%, INTC -18% after hours), glassnode says alt buyers are back to selling at a loss, gum joking CZ hacked Binance to stop HYPE ATHs, whale_alert shows huge BTC/USDC/USDT outflows from Binance. milkroad shilling Hyperliquid. No specific coin long calls.",
+ "updated_at": "2026-10-30T00:11:53+00:00",
+ "equity": 248.27,
+ "risk_per_trade": 12.41,
+ "scan_note": "11:05 Fri intraday (ran ~11:00-11:15): Binance hack still escalating (drain reported ongoing, BTC broke the 78.2k low to 77.7k). 11:00 4h close put 15 of 17 Turtle coins below their 55-bar 4h low. First shorts opened: ENA and NEAR turtle_short_4h at 1% risk. TRX Turtle long triggered but skipped: the pump is the hacker swapping stolen USDT into TRX, with ~684M TRX still sitting on hacker wallets.",
+ "x_list_note": "Intraday run, no list skim (next at the 12:05 FULL run). X search: hacker swapped ~234M USDT to TRX on Tron, ~684M TRX left on two hacker addresses (GuardPay trace); RunnerXBT says the drain is still ongoing.",
  "snipes": [
   {
-   "id": "hype-dip",
-   "coin": "HYPE",
-   "name": "HYPE",
-   "emoji": "\ud83d\udfe2",
+   "id": "ena-turtle-short",
+   "coin": "ENA",
+   "name": "ENA",
+   "emoji": "\ud83d\udd3b",
    "status": "IN TRADE",
-   "why": "Pullback long from 92.50. Alts kept bleeding through the 09:00 hour and HYPE is hugging the 91.2 stop (low 91.18). Stop and TP 97.0 are on the exchange; time exit ~15:00.",
-   "setup": "Pullback to higher low (dip buy)",
+   "side": "short",
+   "why": "First short. The hacker is dumping ENA on-chain and the 11:00 4h candle closed 0.1753, below the 0.184 55-bar low. Shorted 106 @ 0.17127 at 1% risk (untested short setup). Stop 0.1926 on the exchange, trails down on the 20-bar 4h high.",
+   "setup": "Turtle 4h breakdown short (55-bar low)",
    "dir": "below",
-   "trigger": 91.6,
+   "trigger": 0.18403,
    "zone": [
-    91.0,
-    91.6
+    0.165,
+    0.18403
    ],
-   "entry": 92.497,
-   "stop": 91.2,
+   "entry": 0.17127,
+   "stop": 0.1926,
+   "orig_stop": 0.1926,
    "targets": [
-    97.0,
-    100.0
+    0.16,
+    0.15
    ],
    "conditions": [
     {
-     "t": "Dipped into 91.0-91.6 (low 91.48)",
+     "t": "4h close below the 55-bar low 0.18403",
      "ok": true
     },
     {
-     "t": "Held the 89.9 flush low",
+     "t": "Still below 0.184",
      "auto": {
-      "coin": "HYPE",
-      "op": ">",
-      "px": 89.9
+      "coin": "ENA",
+      "op": "<",
+      "px": 0.18403
      }
     },
     {
-     "t": "08:00 1h closed 92.77 with a higher low",
-     "ok": true
-    },
-    {
-     "t": "BTC holds the 78.2k flush low",
+     "t": "BTC below the 78.2k old flush low (news still bad)",
      "auto": {
       "coin": "BTC",
-      "op": ">",
+      "op": "<",
       "px": 78200
      }
     }
    ],
-   "x_mention": "gumsays joking CZ is stopping HYPE ATHs; milkroad shilling Hyperliquid",
-   "plain": "already bought it at 92.50, stop 91.20, cashing out at 97",
-   "size": 5.73,
-   "orig_stop": 91.2,
-   "rr_note": "~3.5R to 97.0",
+   "x_mention": "lookonchain: hacker dumping ENA",
+   "plain": "already shorted it at 0.1713, stop 0.1926, riding it down",
+   "size": 106.0,
+   "rr_note": "1% risk short, Turtle trail exit",
    "rr": [
-    3.47,
-    5.78
+    0.53,
+    1.0
    ],
-   "risk_usd": 7.43,
-   "notional": 530.01,
+   "risk_usd": 2.26,
+   "notional": 18.15,
    "reward_usd": [
-    25.8,
-    42.99
+    1.19,
+    2.25
    ],
-   "price_at_scan": 91.4405
+   "price_at_scan": 0.171825
   },
   {
-   "id": "trx-turtle",
-   "coin": "TRX",
-   "name": "TRX",
-   "emoji": "\ud83d\udd3a",
-   "status": "ARMED",
-   "why": "Validated Turtle coin. TRX ripped to 0.3649 in the 08:00 hour and sits at ~0.3496, above the 0.33341 55-bar 4h high. If the 11:00 4h candle closes above it, it's a Turtle long. Spike candle, so the 2 ATR stop is wide relative to TRX's usual range.",
-   "setup": "Turtle 4h breakout (55-bar high)",
-   "dir": "above",
-   "trigger": 0.33341,
+   "id": "near-turtle-short",
+   "coin": "NEAR",
+   "name": "NEAR",
+   "emoji": "\ud83d\udd3b",
+   "status": "IN TRADE",
+   "side": "short",
+   "why": "11:00 4h close 4.057, below the 4.238 55-bar low, with lower lows every hour (4.074, 4.039, 4.035). Shorted 6.2 @ 4.0472 at 1% risk. Stop 4.40 on the exchange.",
+   "setup": "Turtle 4h breakdown short (55-bar low)",
+   "dir": "below",
+   "trigger": 4.2382,
    "zone": [
-    0.33341,
-    0.3496
+    3.9,
+    4.2382
    ],
-   "entry": 0.3496,
-   "stop": 0.3447,
+   "entry": 4.0472,
+   "stop": 4.4,
+   "orig_stop": 4.4,
    "targets": [
-    0.37,
-    0.39
+    3.8,
+    3.6
    ],
    "conditions": [
     {
-     "t": "4h close above the 55-bar high 0.33341",
-     "ok": false
+     "t": "4h close below the 55-bar low 4.2382",
+     "ok": true
     },
     {
-     "t": "Price above 0.33341",
+     "t": "Still below 4.238",
      "auto": {
-      "coin": "TRX",
-      "op": ">",
-      "px": 0.33341
+      "coin": "NEAR",
+      "op": "<",
+      "px": 4.2382
      }
     },
     {
-     "t": "Hold above 0.3334 into the 11:00 close",
-     "auto": {
-      "coin": "TRX",
-      "op": ">",
-      "px": 0.33341
-     }
-    },
-    {
-     "t": "BTC holds the 78.2k flush low",
+     "t": "BTC below 78.2k",
      "auto": {
       "coin": "BTC",
-      "op": ">",
+      "op": "<",
       "px": 78200
      }
     }
    ],
    "x_mention": null,
-   "plain": "close the 11am 4h candle above 0.3334 (it's at 0.35 now)",
+   "plain": "already shorted it at 4.047, stop 4.40, riding it down",
+   "size": 6.2,
+   "rr_note": "1% risk short, Turtle trail exit",
    "rr": [
-    4.16,
-    8.24
+    0.7,
+    1.27
    ],
-   "size": 2553.0,
-   "notional": 892.55,
-   "risk_usd": 12.51,
+   "risk_usd": 2.19,
+   "notional": 25.09,
    "reward_usd": [
-    52.08,
-    103.14
+    1.53,
+    2.77
    ],
-   "price_at_scan": 0.348395
+   "price_at_scan": 4.0435
+  },
+  {
+   "id": "aave-turtle-short",
+   "coin": "AAVE",
+   "name": "AAVE",
+   "emoji": "\ud83d\udd3b",
+   "status": "ARMED",
+   "side": "short",
+   "why": "11:00 4h close 119.18, well below the 128.46 55-bar low. Backup third short if ENA/NEAR hold and the news keeps getting worse; it bounced off 118.29 so wait for a 1h lower high under 120.3.",
+   "setup": "Turtle 4h breakdown short (55-bar low)",
+   "dir": "below",
+   "trigger": 118.29,
+   "zone": [
+    115.0,
+    120.3
+   ],
+   "entry": 118.2,
+   "stop": 126.4,
+   "targets": [
+    110.0,
+    105.0
+   ],
+   "conditions": [
+    {
+     "t": "4h close below the 55-bar low 128.46",
+     "ok": true
+    },
+    {
+     "t": "Breaks the 118.29 1h low",
+     "auto": {
+      "coin": "AAVE",
+      "op": "<",
+      "px": 118.29
+     }
+    },
+    {
+     "t": "1h lower high under 120.3",
+     "ok": false
+    },
+    {
+     "t": "BTC below 78.2k",
+     "auto": {
+      "coin": "BTC",
+      "op": "<",
+      "px": 78200
+     }
+    }
+   ],
+   "x_mention": null,
+   "plain": "break under 118.29 and keep falling",
+   "x_note": null,
+   "rr": [
+    1.0,
+    1.61
+   ],
+   "size": 0.3024,
+   "notional": 35.75,
+   "risk_usd": 2.48,
+   "reward_usd": [
+    2.48,
+    3.99
+   ],
+   "price_at_scan": 118.84
+  },
+  {
+   "id": "trx-turtle",
+   "coin": "TRX",
+   "name": "TRX",
+   "emoji": "\u26a0\ufe0f",
+   "status": "WAITING",
+   "why": "Turtle long technically triggered (11:00 4h close 0.35286 above the 0.33341 55-bar high, 36.6M volume). SKIPPED: the pump is the Binance hacker swapping stolen USDT into TRX to dodge a Tether freeze, and ~684M TRX (~$240M, 6x HL daily volume) still sits on hacker wallets. Not organic and a dump can come any minute.",
+   "setup": "Turtle 4h breakout (55-bar high)",
+   "dir": "above",
+   "trigger": 0.33341,
+   "zone": [
+    0.345,
+    0.36
+   ],
+   "entry": 0.3534,
+   "stop": 0.3474,
+   "targets": [
+    0.365,
+    0.38
+   ],
+   "conditions": [
+    {
+     "t": "4h close above the 55-bar high 0.33341",
+     "ok": true
+    },
+    {
+     "t": "Hacker TRX bag moved out or frozen (no overhang)",
+     "ok": false
+    },
+    {
+     "t": "Holds above 0.345",
+     "auto": {
+      "coin": "TRX",
+      "op": ">",
+      "px": 0.345
+     }
+    }
+   ],
+   "x_mention": "GuardPay: ~684M TRX left on hacker addresses",
+   "plain": "only if the hacker's TRX pile stops being a threat",
+   "x_note": null,
+   "side": "long",
+   "rr": [
+    1.93,
+    4.43
+   ],
+   "size": 2068.0,
+   "notional": 730.95,
+   "risk_usd": 12.41,
+   "reward_usd": [
+    23.99,
+    55.02
+   ],
+   "price_at_scan": 0.359685
+  },
+  {
+   "id": "uni-rebound",
+   "coin": "UNI",
+   "name": "UNI",
+   "emoji": "\ud83d\udfe2",
+   "status": "WAITING",
+   "why": "BINANCE REBOUND. Hacker dumped UNI, but it's printing 1h higher lows (6.24, 6.34, 6.44). Reclaiming the 6.60 pre-dump close on volume would be the first real rebound.",
+   "setup": "Binance rebound: reclaim of dump level",
+   "dir": "above",
+   "trigger": 6.6,
+   "zone": [
+    6.6,
+    6.7
+   ],
+   "entry": 6.61,
+   "stop": 6.33,
+   "targets": [
+    7.0,
+    7.4
+   ],
+   "conditions": [
+    {
+     "t": "1h close above 6.60 on volume",
+     "ok": false
+    },
+    {
+     "t": "Price above 6.60",
+     "auto": {
+      "coin": "UNI",
+      "op": ">",
+      "px": 6.6
+     }
+    },
+    {
+     "t": "Hack news stopped escalating",
+     "ok": false
+    },
+    {
+     "t": "BTC back above 78.2k",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 78200
+     }
+    }
+   ],
+   "x_mention": "lookonchain: hacker dumping UNI",
+   "plain": "climb back above 6.60 once the hack news calms down",
+   "side": "long",
+   "rr": [
+    1.39,
+    2.82
+   ],
+   "size": 44.32,
+   "notional": 292.96,
+   "risk_usd": 12.41,
+   "reward_usd": [
+    17.29,
+    35.01
+   ],
+   "price_at_scan": 6.47985
+  },
+  {
+   "id": "kpepe-rebound",
+   "coin": "kPEPE",
+   "name": "kPEPE",
+   "emoji": "\ud83d\udc38",
+   "status": "WAITING",
+   "why": "BINANCE REBOUND. Hacker dumped PEPE; 1h low 0.004371 then a 0.00456 close. Needs to reclaim 0.00463 (08:00 close) with a held higher low.",
+   "setup": "Binance rebound: reclaim of dump level",
+   "dir": "above",
+   "trigger": 0.00463,
+   "zone": [
+    0.00463,
+    0.0047
+   ],
+   "entry": 0.00464,
+   "stop": 0.00436,
+   "targets": [
+    0.0049,
+    0.0052
+   ],
+   "conditions": [
+    {
+     "t": "1h close above 0.00463",
+     "ok": false
+    },
+    {
+     "t": "Price above 0.00463",
+     "auto": {
+      "coin": "kPEPE",
+      "op": ">",
+      "px": 0.00463
+     }
+    },
+    {
+     "t": "Hack news stopped escalating",
+     "ok": false
+    },
+    {
+     "t": "BTC back above 78.2k",
+     "auto": {
+      "coin": "BTC",
+      "op": ">",
+      "px": 78200
+     }
+    }
+   ],
+   "x_mention": "lookonchain: hacker dumping PEPE",
+   "plain": "bounce back above 0.00463 once the hack news calms down",
+   "side": "long",
+   "rr": [
+    0.93,
+    2.0
+   ],
+   "size": 44320.0,
+   "notional": 205.65,
+   "risk_usd": 12.41,
+   "reward_usd": [
+    11.52,
+    24.82
+   ],
+   "price_at_scan": 0.004526
   },
   {
    "id": "zec-turtle",
@@ -139,227 +373,49 @@
    "name": "ZEC",
    "emoji": "\ud83d\udee1\ufe0f",
    "status": "WAITING",
-   "why": "Validated Turtle coin. Flushed 1327 to 1198 in the 07:00 hour, now 1245. Needs a 4h close over the 1368.3 55-bar high, ~10% away.",
+   "why": "Closest validated Turtle long that isn't hacker-driven: 14% under the 1400 55-bar 4h high and holding above its 55-bar low while the rest bleed.",
    "setup": "Turtle 4h breakout (55-bar high)",
    "dir": "above",
-   "trigger": 1368.3,
+   "trigger": 1400,
    "zone": [
-    1368.3,
-    1381.983
+    1400,
+    1420
    ],
-   "entry": 1368.3,
-   "stop": 1282.0,
+   "entry": 1400,
+   "stop": 1306,
    "targets": [
-    1450,
-    1550
+    1500,
+    1600
    ],
    "conditions": [
     {
-     "t": "4h close above the 55-bar high 1368.3",
+     "t": "4h close above 1400",
      "ok": false
     },
     {
-     "t": "Price above 1368.3",
+     "t": "Price above 1400",
      "auto": {
       "coin": "ZEC",
       "op": ">",
-      "px": 1368.3
-     }
-    },
-    {
-     "t": "BTC holds the 78.2k flush low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 78200
+      "px": 1400
      }
     }
    ],
    "x_mention": null,
-   "plain": "close a 4h candle above 1368",
+   "plain": "close a 4h candle above 1400",
+   "side": "long",
    "rr": [
-    0.95,
-    2.11
+    1.06,
+    2.13
    ],
-   "size": 0.145,
-   "notional": 198.35,
-   "risk_usd": 12.51,
+   "size": 0.132,
+   "notional": 184.83,
+   "risk_usd": 12.41,
    "reward_usd": [
-    11.84,
-    26.34
+    13.2,
+    26.4
    ],
-   "price_at_scan": 1245.05
-  },
-  {
-   "id": "kpepe-turtle",
-   "coin": "kPEPE",
-   "name": "kPEPE",
-   "emoji": "\ud83d\udc38",
-   "status": "WAITING",
-   "why": "Validated Turtle coin, but it dumped from 0.0055 to 0.00446 since 07:00 on huge volume (76M in the 09:00 hour). Needs a 4h close over 0.005512, ~24% away. Dead money for now.",
-   "setup": "Turtle 4h breakout (55-bar high)",
-   "dir": "above",
-   "trigger": 0.005512,
-   "zone": [
-    0.005512,
-    0.00556712
-   ],
-   "entry": 0.005512,
-   "stop": 0.00506,
-   "targets": [
-    0.006,
-    0.0065
-   ],
-   "conditions": [
-    {
-     "t": "4h close above the 55-bar high 0.005512",
-     "ok": false
-    },
-    {
-     "t": "Price above 0.005512",
-     "auto": {
-      "coin": "kPEPE",
-      "op": ">",
-      "px": 0.005512
-     }
-    },
-    {
-     "t": "BTC holds the 78.2k flush low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 78200
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "get back above 0.0055 on a 4h close",
-   "rr": [
-    1.08,
-    2.19
-   ],
-   "size": 27680.0,
-   "notional": 152.56,
-   "risk_usd": 12.51,
-   "reward_usd": [
-    13.51,
-    27.34
-   ],
-   "price_at_scan": 0.004471
-  },
-  {
-   "id": "pump-turtle",
-   "coin": "PUMP",
-   "name": "PUMP",
-   "emoji": "\ud83d\udc8a",
-   "status": "WAITING",
-   "why": "Validated Turtle coin. Fell from 0.00442 to 0.00394 in the 07:00 flush and is flatlining at 0.00409, just under the 20-bar 4h low. Turtle trigger is 0.00523, 28% away.",
-   "setup": "Turtle 4h breakout (55-bar high)",
-   "dir": "above",
-   "trigger": 0.00523,
-   "zone": [
-    0.00523,
-    0.0052823
-   ],
-   "entry": 0.00523,
-   "stop": 0.00488,
-   "targets": [
-    0.0057,
-    0.0062
-   ],
-   "conditions": [
-    {
-     "t": "4h close above the 55-bar high 0.00523",
-     "ok": false
-    },
-    {
-     "t": "Price above 0.00523",
-     "auto": {
-      "coin": "PUMP",
-      "op": ">",
-      "px": 0.00523
-     }
-    },
-    {
-     "t": "BTC holds the 78.2k flush low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 78200
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "close a 4h candle above 0.00523",
-   "rr": [
-    1.34,
-    2.77
-   ],
-   "size": 35740.0,
-   "notional": 186.94,
-   "risk_usd": 12.51,
-   "reward_usd": [
-    16.8,
-    34.67
-   ],
-   "price_at_scan": 0.004096
-  },
-  {
-   "id": "ena-turtle",
-   "coin": "ENA",
-   "name": "ENA",
-   "emoji": "\u26a1",
-   "status": "WAITING",
-   "why": "Validated Turtle coin, but it's in freefall (0.209 to 0.176 since 07:00, still making lower lows). Turtle trigger is 0.22608, ~28% away.",
-   "setup": "Turtle 4h breakout (55-bar high)",
-   "dir": "above",
-   "trigger": 0.22608,
-   "zone": [
-    0.22608,
-    0.2283408
-   ],
-   "entry": 0.22608,
-   "stop": 0.2076,
-   "targets": [
-    0.245,
-    0.26
-   ],
-   "conditions": [
-    {
-     "t": "4h close above the 55-bar high 0.22608",
-     "ok": false
-    },
-    {
-     "t": "Price above 0.22608",
-     "auto": {
-      "coin": "ENA",
-      "op": ">",
-      "px": 0.22608
-     }
-    },
-    {
-     "t": "BTC holds the 78.2k flush low",
-     "auto": {
-      "coin": "BTC",
-      "op": ">",
-      "px": 78200
-     }
-    }
-   ],
-   "x_mention": null,
-   "plain": "close a 4h candle above 0.226",
-   "rr": [
-    1.02,
-    1.84
-   ],
-   "size": 676.9,
-   "notional": 153.04,
-   "risk_usd": 12.51,
-   "reward_usd": [
-    12.81,
-    22.96
-   ],
-   "price_at_scan": 0.175745
+   "price_at_scan": 1224.75
   }
  ]
 }
