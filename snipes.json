@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-30T00:17:07+00:00",
- "equity": 248.27,
- "risk_per_trade": 12.41,
- "scan_note": "11:16 hack-mode run: Binance says it covers all losses (11:13) but alts/BTC still falling 1h, no squeeze. Added LINK/SOL/ARB/SUI Turtle shorts @1%. Skipped kPEPE (+4.8% off low, no 55-low break) and UNI (+4.2% bounce).",
- "x_list_note": "Intraday run, no list skim (next at the 12:05 FULL run). X search: hacker swapped ~234M USDT to TRX on Tron, ~684M TRX left on two hacker addresses (GuardPay trace); RunnerXBT says the drain is still ongoing.",
+ "updated_at": "2026-10-30T00:53:30+00:00",
+ "equity": 248.63,
+ "risk_per_trade": 12.43,
+ "scan_note": "11:52 run (box reboot healed). Still HACK MODE phase 1: Binance withdrawals still suspended, hacker still swapping alts to ETH (Lunaray). BTC wicked to 76.7k this hour, now ~77.1k. 6/6 shorts held, all stops on the exchange, no new entries (position cap).",
+ "x_list_note": "Intraday run, no list skim (next at the 12:05 FULL run). X search 11:52: not plugged. Binance says it covers losses, deposits/withdrawals still paused; Arbitrum froze 74.5M ARB of hacker funds (via WuBlockchain).",
  "snipes": [
   {
    "id": "ena-turtle-short",
@@ -63,7 +63,7 @@
     1.19,
     2.25
    ],
-   "price_at_scan": 0.1713
+   "price_at_scan": 0.172515
   },
   {
    "id": "near-turtle-short",
@@ -123,16 +123,16 @@
     1.53,
     2.77
    ],
-   "price_at_scan": 4.0223
+   "price_at_scan": 4.0104
   },
   {
    "id": "aave-turtle-short",
    "coin": "AAVE",
    "name": "AAVE",
    "emoji": "\ud83d\udd3b",
-   "status": "ARMED",
+   "status": "WAITING",
    "side": "short",
-   "why": "11:00 4h close 119.18, well below the 128.46 55-bar low. Backup third short if ENA/NEAR hold and the news keeps getting worse; it bounced off 118.29 so wait for a 1h lower high under 120.3.",
+   "why": "11:00 4h close 119.18, well below the 128.46 55-bar low. Backup third short if ENA/NEAR hold and the news keeps getting worse; it bounced off 118.29 so wait for a 1h lower high under 120.3. [cap] Not taken: already 6/6 HACK MODE shorts (max). Next in line if a short closes and AAVE stays under 118.3.",
    "setup": "Turtle 4h breakdown short (55-bar low)",
    "dir": "below",
    "trigger": 118.29,
@@ -179,14 +179,14 @@
     1.0,
     1.61
    ],
-   "size": 0.3024,
-   "notional": 35.75,
-   "risk_usd": 2.48,
+   "size": 0.3037,
+   "notional": 35.89,
+   "risk_usd": 2.49,
    "reward_usd": [
-    2.48,
-    3.99
+    2.49,
+    4.01
    ],
-   "price_at_scan": 118.875
+   "price_at_scan": 118.775
   },
   {
    "id": "trx-turtle",
@@ -234,14 +234,14 @@
     1.93,
     4.43
    ],
-   "size": 2068.0,
-   "notional": 730.95,
-   "risk_usd": 12.41,
+   "size": 2072.0,
+   "notional": 732.13,
+   "risk_usd": 12.43,
    "reward_usd": [
-    23.99,
-    55.02
+    24.03,
+    55.11
    ],
-   "price_at_scan": 0.3545
+   "price_at_scan": 0.356895
   },
   {
    "id": "uni-rebound",
@@ -296,14 +296,14 @@
     1.39,
     2.82
    ],
-   "size": 44.32,
-   "notional": 292.96,
-   "risk_usd": 12.41,
+   "size": 44.39,
+   "notional": 293.44,
+   "risk_usd": 12.43,
    "reward_usd": [
-    17.29,
-    35.01
+    17.31,
+    35.07
    ],
-   "price_at_scan": 6.45695
+   "price_at_scan": 6.4863
   },
   {
    "id": "kpepe-rebound",
@@ -358,14 +358,14 @@
     0.93,
     2.0
    ],
-   "size": 44320.0,
-   "notional": 205.65,
-   "risk_usd": 12.41,
+   "size": 44390.0,
+   "notional": 205.98,
+   "risk_usd": 12.43,
    "reward_usd": [
-    11.52,
-    24.82
+    11.54,
+    24.86
    ],
-   "price_at_scan": 0.004548
+   "price_at_scan": 0.0046
   },
   {
    "id": "zec-turtle",
@@ -408,14 +408,14 @@
     1.06,
     2.13
    ],
-   "size": 0.132,
-   "notional": 184.83,
-   "risk_usd": 12.41,
+   "size": 0.1322,
+   "notional": 185.13,
+   "risk_usd": 12.43,
    "reward_usd": [
-    13.2,
-    26.4
+    13.22,
+    26.45
    ],
-   "price_at_scan": 1223.95
+   "price_at_scan": 1235.25
   },
   {
    "id": "link-turtle-short",
@@ -459,7 +459,7 @@
     1.74,
     3.48
    ],
-   "price_at_scan": 10.5755
+   "price_at_scan": 10.4945
   },
   {
    "id": "sol-turtle-short",
@@ -503,7 +503,7 @@
     2.33,
     4.66
    ],
-   "price_at_scan": 95.1495
+   "price_at_scan": 94.8235
   },
   {
    "id": "arb-turtle-short",
@@ -512,7 +512,7 @@
    "emoji": "\ud83d\udd3b",
    "status": "IN TRADE",
    "side": "short",
-   "why": "Weak chart: 4h close 0.1543 under 0.1623 55-bar low, no bounce on the news. Shorted @ 0.15241 at 1% risk, stop 0.1657 on the exchange.",
+   "why": "Weak chart: 4h close 0.1543 under 0.1623 55-bar low, no bounce on the news. Shorted @ 0.15241 at 1% risk, stop 0.1657 on the exchange. [note] 11:52: Arbitrum Security Council froze 74.5M ARB + 8,425 ETH of hacker funds, which removes hacker ARB supply. ARB back above entry (0.1547). Cut if a 4h close reclaims the 0.1623 breakdown level; stop 0.1657 on the exchange.",
    "setup": "Turtle 4h breakdown short (55-bar low)",
    "dir": "below",
    "trigger": 0.16234,
@@ -547,7 +547,7 @@
     1.28,
     2.56
    ],
-   "price_at_scan": 0.15254
+   "price_at_scan": 0.15487
   },
   {
    "id": "sui-turtle-short",
@@ -591,7 +591,7 @@
     1.79,
     3.58
    ],
-   "price_at_scan": 0.86616
+   "price_at_scan": 0.85531
   }
  ]
 }

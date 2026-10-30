@@ -1,5 +1,5 @@
 {
- "updated": 1793319427228,
+ "updated": 1793321625631,
  "plan": {
   "ENA": {
    "side": "short",
@@ -22,6 +22,50 @@
    "risk_cap": 0.01,
    "exit": "trail on 20-bar 4h high (stop only moves down)",
    "opened": "2026-10-30 11:10 AEDT"
+  },
+  "LINK": {
+   "side": "short",
+   "setup": "turtle_short_4h",
+   "entry": 10.557,
+   "sl": 11.19,
+   "orig_sl": 11.19,
+   "size": 3.3,
+   "risk_cap": 0.01,
+   "exit": "trail on 20-bar 4h high (stop only moves down)",
+   "opened": "2026-10-30 11:16 AEDT"
+  },
+  "SOL": {
+   "side": "short",
+   "setup": "turtle_short_4h",
+   "entry": 95.12,
+   "sl": 99.26,
+   "orig_sl": 99.26,
+   "size": 0.49,
+   "risk_cap": 0.01,
+   "exit": "trail on 20-bar 4h high (stop only moves down)",
+   "opened": "2026-10-30 11:16 AEDT"
+  },
+  "ARB": {
+   "side": "short",
+   "setup": "turtle_short_4h",
+   "entry": 0.15241,
+   "sl": 0.1657,
+   "orig_sl": 0.1657,
+   "size": 168.1,
+   "risk_cap": 0.01,
+   "exit": "trail on 20-bar 4h high (stop only moves down)",
+   "opened": "2026-10-30 11:16 AEDT"
+  },
+  "SUI": {
+   "side": "short",
+   "setup": "turtle_short_4h",
+   "entry": 0.86638,
+   "sl": 0.9168,
+   "orig_sl": 0.9168,
+   "size": 41.3,
+   "risk_cap": 0.01,
+   "exit": "trail on 20-bar 4h high (stop only moves down)",
+   "opened": "2026-10-30 11:16 AEDT"
   }
  },
  "lessons": [
