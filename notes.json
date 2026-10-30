@@ -1,5 +1,5 @@
 {
- "updated": 1793325399573,
+ "updated": 1793329334364,
  "plan": {
   "NEAR": {
    "side": "short",
@@ -11,18 +11,6 @@
    "risk_cap": 0.01,
    "exit": "trail on 20-bar 4h high (stop only moves down)",
    "opened": "2026-10-30 11:10 AEDT"
-  },
-  "LINK": {
-   "side": "short",
-   "setup": "turtle_short_4h",
-   "entry": 10.557,
-   "sl": 10.66,
-   "orig_sl": 11.19,
-   "size": 3.3,
-   "risk_cap": 0.01,
-   "exit": "trail on 20-bar 4h high (stop only moves down)",
-   "opened": "2026-10-30 11:16 AEDT",
-   "note": "12:03 AEDT hack-mode: forced seller done (Lookonchain), SL tightened to above 11:00 1h high"
   },
   "SOL": {
    "side": "short",

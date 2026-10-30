@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-30T01:56:19+00:00",
- "equity": 248.95,
- "risk_per_trade": 12.45,
- "scan_note": "12:03 HACK MODE phase 1: hacker done dumping (Lookonchain) but BTC fresh 1h low 76.7k, no plug confirm. ENA/LINK stops tightened. No longs yet.",
- "x_list_note": "Intraday run, no list skim (next at the 12:05 FULL run). X search 11:52: not plugged. Binance says it covers losses, deposits/withdrawals still paused; Arbitrum froze 74.5M ARB of hacker funds (via WuBlockchain).",
+ "updated_at": "2026-10-30T03:01:58+00:00",
+ "equity": 240.71,
+ "risk_per_trade": 12.04,
+ "scan_note": "14:05 HACK MODE phase 1: not plugged (Binance deposits/withdrawals still suspended). BTC 13:00 hour new low 76,443 then bounced to 77.4k, no higher low yet. LINK stopped 13:16, STRK override closed 13:59. Equity ~$2 above the daily breaker, so no new entries this hour.",
+ "x_list_note": "Intraday run, no list skim (next at the 16:05 FULL run). X news 14:05: still suspended, $5.6-6.3B, SAFU coverage pledged, no plug confirmation.",
  "snipes": [
   {
    "id": "xrp-turtle-short",
@@ -63,7 +63,7 @@
     2.22,
     4.17
    ],
-   "price_at_scan": 1.20955
+   "price_at_scan": 1.22555
   },
   {
    "id": "near-turtle-short",
@@ -123,7 +123,7 @@
     1.53,
     2.77
    ],
-   "price_at_scan": 3.99135
+   "price_at_scan": 4.0774
   },
   {
    "id": "aave-turtle-short",
@@ -179,14 +179,14 @@
     1.0,
     1.61
    ],
-   "size": 0.3037,
-   "notional": 35.89,
-   "risk_usd": 2.49,
+   "size": 0.2939,
+   "notional": 34.74,
+   "risk_usd": 2.41,
    "reward_usd": [
-    2.49,
-    4.01
+    2.41,
+    3.88
    ],
-   "price_at_scan": 119.22
+   "price_at_scan": 122.035
   },
   {
    "id": "trx-turtle",
@@ -234,14 +234,14 @@
     1.93,
     4.43
    ],
-   "size": 2075.0,
-   "notional": 733.3,
-   "risk_usd": 12.45,
+   "size": 2007.0,
+   "notional": 709.16,
+   "risk_usd": 12.04,
    "reward_usd": [
-    24.07,
-    55.19
+    23.28,
+    53.38
    ],
-   "price_at_scan": 0.35652
+   "price_at_scan": 0.35157
   },
   {
    "id": "uni-rebound",
@@ -296,14 +296,14 @@
     1.39,
     2.82
    ],
-   "size": 44.46,
-   "notional": 293.91,
-   "risk_usd": 12.45,
+   "size": 43.0,
+   "notional": 284.23,
+   "risk_usd": 12.04,
    "reward_usd": [
-    17.34,
-    35.13
+    16.77,
+    33.97
    ],
-   "price_at_scan": 6.52335
+   "price_at_scan": 6.63645
   },
   {
    "id": "kpepe-rebound",
@@ -358,14 +358,14 @@
     0.93,
     2.0
    ],
-   "size": 44460.0,
-   "notional": 206.31,
-   "risk_usd": 12.45,
+   "size": 43000.0,
+   "notional": 199.52,
+   "risk_usd": 12.04,
    "reward_usd": [
-    11.56,
-    24.9
+    11.18,
+    24.08
    ],
-   "price_at_scan": 0.00465
+   "price_at_scan": 0.004758
   },
   {
    "id": "zec-turtle",
@@ -408,58 +408,14 @@
     1.06,
     2.13
    ],
-   "size": 0.1324,
-   "notional": 185.43,
-   "risk_usd": 12.45,
+   "size": 0.1281,
+   "notional": 179.32,
+   "risk_usd": 12.04,
    "reward_usd": [
-    13.24,
-    26.49
+    12.81,
+    25.62
    ],
-   "price_at_scan": 1235.45
-  },
-  {
-   "id": "link-turtle-short",
-   "coin": "LINK",
-   "name": "LINK",
-   "emoji": "\ud83d\udd3b",
-   "status": "IN TRADE",
-   "side": "short",
-   "why": "Hacker dumping LINK on-chain; 11:00 4h close 10.604 below 11.221 55-bar low and flat after Binance cover news. Shorted @ 10.557 at 1% risk, stop 11.19 on the exchange.",
-   "setup": "Turtle 4h breakdown short (55-bar low)",
-   "dir": "below",
-   "trigger": 11.221,
-   "zone": [
-    9.81801,
-    11.221
-   ],
-   "entry": 10.557,
-   "stop": 10.66,
-   "orig_stop": 11.19,
-   "targets": [
-    10.02915,
-    9.5013
-   ],
-   "conditions": [
-    {
-     "t": "4h close below the 55-bar low 11.221",
-     "ok": true
-    }
-   ],
-   "x_mention": "lookonchain: hacker dumping ENA",
-   "plain": "already shorted it at 0.1713, stop 0.1926, riding it down",
-   "size": 3.3,
-   "rr_note": "1% risk short, Turtle trail exit",
-   "rr": [
-    0.83,
-    1.67
-   ],
-   "risk_usd": 0.34,
-   "notional": 34.84,
-   "reward_usd": [
-    1.74,
-    3.48
-   ],
-   "price_at_scan": 10.5135
+   "price_at_scan": 1264.35
   },
   {
    "id": "sol-turtle-short",
@@ -503,7 +459,7 @@
     2.33,
     4.66
    ],
-   "price_at_scan": 93.9805
+   "price_at_scan": 95.6005
   },
   {
    "id": "arb-turtle-short",
@@ -547,7 +503,7 @@
     1.28,
     2.56
    ],
-   "price_at_scan": 0.15282
+   "price_at_scan": 0.15645
   },
   {
    "id": "sui-turtle-short",
@@ -591,7 +547,7 @@
     1.79,
     3.58
    ],
-   "price_at_scan": 0.85528
+   "price_at_scan": 0.86858
   }
  ]
 }
