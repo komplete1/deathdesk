@@ -1,0 +1,32 @@
+{
+ "generated": "2026-10-30 14:51 AEDT",
+ "state": {
+  "balance": 239.13,
+  "day": "2026-10-30",
+  "day_start_eq": 239.13,
+  "errors": 0,
+  "halted_day": null,
+  "last_bar": 1793304000000,
+  "pending": {},
+  "positions": {},
+  "runs": 1,
+  "start_balance": 239.13,
+  "started": 1793332164230
+ },
+ "trades": [],
+ "status": "2026-10-30 14:49 AEDT | PAPER eq $239.13 (+0.00) | pos: flat | pending: none | last closed 4h bar ended 2026-10-30 11:00 AEDT | errors 0",
+ "strategy_md": "# LOCKED STRATEGY: 4h Turtle breakout, long only (PAPER)\nFrozen 30 Oct 2026 for paper week 30 Oct 3pm AEDT to 6 Nov 2026. No edits during the week.\n\n- Coins (fixed): SOL, XRP, SUI, LINK, NEAR. These are liquid coins with turtle_long_4h marked VALIDATED and robust, with both in-sample and out-of-sample results positive (research/setup_verdicts.json).\n- Data: Hyperliquid public candleSnapshot, 4h. The bot acts on CLOSED bars only (closes at 03,07,11,15,19,23 AEDT).\n- Entry: the closed 4h bar's close is above the highest high of the previous 55 bars. The bot buys at the next bar's open.\n- Initial stop: signal close minus 2 x ATR(20). An entry is skipped if the open is already at or below the stop.\n- Trail/exit: after each closed bar, stop = max(stop, lowest low of the last 20 bars). The stop rests intrabar: if a bar's low touches it, the exit is at min(bar open, stop).\n- Size: risk 1% of paper balance (start $239.13), qty = risk / (entry - stop), notional capped at 1x balance.\n- Max 3 positions/pending at once. Signals are taken in coin-list order.\n- Daily breaker: if equity on a bar close is at or below 90% of that AEDT day's start equity, the bot closes everything and takes no entries until the next AEDT day.\n- Costs: 0.045% taker each side + 0.05% slippage each side.\n- No discretion, no news, no shorts, no half-takes, no overrides. PAPER ONLY: no keys, no signing, no orders.\n",
+ "coins": [
+  "SOL",
+  "XRP",
+  "SUI",
+  "LINK",
+  "NEAR"
+ ],
+ "issues": [],
+ "log_tail": [
+  "[2026-10-30 14:49 AEDT] INIT paper balance 239.13, first bar to act on closes after 2026-10-30 11:00 AEDT",
+  "[2026-10-30 14:49 AEDT] no new closed bar, nothing to do",
+  "[2026-10-30 14:49 AEDT] STATUS 2026-10-30 14:49 AEDT | PAPER eq $239.13 (+0.00) | pos: flat | pending: none | last closed 4h bar ended 2026-10-30 11:00 AEDT | errors 0"
+ ]
+}
