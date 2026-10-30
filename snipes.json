@@ -1,47 +1,47 @@
 {
- "updated_at": "2026-10-30T01:03:58+00:00",
- "equity": 249.18,
- "risk_per_trade": 12.46,
+ "updated_at": "2026-10-30T01:56:19+00:00",
+ "equity": 248.95,
+ "risk_per_trade": 12.45,
  "scan_note": "12:03 HACK MODE phase 1: hacker done dumping (Lookonchain) but BTC fresh 1h low 76.7k, no plug confirm. ENA/LINK stops tightened. No longs yet.",
  "x_list_note": "Intraday run, no list skim (next at the 12:05 FULL run). X search 11:52: not plugged. Binance says it covers losses, deposits/withdrawals still paused; Arbitrum froze 74.5M ARB of hacker funds (via WuBlockchain).",
  "snipes": [
   {
-   "id": "ena-turtle-short",
-   "coin": "ENA",
-   "name": "ENA",
+   "id": "xrp-turtle-short",
+   "coin": "XRP",
+   "name": "XRP",
    "emoji": "\ud83d\udd3b",
    "status": "IN TRADE",
    "side": "short",
-   "why": "First short. The hacker is dumping ENA on-chain and the 11:00 4h candle closed 0.1753, below the 0.184 55-bar low. Shorted 106 @ 0.17127 at 1% risk (untested short setup). Stop 0.1926 on the exchange, trails down on the 20-bar 4h high.",
+   "why": "11:00 4h close 1.2372, below the 1.2542 55-bar low, fresh 1h lower lows with BTC (12:00 hour low 1.2000). Shorted 39 @ 1.207 at 1% risk (untested short setup). Stop 1.258 on the exchange, above the breakdown level.",
    "setup": "Turtle 4h breakdown short (55-bar low)",
    "dir": "below",
-   "trigger": 0.18403,
+   "trigger": 1.2542,
    "zone": [
-    0.165,
-    0.18403
+    1.18,
+    1.2542
    ],
-   "entry": 0.17127,
-   "stop": 0.176,
-   "orig_stop": 0.1926,
+   "entry": 1.207,
+   "stop": 1.258,
+   "orig_stop": 1.258,
    "targets": [
-    0.16,
-    0.15
+    1.15,
+    1.1
    ],
    "conditions": [
     {
-     "t": "4h close below the 55-bar low 0.18403",
+     "t": "4h close below the 55-bar low 1.2542",
      "ok": true
     },
     {
-     "t": "Still below 0.184",
+     "t": "Still below 1.254",
      "auto": {
-      "coin": "ENA",
+      "coin": "XRP",
       "op": "<",
-      "px": 0.18403
+      "px": 1.2542
      }
     },
     {
-     "t": "BTC below the 78.2k old flush low (news still bad)",
+     "t": "BTC below 78.2k",
      "auto": {
       "coin": "BTC",
       "op": "<",
@@ -49,21 +49,21 @@
      }
     }
    ],
-   "x_mention": "lookonchain: hacker dumping ENA",
-   "plain": "already shorted it at 0.1713, stop 0.1926, riding it down",
-   "size": 106.0,
+   "x_mention": null,
+   "plain": "shorted at 1.207, stop 1.258, riding it down",
+   "size": 39.0,
    "rr_note": "1% risk short, Turtle trail exit",
    "rr": [
-    0.53,
-    1.0
+    1.12,
+    2.1
    ],
-   "risk_usd": 0.5,
-   "notional": 18.15,
+   "risk_usd": 1.99,
+   "notional": 47.07,
    "reward_usd": [
-    1.19,
-    2.25
+    2.22,
+    4.17
    ],
-   "price_at_scan": 0.173195
+   "price_at_scan": 1.20955
   },
   {
    "id": "near-turtle-short",
@@ -123,7 +123,7 @@
     1.53,
     2.77
    ],
-   "price_at_scan": 3.991
+   "price_at_scan": 3.99135
   },
   {
    "id": "aave-turtle-short",
@@ -132,10 +132,10 @@
    "emoji": "\ud83d\udd3b",
    "status": "WAITING",
    "side": "short",
-   "why": "11:00 4h close 119.18, well below the 128.46 55-bar low. Backup third short if ENA/NEAR hold and the news keeps getting worse; it bounced off 118.29 so wait for a 1h lower high under 120.3. [cap] Not taken: already 6/6 HACK MODE shorts (max). Next in line if a short closes and AAVE stays under 118.3.",
+   "why": "11:00 4h close 119.18, well below the 128.46 55-bar low. Hacker has finished dumping AAVE (lookonchain) and it bounced off 115.12, so squeeze risk is up. Not taken: 6/6 HACK MODE shorts again after XRP. Only if a slot frees and AAVE loses 115 on a 1h close.",
    "setup": "Turtle 4h breakdown short (55-bar low)",
    "dir": "below",
-   "trigger": 118.29,
+   "trigger": 115.0,
    "zone": [
     115.0,
     120.3
@@ -186,7 +186,7 @@
     2.49,
     4.01
    ],
-   "price_at_scan": 118.465
+   "price_at_scan": 119.22
   },
   {
    "id": "trx-turtle",
@@ -234,14 +234,14 @@
     1.93,
     4.43
    ],
-   "size": 2077.0,
-   "notional": 733.89,
-   "risk_usd": 12.46,
+   "size": 2075.0,
+   "notional": 733.3,
+   "risk_usd": 12.45,
    "reward_usd": [
-    24.09,
-    55.24
+    24.07,
+    55.19
    ],
-   "price_at_scan": 0.357265
+   "price_at_scan": 0.35652
   },
   {
    "id": "uni-rebound",
@@ -296,14 +296,14 @@
     1.39,
     2.82
    ],
-   "size": 44.5,
-   "notional": 294.14,
-   "risk_usd": 12.46,
+   "size": 44.46,
+   "notional": 293.91,
+   "risk_usd": 12.45,
    "reward_usd": [
-    17.35,
-    35.15
+    17.34,
+    35.13
    ],
-   "price_at_scan": 6.44765
+   "price_at_scan": 6.52335
   },
   {
    "id": "kpepe-rebound",
@@ -358,14 +358,14 @@
     0.93,
     2.0
    ],
-   "size": 44500.0,
-   "notional": 206.48,
-   "risk_usd": 12.46,
+   "size": 44460.0,
+   "notional": 206.31,
+   "risk_usd": 12.45,
    "reward_usd": [
-    11.57,
-    24.92
+    11.56,
+    24.9
    ],
-   "price_at_scan": 0.004585
+   "price_at_scan": 0.00465
   },
   {
    "id": "zec-turtle",
@@ -408,14 +408,14 @@
     1.06,
     2.13
    ],
-   "size": 0.1326,
-   "notional": 185.57,
-   "risk_usd": 12.46,
+   "size": 0.1324,
+   "notional": 185.43,
+   "risk_usd": 12.45,
    "reward_usd": [
-    13.26,
-    26.51
+    13.24,
+    26.49
    ],
-   "price_at_scan": 1234.75
+   "price_at_scan": 1235.45
   },
   {
    "id": "link-turtle-short",
@@ -459,7 +459,7 @@
     1.74,
     3.48
    ],
-   "price_at_scan": 10.506
+   "price_at_scan": 10.5135
   },
   {
    "id": "sol-turtle-short",
@@ -503,7 +503,7 @@
     2.33,
     4.66
    ],
-   "price_at_scan": 94.4955
+   "price_at_scan": 93.9805
   },
   {
    "id": "arb-turtle-short",
@@ -547,7 +547,7 @@
     1.28,
     2.56
    ],
-   "price_at_scan": 0.15367
+   "price_at_scan": 0.15282
   },
   {
    "id": "sui-turtle-short",
@@ -591,7 +591,7 @@
     1.79,
     3.58
    ],
-   "price_at_scan": 0.85232
+   "price_at_scan": 0.85528
   }
  ]
 }
