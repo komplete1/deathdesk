@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-30T00:11:53+00:00",
+ "updated_at": "2026-10-30T00:17:07+00:00",
  "equity": 248.27,
  "risk_per_trade": 12.41,
- "scan_note": "11:05 Fri intraday (ran ~11:00-11:15): Binance hack still escalating (drain reported ongoing, BTC broke the 78.2k low to 77.7k). 11:00 4h close put 15 of 17 Turtle coins below their 55-bar 4h low. First shorts opened: ENA and NEAR turtle_short_4h at 1% risk. TRX Turtle long triggered but skipped: the pump is the hacker swapping stolen USDT into TRX, with ~684M TRX still sitting on hacker wallets.",
+ "scan_note": "11:16 hack-mode run: Binance says it covers all losses (11:13) but alts/BTC still falling 1h, no squeeze. Added LINK/SOL/ARB/SUI Turtle shorts @1%. Skipped kPEPE (+4.8% off low, no 55-low break) and UNI (+4.2% bounce).",
  "x_list_note": "Intraday run, no list skim (next at the 12:05 FULL run). X search: hacker swapped ~234M USDT to TRX on Tron, ~684M TRX left on two hacker addresses (GuardPay trace); RunnerXBT says the drain is still ongoing.",
  "snipes": [
   {
@@ -63,7 +63,7 @@
     1.19,
     2.25
    ],
-   "price_at_scan": 0.171825
+   "price_at_scan": 0.1713
   },
   {
    "id": "near-turtle-short",
@@ -123,7 +123,7 @@
     1.53,
     2.77
    ],
-   "price_at_scan": 4.0435
+   "price_at_scan": 4.0223
   },
   {
    "id": "aave-turtle-short",
@@ -186,7 +186,7 @@
     2.48,
     3.99
    ],
-   "price_at_scan": 118.84
+   "price_at_scan": 118.875
   },
   {
    "id": "trx-turtle",
@@ -241,7 +241,7 @@
     23.99,
     55.02
    ],
-   "price_at_scan": 0.359685
+   "price_at_scan": 0.3545
   },
   {
    "id": "uni-rebound",
@@ -303,7 +303,7 @@
     17.29,
     35.01
    ],
-   "price_at_scan": 6.47985
+   "price_at_scan": 6.45695
   },
   {
    "id": "kpepe-rebound",
@@ -365,7 +365,7 @@
     11.52,
     24.82
    ],
-   "price_at_scan": 0.004526
+   "price_at_scan": 0.004548
   },
   {
    "id": "zec-turtle",
@@ -415,7 +415,183 @@
     13.2,
     26.4
    ],
-   "price_at_scan": 1224.75
+   "price_at_scan": 1223.95
+  },
+  {
+   "id": "link-turtle-short",
+   "coin": "LINK",
+   "name": "LINK",
+   "emoji": "\ud83d\udd3b",
+   "status": "IN TRADE",
+   "side": "short",
+   "why": "Hacker dumping LINK on-chain; 11:00 4h close 10.604 below 11.221 55-bar low and flat after Binance cover news. Shorted @ 10.557 at 1% risk, stop 11.19 on the exchange.",
+   "setup": "Turtle 4h breakdown short (55-bar low)",
+   "dir": "below",
+   "trigger": 11.221,
+   "zone": [
+    9.81801,
+    11.221
+   ],
+   "entry": 10.557,
+   "stop": 11.19,
+   "orig_stop": 11.19,
+   "targets": [
+    10.02915,
+    9.5013
+   ],
+   "conditions": [
+    {
+     "t": "4h close below the 55-bar low 11.221",
+     "ok": true
+    }
+   ],
+   "x_mention": "lookonchain: hacker dumping ENA",
+   "plain": "already shorted it at 0.1713, stop 0.1926, riding it down",
+   "size": 3.3,
+   "rr_note": "1% risk short, Turtle trail exit",
+   "rr": [
+    0.83,
+    1.67
+   ],
+   "risk_usd": 2.09,
+   "notional": 34.84,
+   "reward_usd": [
+    1.74,
+    3.48
+   ],
+   "price_at_scan": 10.5755
+  },
+  {
+   "id": "sol-turtle-short",
+   "coin": "SOL",
+   "name": "SOL",
+   "emoji": "\ud83d\udd3b",
+   "status": "IN TRADE",
+   "side": "short",
+   "why": "Majors leg: 4h close 95.61 below 98.64 55-bar low, still falling after the cover news. Shorted @ 95.12 at 1% risk, stop 99.26 on the exchange.",
+   "setup": "Turtle 4h breakdown short (55-bar low)",
+   "dir": "below",
+   "trigger": 98.635,
+   "zone": [
+    88.4616,
+    98.635
+   ],
+   "entry": 95.12,
+   "stop": 99.26,
+   "orig_stop": 99.26,
+   "targets": [
+    90.364,
+    85.608
+   ],
+   "conditions": [
+    {
+     "t": "4h close below the 55-bar low 98.635",
+     "ok": true
+    }
+   ],
+   "x_mention": "lookonchain: hacker dumping ENA",
+   "plain": "already shorted it at 0.1713, stop 0.1926, riding it down",
+   "size": 0.49,
+   "rr_note": "1% risk short, Turtle trail exit",
+   "rr": [
+    1.15,
+    2.3
+   ],
+   "risk_usd": 2.03,
+   "notional": 46.61,
+   "reward_usd": [
+    2.33,
+    4.66
+   ],
+   "price_at_scan": 95.1495
+  },
+  {
+   "id": "arb-turtle-short",
+   "coin": "ARB",
+   "name": "ARB",
+   "emoji": "\ud83d\udd3b",
+   "status": "IN TRADE",
+   "side": "short",
+   "why": "Weak chart: 4h close 0.1543 under 0.1623 55-bar low, no bounce on the news. Shorted @ 0.15241 at 1% risk, stop 0.1657 on the exchange.",
+   "setup": "Turtle 4h breakdown short (55-bar low)",
+   "dir": "below",
+   "trigger": 0.16234,
+   "zone": [
+    0.141741,
+    0.16234
+   ],
+   "entry": 0.15241,
+   "stop": 0.1657,
+   "orig_stop": 0.1657,
+   "targets": [
+    0.144789,
+    0.137169
+   ],
+   "conditions": [
+    {
+     "t": "4h close below the 55-bar low 0.16234",
+     "ok": true
+    }
+   ],
+   "x_mention": "lookonchain: hacker dumping ENA",
+   "plain": "already shorted it at 0.1713, stop 0.1926, riding it down",
+   "size": 168.1,
+   "rr_note": "1% risk short, Turtle trail exit",
+   "rr": [
+    0.57,
+    1.15
+   ],
+   "risk_usd": 2.23,
+   "notional": 25.62,
+   "reward_usd": [
+    1.28,
+    2.56
+   ],
+   "price_at_scan": 0.15254
+  },
+  {
+   "id": "sui-turtle-short",
+   "coin": "SUI",
+   "name": "SUI",
+   "emoji": "\ud83d\udd3b",
+   "status": "IN TRADE",
+   "side": "short",
+   "why": "Weak chart: 4h close 0.869 under 0.898 55-bar low, still bleeding. Shorted @ 0.86638 at 1% risk, stop 0.9168 on the exchange.",
+   "setup": "Turtle 4h breakdown short (55-bar low)",
+   "dir": "below",
+   "trigger": 0.89774,
+   "zone": [
+    0.805733,
+    0.89774
+   ],
+   "entry": 0.86638,
+   "stop": 0.9168,
+   "orig_stop": 0.9168,
+   "targets": [
+    0.823061,
+    0.779742
+   ],
+   "conditions": [
+    {
+     "t": "4h close below the 55-bar low 0.89774",
+     "ok": true
+    }
+   ],
+   "x_mention": "lookonchain: hacker dumping ENA",
+   "plain": "already shorted it at 0.1713, stop 0.1926, riding it down",
+   "size": 41.3,
+   "rr_note": "1% risk short, Turtle trail exit",
+   "rr": [
+    0.86,
+    1.72
+   ],
+   "risk_usd": 2.08,
+   "notional": 35.78,
+   "reward_usd": [
+    1.79,
+    3.58
+   ],
+   "price_at_scan": 0.86616
   }
  ]
 }
