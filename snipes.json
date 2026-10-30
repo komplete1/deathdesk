@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-10-30T00:53:30+00:00",
- "equity": 248.63,
- "risk_per_trade": 12.43,
- "scan_note": "11:52 run (box reboot healed). Still HACK MODE phase 1: Binance withdrawals still suspended, hacker still swapping alts to ETH (Lunaray). BTC wicked to 76.7k this hour, now ~77.1k. 6/6 shorts held, all stops on the exchange, no new entries (position cap).",
+ "updated_at": "2026-10-30T01:03:58+00:00",
+ "equity": 249.18,
+ "risk_per_trade": 12.46,
+ "scan_note": "12:03 HACK MODE phase 1: hacker done dumping (Lookonchain) but BTC fresh 1h low 76.7k, no plug confirm. ENA/LINK stops tightened. No longs yet.",
  "x_list_note": "Intraday run, no list skim (next at the 12:05 FULL run). X search 11:52: not plugged. Binance says it covers losses, deposits/withdrawals still paused; Arbitrum froze 74.5M ARB of hacker funds (via WuBlockchain).",
  "snipes": [
   {
@@ -21,7 +21,7 @@
     0.18403
    ],
    "entry": 0.17127,
-   "stop": 0.1926,
+   "stop": 0.176,
    "orig_stop": 0.1926,
    "targets": [
     0.16,
@@ -57,13 +57,13 @@
     0.53,
     1.0
    ],
-   "risk_usd": 2.26,
+   "risk_usd": 0.5,
    "notional": 18.15,
    "reward_usd": [
     1.19,
     2.25
    ],
-   "price_at_scan": 0.172515
+   "price_at_scan": 0.173195
   },
   {
    "id": "near-turtle-short",
@@ -123,7 +123,7 @@
     1.53,
     2.77
    ],
-   "price_at_scan": 4.0104
+   "price_at_scan": 3.991
   },
   {
    "id": "aave-turtle-short",
@@ -186,7 +186,7 @@
     2.49,
     4.01
    ],
-   "price_at_scan": 118.775
+   "price_at_scan": 118.465
   },
   {
    "id": "trx-turtle",
@@ -234,14 +234,14 @@
     1.93,
     4.43
    ],
-   "size": 2072.0,
-   "notional": 732.13,
-   "risk_usd": 12.43,
+   "size": 2077.0,
+   "notional": 733.89,
+   "risk_usd": 12.46,
    "reward_usd": [
-    24.03,
-    55.11
+    24.09,
+    55.24
    ],
-   "price_at_scan": 0.356895
+   "price_at_scan": 0.357265
   },
   {
    "id": "uni-rebound",
@@ -296,14 +296,14 @@
     1.39,
     2.82
    ],
-   "size": 44.39,
-   "notional": 293.44,
-   "risk_usd": 12.43,
+   "size": 44.5,
+   "notional": 294.14,
+   "risk_usd": 12.46,
    "reward_usd": [
-    17.31,
-    35.07
+    17.35,
+    35.15
    ],
-   "price_at_scan": 6.4863
+   "price_at_scan": 6.44765
   },
   {
    "id": "kpepe-rebound",
@@ -358,14 +358,14 @@
     0.93,
     2.0
    ],
-   "size": 44390.0,
-   "notional": 205.98,
-   "risk_usd": 12.43,
+   "size": 44500.0,
+   "notional": 206.48,
+   "risk_usd": 12.46,
    "reward_usd": [
-    11.54,
-    24.86
+    11.57,
+    24.92
    ],
-   "price_at_scan": 0.0046
+   "price_at_scan": 0.004585
   },
   {
    "id": "zec-turtle",
@@ -408,14 +408,14 @@
     1.06,
     2.13
    ],
-   "size": 0.1322,
-   "notional": 185.13,
-   "risk_usd": 12.43,
+   "size": 0.1326,
+   "notional": 185.57,
+   "risk_usd": 12.46,
    "reward_usd": [
-    13.22,
-    26.45
+    13.26,
+    26.51
    ],
-   "price_at_scan": 1235.25
+   "price_at_scan": 1234.75
   },
   {
    "id": "link-turtle-short",
@@ -433,7 +433,7 @@
     11.221
    ],
    "entry": 10.557,
-   "stop": 11.19,
+   "stop": 10.66,
    "orig_stop": 11.19,
    "targets": [
     10.02915,
@@ -453,13 +453,13 @@
     0.83,
     1.67
    ],
-   "risk_usd": 2.09,
+   "risk_usd": 0.34,
    "notional": 34.84,
    "reward_usd": [
     1.74,
     3.48
    ],
-   "price_at_scan": 10.4945
+   "price_at_scan": 10.506
   },
   {
    "id": "sol-turtle-short",
@@ -503,7 +503,7 @@
     2.33,
     4.66
    ],
-   "price_at_scan": 94.8235
+   "price_at_scan": 94.4955
   },
   {
    "id": "arb-turtle-short",
@@ -547,7 +547,7 @@
     1.28,
     2.56
    ],
-   "price_at_scan": 0.15487
+   "price_at_scan": 0.15367
   },
   {
    "id": "sui-turtle-short",
@@ -591,7 +591,7 @@
     1.79,
     3.58
    ],
-   "price_at_scan": 0.85531
+   "price_at_scan": 0.85232
   }
  ]
 }
