@@ -1,15 +1,15 @@
 {
- "generated": "2026-11-09 09:58 AEDT",
+ "generated": "2026-11-09 10:56 AEDT",
  "state": {
   "balance": 235.5699861561419,
   "day": "2026-11-09",
   "day_start_eq": 236.649000174973,
   "errors": 0,
   "halted_day": null,
-  "last_bar": 1794171600000,
+  "last_bar": 1794175200000,
   "pending": {},
   "positions": {},
-  "runs": 68,
+  "runs": 69,
   "start_balance": 239.13,
   "started": 1793941891896,
   "strategy": "AME_v1"
@@ -82,14 +82,13 @@
    "note": "stop side=1 R=-0.21"
   }
  ],
- "status": "2026-11-09 09:57 AEDT | PAPER AME eq $235.57 (-3.56) | pos: flat | pending: none | last closed 1h bar ended 2026-11-09 09:00 AEDT | errors 0",
+ "status": "2026-11-09 10:55 AEDT | PAPER AME eq $235.57 (-3.56) | pos: flat | pending: none | last closed 1h bar ended 2026-11-09 10:00 AEDT | errors 0",
  "strategy_md": "# PAPER STRATEGY: AME v1 \u2014 Aggressive Momentum Entries (locked 6 Nov 2026 AEDT)\n\nPAPER ONLY. No keys, no signing, no live orders. Live Hyperliquid remains HALT.\n\nReplaces the locked Turtle 55-bar long-only (archived in `archive/`). Danny approved changing the strategy after a zero-trade paper week (30 Oct \u2013 6 Nov).\n\n## What the 90d Hyperliquid backtest said (honest)\n\nUniverse: 17 liquid HL perps, 1h candles, ~90 days to 6 Nov 2026. Costs: 0.045% taker + 0.05% slip each side. Start $239.13.\n\n- Blind 20-bar short breakouts: large net loss across variants.\n- Weekend-fade shorts (2y Binance \"survives\" rule): 0\u201321% hit, net negative on this window.\n- Capitulaton via volume-z proxy (no historical OI on HL): mostly hurt vs breakout-only.\n- Winner under DD\u226445% and \u226525 trades: **long 12-bar Donchian + EMA(200) trend filter, 2% risk, 2.0 ATR stop**.\n\nSelected backtest (L12_r20_s2.0, no capit): **272 trades, 34.2% win rate, +$434.34 (+181.6%), max DD 41.4%**. High DD is the cost of actually trading on a small account \u2014 reported, not hidden.\n\nLive overlay (not in the 90d HL candle backtest): when Binance public OI shows the edge-bot `capitulation_flush` rule (4h vol z < -3 and OI 24h < -5%), take a long. Half-size weekend-fade short is OFF until it earns its keep again on this book.\n\n## Rules (frozen until Danny says otherwise)\n\n- Coins: BTC, ETH, SOL, HYPE, XRP, BNB, DOGE, LINK, SUI, NEAR, UNI, AAVE, WLD, kPEPE, ENA, TAO, TRUMP (HL liquid set; skipped if delisted or day volume < $10M).\n- Bar: Hyperliquid public `candleSnapshot` 1h. Act on CLOSED bars only.\n- Trend gate: close must be above EMA(200) on 1h.\n- Entry (long): closed 1h close > highest high of previous 12 bars \u2192 buy next open.\n- Capitulaton overlay (long): if Binance public 1h data fires `vz4 < -3` and `oi24 < -0.05` on that coin (mapped USDT), queue a long even through a flat Donchian (still needs trend gate OR z-flush alone). Size same as breakout.\n- Initial stop: entry \u2212 2.0 \u00d7 ATR(14). Skip if open already \u2264 stop.\n- Trail: stop = max(stop, lowest low of last 8 bars) after each close.\n- Time stop: exit at close after 36 bars (~36h) if still open.\n- Size: risk **2%** of paper equity; qty = risk / (entry \u2212 stop); notional capped at **3\u00d7** equity.\n- Max 4 positions/pending. Coin-list order.\n- Daily breaker: if equity \u2264 92% of that AEDT day's start equity, flatten and no new entries until next AEDT day.\n- Costs modeled: 0.045% + 0.05% slip each side.\n- No discretion, no news overrides. PAPER ONLY.\n\n## Ops\n\n- Entry point unchanged: `python3 paper.py` (4h routine still works; each run processes every new closed 1h bar).\n- `python3 paper.py --replay DAYS --out DIR` for offline replay.\n- State: `state.json`, `trades.csv`, `status.txt`, `paper.log`.\n- Dashboard: `publish_dash.py` unchanged.\n",
  "coins": [],
  "issues": [
   "[2026-11-07 16:05 AEDT] FIX replay 10 skipped manage bars for open AAVE (kept fetching it after it dropped off liquid_set)"
  ],
  "log_tail": [
-  "[2026-11-08 23:00 AEDT] ENTRY kPEPE brk12L side=1 44087.5 @ 0.0049965 stop 0.00488914 risk $4.73",
   "[2026-11-09 00:03 AEDT] STATUS 2026-11-09 00:03 AEDT | PAPER AME eq $236.88 (-2.25) | pos: kPEPEL@0.004996/stop0.004889 | pending: none | last closed 1h bar ended 2026-11-09 00:00 AEDT | errors 0",
   "[2026-11-09 01:03 AEDT] STATUS 2026-11-09 01:03 AEDT | PAPER AME eq $238.12 (-1.01) | pos: kPEPEL@0.004996/stop0.004889 | pending: none | last closed 1h bar ended 2026-11-09 01:00 AEDT | errors 0",
   "[2026-11-09 02:04 AEDT] STATUS 2026-11-09 02:04 AEDT | PAPER AME eq $240.63 (+1.50) | pos: kPEPEL@0.004996/stop0.004889 | pending: none | last closed 1h bar ended 2026-11-09 02:00 AEDT | errors 0",
@@ -103,6 +102,7 @@
   "[2026-11-09 07:59 AEDT] STATUS 2026-11-09 07:59 AEDT | PAPER AME eq $240.01 (+0.88) | pos: kPEPEL@0.004996/stop0.004972 | pending: none | last closed 1h bar ended 2026-11-09 07:00 AEDT | errors 0",
   "[2026-11-09 08:58 AEDT] STATUS 2026-11-09 08:58 AEDT | PAPER AME eq $239.35 (+0.22) | pos: kPEPEL@0.004996/stop0.004979 | pending: none | last closed 1h bar ended 2026-11-09 08:00 AEDT | errors 0",
   "[2026-11-09 08:00 AEDT] EXIT kPEPE side=1 44087.5 @ 0.00497651 (stop) pnl -0.98 (-0.21R) bal 235.57",
-  "[2026-11-09 09:57 AEDT] STATUS 2026-11-09 09:57 AEDT | PAPER AME eq $235.57 (-3.56) | pos: flat | pending: none | last closed 1h bar ended 2026-11-09 09:00 AEDT | errors 0"
+  "[2026-11-09 09:57 AEDT] STATUS 2026-11-09 09:57 AEDT | PAPER AME eq $235.57 (-3.56) | pos: flat | pending: none | last closed 1h bar ended 2026-11-09 09:00 AEDT | errors 0",
+  "[2026-11-09 10:55 AEDT] STATUS 2026-11-09 10:55 AEDT | PAPER AME eq $235.57 (-3.56) | pos: flat | pending: none | last closed 1h bar ended 2026-11-09 10:00 AEDT | errors 0"
  ]
 }
